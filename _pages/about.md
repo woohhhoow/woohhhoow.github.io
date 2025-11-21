@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: " **个人简介（长篇、叙事向、专业向结合）**"
+title: " **Personal Profile **"
 author_profile: true
 redirect_from: 
   - /about/
@@ -8,18 +8,20 @@ redirect_from:
 ---
 
 
-我目前就读于 **米兰理工大学景观建筑专业**，长期关注 **场地、影像与叙事**之间的互动关系。在学习与实践的过程中，我逐渐形成了一套属于自己的观察方法：从 **地形、植被、水系统**等自然要素出发，结合 **地方文化、历史遗存与社会结构**，尝试理解一个场地如何在时间中被塑造，又如何继续影响未来的生活方式。
 
-我的设计兴趣并不局限在传统的景观领域。相反，我常常将 **摄影** 视为另一种“快速场地调研”，通过镜头记录 **光线、尺度、材质、边界、噪音、人的移动轨迹** 等信息。影像对我来说既是捕捉，也是筛选，让我在复杂的现实中找到核心线索。近年来，我也在探索 **影像、GIS 数据与人工智能工具的交叉使用**，希望让技术成为理解环境与生成叙事的延伸。
 
-在项目中，我尤其关注那些被忽略的地方：**废弃的铁路、城市缝隙、被遗忘的空地、边缘化的水体、破碎但仍具有价值的生态廊道**。这些场地往往自由、生动，拥有未被消解的原始性。我希望通过设计为它们 **重新建立秩序**，而不是强行覆盖；寻找一种既能 **回应现实**，也能 **给未来留出生长空间** 的方式。**更新、修复、激活**，是我反复思考的关键词。
+I am currently pursuing a degree in Landscape Architecture at the Politecnico di Milano, with a longstanding focus on the interplay between **site, imagery, and narrative**. Through my studies and practice, I have developed a personal observational approach: starting from natural elements like **topography, vegetation, and water systems**, I integrate **local culture, historical remnants, and social structures** to understand how a site is shaped over time and how it continues to influence future ways of living.
 
-对我来说，景观不仅是“可见的空间”，更是一种 **自然与社会力量共同作用**的系统。它包含 **时间的厚度**，也包含人们的 **使用逻辑、生活方式与情感体验**。因此，我在设计过程中特别重视 **叙事结构**，希望通过分析与策略构建出一条清晰的逻辑线——从 **问题识别、系统分析、概念生成、设计表达**，每一步都有迹可循，同时又能在表达中呈现独特的美学与思考。
+My design interests extend beyond traditional landscape boundaries. Instead, I often treat **photography** as an alternative form of “rapid site research,” using the lens to document information like **light, scale, materials, boundaries, noise, and human movement patterns**. For me, images serve both to capture and filter, helping me identify core clues within complex realities. In recent years, I've also explored the **intersection of imagery, GIS data, and AI tools**, aiming to extend technology as a means to comprehend environments and generate narratives.
 
-在米兰的学习经历给予我大量跨文化的刺激，我开始理解 **欧洲景观体系** 的运行方式，也开始思考中国语境中 **土地、乡村、城市更新、生态修复** 的复杂性。未来我希望回到国内，从 **养老、乡村建设、城市公共空间** 等层面继续探索 **人—土地—基础设施**之间的关系，用设计去回应真实的问题，而不是只追求形式。
+In my projects, I pay particular attention to overlooked places: **abandoned railways, urban crevices, forgotten vacant lots, marginalized water bodies, fragmented yet valuable ecological corridors**. These sites often possess a raw, unresolved vitality and freedom. Through design, I aim to **reestablish order** for them rather than forcibly cover them up; to find a way that both **responds to reality** and **preserves space for future growth**. **Renewal, restoration, and activation** are the keywords I continually reflect upon.
 
-同时，我对 **跨学科** 非常着迷。**摄影、人工智能、制图技术、叙事写作** —— 这些看似分散的元素互相连接，构成了我理解世界的方式。我相信设计不是单一技能，而是一种 **持续学习、调研、分析与想象** 的能力。
+For me, landscape is not merely “visible space” but a system shaped by the **interplay of natural and social forces**. It encompasses **the depth of time**, as well as people's **logic of use, lifestyles, and emotional experiences**. Therefore, I place particular emphasis on **narrative structure** in the design process, aiming to construct a clear logical thread through analysis and strategy—from **problem identification, system analysis, concept generation, to design expression**. Each step is traceable, while simultaneously presenting unique aesthetics and thought in the expression.
 
-无论是专业项目还是个人创作，我希望自己的作品都能具有一种 **内在的诚实感**：**尊重场地、理解现实、拥抱不确定性**，并在最细微的地方看到可能性。景观设计是一个 **慢的专业**，而节奏的放缓也让我更愿意去倾听场地与人的故事，去观察城市如何呼吸，也去尝试成为一个真正 **理解空间与生活的设计者**。
+My studies in Milan provided extensive cross-cultural stimulation, enabling me to grasp the functioning of **European landscape systems** while contemplating the complexities of **land, rural areas, urban renewal, and ecological restoration** within the Chinese context. Moving forward, I aspire to return to China and continue exploring the relationship between **people, land, and infrastructure** through **eldercare, rural development, and urban public spaces**. My goal is to use design to address real-world challenges rather than merely pursue form.
 
-[点一下](https://woohhhoow.github.io/)
+Simultaneously, I am deeply fascinated by **interdisciplinary approaches**. **Photography, artificial intelligence, mapping techniques, narrative writing**—these seemingly disparate elements interconnect to form my lens for understanding the world. I believe design is not a singular skill but an ongoing capacity for **learning, research, analysis, and imagination**.
+
+Whether in professional projects or personal creations, I strive for an **inner sense of honesty** in my work: **respecting the site, understanding reality, embracing uncertainty**, and spotting possibilities in the smallest details. Landscape architecture is a **slow profession**, and this deliberate pace allows me to listen more attentively to the stories of places and people, observe how cities breathe, and aspire to become a designer who truly **understands space and life**.
+
+[Clicking here won't help. ](https://woohhhoow.github.io/)
