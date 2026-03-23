@@ -1,99 +1,133 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wu Haiwen | 景观建筑设计师 | Landscape Architect</title>
+    <title>WU HAIWEN | Landscape Architecture</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Manrope:wght@200;400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dark-theme">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="noise-overlay"></div>
 
     <nav id="navbar">
-        <div class="logo-wrap">WU HAIWEN <span>/ Landscape Architect</span></div>
-        <ul>
-            <li><a href="#hero">Index</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+        <a href="#hero" class="logo hover-target">WU HAIWEN.</a>
+        <div class="nav-links">
+            <a href="#projects" class="hover-target">Projects</a>
+            <a href="#about" class="hover-target">Studio</a>
+            <a href="#contact" class="hover-target">Contact</a>
+        </div>
     </nav>
 
     <header id="hero" class="hero">
-        <div class="hero-bg" id="heroBg"></div>
-        <div class="hero-content" id="heroContent">
-            <h1>Wu Haiwen</h1>
-            <h2>专注于可持续与韧性的现代景观设计</h2>
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h2 class="reveal-text">Landscape Architecture</h2>
+            <h1 class="reveal-text delay-1">WU HAIWEN</h1>
+            <p class="reveal-text delay-2">Crafting resilient ecologies and immersive spatial narratives.</p>
             
-            <div class="magnetic-wrap" id="magneticBtn">
-                <a href="#projects" class="btn-magnetic">探索项目 (Explore)</a>
+            <div class="scroll-indicator reveal-text delay-3">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <p>Scroll to explore</p>
             </div>
         </div>
     </header>
 
-    <section id="projects" class="projects">
-        <div class="section-header reveal">
-            <span>Selected Projects</span>
-            <h3>以生态整合与以人为本为核心的设计实践</h3>
-        </div>
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-title reveal-elem">
+                <h3>Selected Works</h3>
+                <div class="line"></div>
+            </div>
 
-        <div class="grid-container">
+            <div class="project-grid">
+                <a href="#" class="project-item hover-target reveal-elem">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1596401057633-ce2674e79129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Project 1">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <span>01 / Ecological Restoration</span>
+                        <h4>Suzhou Creek Waterfront</h4>
+                    </div>
+                </a>
+
+                <a href="#" class="project-item hover-target reveal-elem">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Project 2">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <span>02 / Urban Design</span>
+                        <h4>Plaza Regeneration</h4>
+                    </div>
+                </a>
+
+                <a href="#" class="project-item hover-target reveal-elem">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1620393470010-f1c5c1e550c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Project 3">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <span>03 / Detail & Materiality</span>
+                        <h4>Commercial Roof Garden</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal-elem">
+                    <h3>The Studio</h3>
+                    <p>Wu Haiwen is a landscape architect dedicated to exploring the intersection of natural systems, urban infrastructure, and human experience.</p>
+                    <p>Based on rigorous site analysis and a profound respect for materiality, the practice focuses on delivering poetic yet highly functional landscapes.</p>
+                </div>
+                <div class="about-skills reveal-elem">
+                    <h4>Core Capabilities</h4>
+                    <ul>
+                        <li>Masterplanning & Urban Design</li>
+                        <li>Ecological Restoration</li>
+                        <li>Parametric Landscape Design</li>
+                        <li>Public Realm & Material Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-top reveal-elem">
+                <h2>Let's build something<br>extraordinary.</h2>
+                <a href="mailto:w16026174@gmail.com" class="big-email hover-target">w16026174@gmail.com</a>
+            </div>
             
-            <div class="project-card reveal">
-                <div class="project-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1596401057633-ce2674e79129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="苏州河滨水空间更新">
+            <div class="footer-bottom">
+                <p>&copy; 2026 WU HAIWEN. All Rights Reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="hover-target">LinkedIn</a>
+                    <a href="#" class="hover-target">Instagram</a>
+                    <a href="#" class="hover-target">Issuu</a>
                 </div>
-                <span class="project-meta">Ecological Restoration / Urban Design</span>
-                <h4>苏州河（普陀段）滨水空间修复</h4>
-                <p>引入弹性湿地边界与多层级活力节点，重塑城市破碎肌理。Reshaping urban fabric with resilient wetland edges.</p>
             </div>
-
-            <div class="project-card reveal">
-                <div class="project-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="杨树浦发电厂遗址公园">
-                </div>
-                <span class="project-meta">Post-Industrial / Adaptive Reuse</span>
-                <h4>杨树浦工业遗址生态公园規劃</h4>
-                <p>将历史工业构筑物与自然景观系统有机融合，打造体验式工业记忆。Integrating historical structures with natural systems.</p>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1620393470010-f1c5c1e550c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="商业综合体屋顶花园">
-                </div>
-                <span class="project-meta">Urban Roof Garden / Detail Design</span>
-                <h4>新天地现代办公中心屋顶花园</h4>
-                <p>基于参数化设计的铺装细节与植物组团，提升高密度城市屋顶生态价值。Paving details & planting groups for urban roof.</p>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="莫干山乡村修复设计">
-                </div>
-                <span class="project-meta">Rural Revitalization / Sustainable Tourism</span>
-                <h4>莫干山生态营地规划与节点细节</h4>
-                <p>低干预开发策略，探索乡村叙事与生物多样性保护的生态平衡。Low-intervention strategies for rural landscape.</p>
-            </div>
-
         </div>
-    </section>
-
-    <section id="about" class="about-contact">
-        <div class="reveal">
-            <h3>关于 / About</h3>
-            <p>我是吴海闻 (Wu Haiwen)，一名深耕于现代景观建筑领域的专业设计师。致力于将生态学原理、数字建造技术与以人为本的空间叙事相结合。</p>
-        </div>
-        <div class="reveal">
-            <h3>联系 / Contact</h3>
-            <p>对我的作品感兴趣，或寻找合作机会？请随时通过邮件与我联系。</p>
-            <a href="mailto:haiwen_wu.design@email.com" class="email-link">haiwen_wu.design@email.com</a>
-        </div>
-    </section>
+    </footer>
 
     <script src="js/main.js"></script>
-
 </body>
 </html>

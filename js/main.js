@@ -1,97 +1,83 @@
-/* =========================================
-   Wu Haiwen Portfolio - 高级交互脚本
-   ========================================= */
+document.addEventListener('DOMContentLoaded', () => {
 
-// --- A. 滚动可见淡入 (Intersection Observer API) ---
-const reveals = document.querySelectorAll('.reveal');
-const observerOptions = { threshold: 0.15 }; // 视口内 15% 可见时触发
+    /* --- 1. 定制鼠标特效 (Custom Cursor) --- */
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+    const hoverTargets = document.querySelectorAll('.hover-target, a, button');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // 触发后停止观察，性能优化
-        }
-    });
-}, observerOptions);
+    // 监听鼠标移动
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
 
-reveals.forEach(reveal => observer.observe(reveal));
+        // 小圆点紧跟鼠标
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
 
-// --- B. Hero 首屏鼠标跟随视差效果 ---
-const hero = document.getElementById('hero');
-if (hero) {
-    const heroBg = document.getElementById('heroBg');
-    const heroContent = document.getElementById('heroContent');
-
-    hero.addEventListener('mousemove', (e) => {
-        const { clientX, clientY } = e;
-        const { innerWidth, innerHeight } = window;
-
-        // 计算鼠标相对于屏幕中心的偏移量，范围: -1 ~ 1
-        const moveX = (clientX - innerWidth / 2) / (innerWidth / 2);
-        const moveY = (clientY - innerHeight / 2) / (innerHeight / 2);
-
-        // 增强背景的偏移量 (增加深度空间感)
-        const bgOffset = 30; // 偏移像素
-        if (heroBg) {
-            heroBg.style.transform = `translate(${moveX * bgOffset}px, ${moveY * bgOffset}px)`;
-        }
-
-        // 轻微偏移前景文字 (创造多层立体感)
-        const contentOffset = -15; 
-        if (heroContent) {
-            heroContent.style.transform = `translate(${moveX * contentOffset}px, ${moveY * contentOffset}px)`;
-        }
-    });
-}
-
-// --- C. 磁性按钮交互 (Magnetic Button) ---
-const magneticWrap = document.getElementById('magneticBtn');
-if (magneticWrap) {
-    const magneticBtn = magneticWrap.querySelector('.btn-magnetic');
-
-    magneticWrap.addEventListener('mousemove', (e) => {
-        const { offsetX, offsetY, target } = e;
-        const { offsetWidth, offsetHeight } = target;
-
-        // 计算鼠标相对于按钮中心的相对位置
-        const relX = (offsetX - offsetWidth / 2);
-        const relY = (offsetY - offsetHeight / 2);
-
-        // 移动整个包装器 (磁性吸附范围)
-        const force = 0.3; // 吸附力度
-        magneticWrap.style.transform = `translate(${relX * force}px, ${relY * force}px)`;
-
-        // 稍微移动内部按钮文本 (增加动感)
-        const textForce = 0.1;
-        if (magneticBtn) {
-            magneticBtn.style.transform = `translate(${relX * textForce}px, ${relY * textForce}px)`;
-        }
+        // 外圈圆带有延迟动画 (使用 requestAnimationFrame 会更平滑，这里用简写)
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
     });
 
-    // 鼠标离开时复位
-    magneticWrap.addEventListener('mouseleave', () => {
-        magneticWrap.style.transform = `translate(0px, 0px)`;
-        if (magneticBtn) {
-            magneticBtn.style.transform = `translate(0px, 0px)`;
-        }
+    // 监听悬停放大状态
+    hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            document.body.classList.add('cursor-hover');
+        });
+        target.addEventListener('mouseleave', () => {
+            document.body.classList.remove('cursor-hover');
+        });
     });
-}
 
-// --- D. 智能导航栏滚动隐藏 ---
-let lastScrollTop = 0;
-const navbar = document.getElementById('navbar');
+    /* --- 2. 首屏景深视差跟随特效 (Hero Parallax) --- */
+    const hero = document.getElementById('hero');
+    const heroBg = document.querySelector('.hero-bg');
 
-window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (navbar) {
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // 向下滚动且超过100px -> 隐藏
-            navbar.classList.add('nav-hidden');
-        } else {
-            // 向上滚动 -> 显示
-            navbar.classList.remove('nav-hidden');
-        }
+    if (hero && heroBg) {
+        hero.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth - e.pageX * 2) / 90;
+            const y = (window.innerHeight - e.pageY * 2) / 90;
+            heroBg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+        });
+        // 鼠标移出恢复居中
+        hero.addEventListener('mouseleave', () => {
+            heroBg.style.transform = `translate(0px, 0px) scale(1)`;
+        });
     }
-    lastScrollTop = scrollTop;
+
+    /* --- 3. 滚动渐显特效 (Intersection Observer) --- */
+    const revealElements = document.querySelectorAll('.reveal-elem');
+    
+    const revealOptions = {
+        threshold: 0.15, // 元素进入视口 15% 时触发
+        rootMargin: "0px 0px -50px 0px" 
+    };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // 只执行一次
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => {
+        revealOnScroll.observe(el);
+    });
+
+    /* --- 4. 导航栏滚动变色 --- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
 });
