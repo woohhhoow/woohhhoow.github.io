@@ -3,89 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wu Haiwen 吴海文 | 景观建筑作品集 Landscape Architecture Portfolio</title>
+    <title>Wu Haiwen | 景观建筑设计师 | Landscape Architect</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">WU HAIWEN. <span class="cn-name">吴海文</span></div>
+    <nav id="navbar">
+        <div class="logo-wrap">WU HAIWEN <span>/ Landscape Architect</span></div>
         <ul>
-            <li><a href="#hero">首页</a></li>
-            <li><a href="#projects">项目作品</a></li>
-            <li><a href="#about">关于我</a></li>
-            <li><a href="#contact">联系</a></li>
+            <li><a href="#hero">Index</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
         </ul>
     </nav>
 
     <header id="hero" class="hero">
-        <div class="hero-content">
-            <h1>吴海文 Wu Haiwen</h1>
-            <h2>景观建筑设计师 | Landscape Architect</h2>
-            <div class="divider"></div>
-            <p>专注于重塑城市韧性肌理、生态修复与以人为本的公共空间设计。Sculpting landscapes. Integrating ecology. Connecting communities.</p>
-            <a href="#projects" class="btn-primary">探索项目 (Explore Works)</a>
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-content" id="heroContent">
+            <h1>Wu Haiwen</h1>
+            <h2>专注于可持续与韧性的现代景观设计</h2>
+            
+            <div class="magnetic-wrap" id="magneticBtn">
+                <a href="#projects" class="btn-magnetic">探索项目 (Explore)</a>
+            </div>
         </div>
     </header>
 
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title">Selected Projects / 精选作品</h2>
-            <div class="grid-container">
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1596401057633-ce2674e79129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="滨水生态公园">
-                    <div class="project-info">
-                        <span class="category">生态修复 / 城市韧性</span>
-                        <h3>上海苏州河滨水空间更新</h3>
-                        <p>连接破碎肌理，引入弹性湿地，打造活力共享的“都市绿肺”。Connecting urban fabric, introducing resilient wetlands, creating a vital shared "urban lung".</p>
-                    </div>
-                </div>
+    <section id="projects" class="projects">
+        <div class="section-header reveal">
+            <span>Selected Projects</span>
+            <h3>以生态整合与以人为本为核心的设计实践</h3>
+        </div>
 
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="城市广场更新">
-                    <div class="project-info">
-                        <span class="category">城市设计 / 公共空间</span>
-                        <h3>新天地中央广场空间活化</h3>
-                        <p>以铺装和种植重塑流线，将消极空间转化为沉浸式社区休闲枢纽。Reshaping circulation through paving and planting, transforming passive space into an immersive community hub.</p>
-                    </div>
+        <div class="grid-container">
+            
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1596401057633-ce2674e79129?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="苏州河滨水空间更新">
                 </div>
-
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="社区疗愈花园">
-                    <div class="project-info">
-                        <span class="category">乡村振兴 / 自然教育</span>
-                        <h3>莫干山生态艺术营地规划</h3>
-                        <p>基于生物多样性保护的低干预开发，探索乡村景观与可持续旅游的平衡。Low-intervention development based on biodiversity conservation, exploring the balance between rural landscape and sustainable tourism.</p>
-                    </div>
-                </div>
-
+                <span class="project-meta">Ecological Restoration / Urban Design</span>
+                <h4>苏州河（普陀段）滨水空间修复</h4>
+                <p>引入弹性湿地边界与多层级活力节点，重塑城市破碎肌理。Reshaping urban fabric with resilient wetland edges.</p>
             </div>
-        </div>
-    </section>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-wrapper">
-                <div class="about-text">
-                    <h2>关于我 / About Me</h2>
-                    <p>我是吴海文 (Wu Haiwen)，一名深耕于景观建筑领域的专业设计师。拥有[你的学历]背景，并专注于从宏观生态规划到微观节点细节的全过程设计。</p>
-                    <p>我坚信景观不仅是视觉的呈现，更是解决复杂城市问题（如雨水管理、热岛效应）的触媒。我的设计方法强调场地叙事、材料的原生感、以及自然系统随时间推移的演变规律。My design approach emphasizes site narrative, the materiality, and the natural systems over time.</p>
-                    <div class="skills-tags">
-                        <span>Rhino / Grasshopper</span><span>AutoCAD</span><span>Lumion</span><span>Enscape</span><span>GIS</span><span>ArcGIS</span><span>Adobe CS</span>
-                    </div>
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="杨树浦发电厂遗址公园">
                 </div>
+                <span class="project-meta">Post-Industrial / Adaptive Reuse</span>
+                <h4>杨树浦工业遗址生态公园規劃</h4>
+                <p>将历史工业构筑物与自然景观系统有机融合，打造体验式工业记忆。Integrating historical structures with natural systems.</p>
             </div>
+
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1620393470010-f1c5c1e550c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="商业综合体屋顶花园">
+                </div>
+                <span class="project-meta">Urban Roof Garden / Detail Design</span>
+                <h4>新天地现代办公中心屋顶花园</h4>
+                <p>基于参数化设计的铺装细节与植物组团，提升高密度城市屋顶生态价值。Paving details & planting groups for urban roof.</p>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="莫干山乡村修复设计">
+                </div>
+                <span class="project-meta">Rural Revitalization / Sustainable Tourism</span>
+                <h4>莫干山生态营地规划与节点细节</h4>
+                <p>低干预开发策略，探索乡村叙事与生物多样性保护的生态平衡。Low-intervention strategies for rural landscape.</p>
+            </div>
+
         </div>
     </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>联系 / Contact</h2>
-            <p>正在寻找新的设计机遇、项目合作或对我的作品感兴趣？期待与您的交流。</p>
-            <a href="mailto:whw_design@email.com" class="email-link">whw_design@email.com</a>
+    <section id="about" class="about-contact">
+        <div class="reveal">
+            <h3>关于 / About</h3>
+            <p>我是吴海闻 (Wu Haiwen)，一名深耕于现代景观建筑领域的专业设计师。致力于将生态学原理、数字建造技术与以人为本的空间叙事相结合。</p>
+        </div>
+        <div class="reveal">
+            <h3>联系 / Contact</h3>
+            <p>对我的作品感兴趣，或寻找合作机会？请随时通过邮件与我联系。</p>
+            <a href="mailto:haiwen_wu.design@email.com" class="email-link">haiwen_wu.design@email.com</a>
         </div>
     </section>
+
+    <script src="js/main.js"></script>
 
 </body>
 </html>
