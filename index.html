@@ -3,185 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WU HAIWEN | Landscape Architecture | Resilient Ecologies</title>
+    <title>WU HAIWEN | Landscape Architect</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Manrope:wght@200;300;400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="dark-theme">
+<body>
 
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline hover-blur"></div>
+    <div class="cursor"></div>
+    
+    <div class="hover-image-reveal"></div>
 
-    <div class="noise-overlay"></div>
-
-    <nav id="navbar">
-        <a href="#hero" class="logo hover-target">WU HAIWEN.</a>
-        <div class="nav-links">
-            <a href="#projects" class="hover-target">Projects</a>
-            <a href="#about" class="hover-target">Studio</a>
-            <a href="#contact" class="hover-target">Contact</a>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#hero" class="logo">WU HAIWEN</a>
+        </div>
+        <div class="nav-right">
+            <a href="#projects" class="nav-link">Selected Works</a>
+            <a href="#about" class="nav-link">Studio</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
-    <header id="hero" class="hero">
-        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1596401057633-ce2674e79129?q=80&w=2500&auto=format&fit=crop');"></div>
-        <div class="hero-overlay"></div>
+    <header class="hero" id="hero">
+        <div class="hero-image-wrapper">
+            <img src="https://picsum.photos/id/1015/2500/1500" alt="Landscape Architecture" class="hero-img">
+        </div>
         
-        <div class="hero-content">
-            <h2 class="reveal-text">Landscape Architecture</h2>
-            <h1 class="reveal-text delay-1">WU HAIWEN</h1>
-            <p class="reveal-text delay-2">Crafting resilient ecologies and immersive spatial narratives.</p>
-            
-            <div class="scroll-indicator reveal-text delay-3">
-                <span class="mouse">
-                    <span class="wheel"></span>
-                </span>
-                <p>Scroll to explore</p>
-            </div>
+        <div class="hero-title-wrapper">
+            <h1 class="hero-title">WU<br>HAIWEN</h1>
+            <p class="hero-subtitle">LANDSCAPE ARCHITECT & URBAN DESIGNER</p>
+        </div>
+
+        <div class="scroll-down">
+            <span class="fine-line"></span>
+            <span>SCROLL</span>
         </div>
     </header>
 
-    <section id="philosophy" class="philosophy-section">
-        <div class="container reveal-elem">
-            <div class="philosophy-content">
-                <span>Core Philosophy</span>
-                <h3>We shape our environments; therefore, our environments shape us.</h3>
-                <p>I believe that landscape is not merely an aesthetic endeavor, but a catalyst for systemic change. By weaving together site specifics, biological systems, and architectural parameters, the practice aims to create spaces that are both poetic and performative.</p>
-            </div>
+    <div class="marquee-section">
+        <div class="marquee">
+            <span>ECOLOGICAL RESTORATION — URBAN DESIGN — MATERIALITY — PARAMETRIC LANDSCAPE — SPATIAL NARRATIVE — </span>
+            <span>ECOLOGICAL RESTORATION — URBAN DESIGN — MATERIALITY — PARAMETRIC LANDSCAPE — SPATIAL NARRATIVE — </span>
         </div>
-    </section>
+    </div>
 
-    <section id="projects" class="projects-section">
+    <section class="projects-section" id="projects">
         <div class="container">
-            <div class="section-title reveal-elem">
-                <h3>Selected Works</h3>
-                <div class="line"></div>
+            <div class="section-header reveal-up">
+                <span class="tiny-label">01 / Index</span>
+                <h2 class="section-title">Selected Works</h2>
             </div>
-
-            <div class="project-grid">
+            
+            <div class="projects-list">
+                <div class="separator reveal-line"></div>
                 
-                <a href="#" class="project-item hover-target reveal-elem">
-                    <div class="project-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1620393470010-f1c5c1e550c6?q=80&w=1200&auto=format&fit=crop" alt="苏州河滨水空间修复" class="project-img">
-                        <div class="img-overlay"></div>
-                    </div>
-                    <div class="project-meta">
-                        <span class="category">Ecological Restoration</span>
-                        <h4>Suzhou Creek Waterfront</h4>
-                        <div class="project-data">
-                            <span>Shanghai, China</span>
-                            <span class="line"></span>
-                            <span>2024</span>
-                        </div>
-                    </div>
-                </a>
+                <div class="project-row reveal-up" data-image="https://picsum.photos/id/1047/800/1000">
+                    <div class="proj-col proj-num">01</div>
+                    <div class="proj-col proj-name">Suzhou Creek Waterfront</div>
+                    <div class="proj-col proj-type">Ecological Restoration</div>
+                    <div class="proj-col proj-year">2024</div>
+                </div>
+                <div class="separator reveal-line"></div>
 
-                <a href="#" class="project-item hover-target reveal-elem">
-                    <div class="project-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1581091215367-9b6c00b3035a?q=80&w=1200&auto=format&fit=crop" alt="新天地广场更新" class="project-img">
-                        <div class="img-overlay"></div>
-                    </div>
-                    <div class="project-meta">
-                        <span class="category">Urban Design /公共空间</span>
-                        <h4>Plaza Regeneration</h4>
-                        <div class="project-data">
-                            <span>Shanghai, China</span>
-                            <span class="line"></span>
-                            <span>2023</span>
-                        </div>
-                    </div>
-                </a>
+                <div class="project-row reveal-up" data-image="https://picsum.photos/id/1048/800/1000">
+                    <div class="proj-col proj-num">02</div>
+                    <div class="proj-col proj-name">Plaza Regeneration</div>
+                    <div class="proj-col proj-type">Urban Public Space</div>
+                    <div class="proj-col proj-year">2023</div>
+                </div>
+                <div class="separator reveal-line"></div>
 
-                <a href="#" class="project-item hover-target reveal-elem">
-                    <div class="project-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1523730205978-59fd1b2965e3?q=80&w=1200&auto=format&fit=crop" alt="莫干山生态艺术营地" class="project-img">
-                        <div class="img-overlay"></div>
-                    </div>
-                    <div class="project-meta">
-                        <span class="category">乡村振兴 / Nature Education</span>
-                        <h4>Sustainable Camp</h4>
-                        <div class="project-data">
-                            <span>Moganshan, China</span>
-                            <span class="line"></span>
-                            <span>2022</span>
-                        </div>
-                    </div>
-                </a>
+                <div class="project-row reveal-up" data-image="https://picsum.photos/id/122/800/1000">
+                    <div class="proj-col proj-num">03</div>
+                    <div class="proj-col proj-name">Sustainable Camp</div>
+                    <div class="proj-col proj-type">Rural Revitalization</div>
+                    <div class="proj-col proj-year">2022</div>
+                </div>
+                <div class="separator reveal-line"></div>
 
-                <a href="#" class="project-item hover-target reveal-elem">
-                    <div class="project-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1634571999971-ce4a67504381?q=80&w=1200&auto=format&fit=crop" alt="杨树浦工业遗址公园" class="project-img">
-                        <div class="img-overlay"></div>
-                    </div>
-                    <div class="project-meta">
-                        <span class="category">Adaptive Reuse</span>
-                        <h4>Post-Industrial Park</h4>
-                        <div class="project-data">
-                            <span>Shanghai, China</span>
-                            <span class="line"></span>
-                            <span>2021</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="#" class="project-item hover-target reveal-elem">
-                    <div class="project-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1549413247-92e106df2614?q=80&w=1200&auto=format&fit=crop" alt="屋顶花园材料细节" class="project-img">
-                        <div class="img-overlay"></div>
-                    </div>
-                    <div class="project-meta">
-                        <span class="category">Detail & Materiality</span>
-                        <h4>Rooftop Garden Details</h4>
-                        <div class="project-data">
-                            <span>Shanghai, China</span>
-                            <span class="line"></span>
-                            <span>2020</span>
-                        </div>
-                    </div>
-                </a>
-
+                <div class="project-row reveal-up" data-image="https://picsum.photos/id/164/800/1000">
+                    <div class="proj-col proj-num">04</div>
+                    <div class="proj-col proj-name">Post-Industrial Park</div>
+                    <div class="proj-col proj-type">Adaptive Reuse</div>
+                    <div class="proj-col proj-year">2021</div>
+                </div>
+                <div class="separator reveal-line"></div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="container reveal-elem">
+    <section class="about-section" id="about">
+        <div class="container">
             <div class="about-grid">
-                <div class="about-content-left">
-                    <h3>The Studio</h3>
-                    <p>Wu Haiwen is a landscape architect dedicated to exploring the complex interplay between natural systems, urban infrastructure, and human experience.</p>
-                    <p>Based on rigorous site analysis and a profound respect for materiality, the practice focuses on delivering landscapes that are both performative and poetic.</p>
+                <div class="about-left reveal-up">
+                    <span class="tiny-label">02 / Ethos</span>
                 </div>
-                <div class="about-content-right">
-                    <h4>Core Capabilities</h4>
-                    <ul class="skills-list">
-                        <li>Masterplanning & Urban Design</li>
-                        <li>Ecological Restoration & Stormwater Management</li>
-                        <li>Parametric Landscape & Custom Material Design</li>
-                        <li>Public Realm & Installation Details</li>
-                    </ul>
+                <div class="about-right reveal-up">
+                    <h3 class="manifesto">Landscape is not a static backdrop, but a dynamic, living system. We design frameworks for nature and humanity to co-author the future.</h3>
+                    <p class="bio-text">Based in a rigorous reading of site history and ecological flows, the practice of Wu Haiwen focuses on crafting resilient environments. From macro-scale urban strategies to the precise articulation of material details, the studio seeks poetry in the performative.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="site-footer">
+    <footer class="footer" id="contact">
         <div class="container">
-            <div class="footer-top reveal-elem">
-                <h2>Let's build something<br>extraordinary.</h2>
-                <a href="mailto:w16026174@gmail.com" class="big-email hover-target">w16026174@gmail.com</a>
+            <div class="footer-top reveal-up">
+                <span class="tiny-label">03 / Contact</span>
+                <a href="mailto:w16026174@gmail.com" class="huge-email">w16026174<br>@gmail.com</a>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 WU HAIWEN. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="hover-target">LinkedIn</a>
-                    <a href="#" class="hover-target">Instagram</a>
-                    <a href="#" class="hover-target">Issuu</a>
+                <div class="separator"></div>
+                <div class="footer-info">
+                    <p class="tiny-label">© 2026 WU HAIWEN</p>
+                    <div class="socials">
+                        <a href="#" class="tiny-label">LINKEDIN</a>
+                        <a href="#" class="tiny-label">INSTAGRAM</a>
+                    </div>
+                    <p class="tiny-label">BASED IN THE WORLD</p>
                 </div>
             </div>
         </div>

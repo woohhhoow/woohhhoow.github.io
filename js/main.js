@@ -1,120 +1,118 @@
-/* =========================================
-   Wu Haiwen Landscape Architecture - Advanced JS
-   ========================================= */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- 🌟 1. 定制鼠标特效 (Advanced Custom Cursor) --- */
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-    const hoverTargets = document.querySelectorAll('.hover-target, a, button, .project-item');
-
-    // 🌟 在电脑端且检测到鼠标移动时才显示定制鼠标
-    let cursorActive = false;
+    /* --- 1. 定制反转光标 --- */
+    const cursor = document.querySelector('.cursor');
+    
+    // 平滑跟随逻辑
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
+    const speed = 0.2; // 值越小跟随越顺滑/延迟感越强
 
     window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // 首次移动时显示鼠标
-        if(!cursorActive){
-            if(cursorDot) cursorDot.style.display = 'block';
-            if(cursorOutline) cursorOutline.style.display = 'block';
-            cursorActive = true;
-        }
-
-        // 小圆点紧跟鼠标，使用GSAP可实现平滑，这里用简单的CSS设置
-        if(cursorDot){
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-        }
-
-        // 🌟 外圈圆带有延迟和平滑动画 (现代JS做法，性能优于直接操作 style)
-        if(cursorOutline){
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 400, fill: "forwards", easing: "ease-out" });
-        }
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
 
-    // 🌟 监听悬停放大状态，增加毛玻璃交互细节HOOK
+    function animateCursor() {
+        const distX = mouseX - cursorX;
+        const distY = mouseY - cursorY;
+        cursorX += distX * speed;
+        cursorY += distY * speed;
+        
+        if (cursor) {
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        }
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // 交互元素的 Hover 放大光圈效果
+    const hoverTargets = document.querySelectorAll('a, .project-row');
     hoverTargets.forEach(target => {
-        target.addEventListener('mouseenter', () => {
-            document.body.classList.add('cursor-hover');
-        });
-        target.addEventListener('mouseleave', () => {
-            document.body.classList.remove('cursor-hover');
-        });
+        target.addEventListener('mouseenter', () => cursor.classList.add('active'));
+        target.addEventListener('mouseleave', () => cursor.classList.remove('active'));
     });
 
-    // 鼠标移出屏幕时隐藏
-    document.addEventListener('mouseleave', () => {
-        if(cursorDot) cursorDot.style.display = 'none';
-        if(cursorOutline) cursorOutline.style.display = 'none';
-        cursorActive = false;
-    });
-
-
-    /* --- 🌟 2. 首屏景深视差跟随特效 (Hero Cinematic Parallax) --- */
+    /* --- 2. 首屏 名字与图片 弹性互动 (Elastic Parallax) --- */
     const hero = document.getElementById('hero');
-    const heroBg = document.querySelector('.hero-bg');
+    const heroImg = document.querySelector('.hero-image-wrapper');
+    const heroTitle = document.querySelector('.hero-title-wrapper');
 
-    if (hero && heroBg) {
+    if (hero && heroImg && heroTitle) {
         hero.addEventListener('mousemove', (e) => {
-            // 计算偏移量，强度降低以增加高级感
-            const intensity = 70; // 数字越小强度越大
-            const x = (window.innerWidth - e.pageX * 2) / intensity;
-            const y = (window.innerHeight - e.pageY * 2) / intensity;
-            // 🌟 加入轻微缩放以消除边缘黑边
-            heroBg.style.transform = `translate(${x}px, ${y}px) scale(1.04)`;
+            // 计算鼠标相对屏幕中心的百分比 (-1 到 1)
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+            // 图片与文字的反向移动 (产生深度与拉扯感)
+            // 图片缓慢向鼠标反方向移动
+            heroImg.style.transform = `translate(${x * -30}px, ${y * -30}px)`;
+            
+            // 文字向鼠标正方向移动（速度更快，产生漂浮感）
+            heroTitle.style.transform = `translate(${x * 50}px, ${y * 50}px)`;
         });
-        // 鼠标移出恢复居中
+
+        // 鼠标离开恢复原位
         hero.addEventListener('mouseleave', () => {
-            heroBg.style.transform = `translate(0px, 0px) scale(1.02)`;
+            heroImg.style.transform = `translate(0px, 0px)`;
+            heroTitle.style.transform = `translate(0px, 0px)`;
         });
     }
 
-    /* --- 🌟 3. 优化后的滚动渐显 (Intersection Observer) --- */
-    const revealElements = document.querySelectorAll('.reveal-elem');
-    
-    // 🌟 根据设备屏幕高度动态调整阈值，性能更佳
-    const isMobile = window.innerWidth < 900;
-    const revealOptions = {
-        threshold: isMobile ? 0.05 : 0.15, // 移动端更灵敏
-        rootMargin: "0px 0px -60px 0px" // 底部预留空间以防闪烁
-    };
+    /* --- 3. 项目列表：幽灵悬停图片展示 (Hover Image Reveal) --- */
+    const projectRows = document.querySelectorAll('.project-row');
+    const hoverImgReveal = document.querySelector('.hover-image-reveal');
+    let revealImgX = window.innerWidth / 2;
+    let revealImgY = window.innerHeight / 2;
 
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // 只执行一次，节省性能
+    function animateRevealImg() {
+        // 让图片容器也带有顺滑的物理跟随感
+        const distX = mouseX - revealImgX;
+        const distY = mouseY - revealImgY;
+        revealImgX += distX * 0.1;
+        revealImgY += distY * 0.1;
+
+        if (hoverImgReveal) {
+            // 注意：因为 CSS 里已经有 translate(-50%, -50%) 居中处理了
+            hoverImgReveal.style.left = `${revealImgX}px`;
+            hoverImgReveal.style.top = `${revealImgY}px`;
+        }
+        requestAnimationFrame(animateRevealImg);
+    }
+    animateRevealImg();
+
+    projectRows.forEach(row => {
+        row.addEventListener('mouseenter', (e) => {
+            const imgUrl = row.getAttribute('data-image');
+            if (hoverImgReveal) {
+                hoverImgReveal.style.backgroundImage = `url(${imgUrl})`;
+                hoverImgReveal.classList.add('visible');
             }
         });
-    }, revealOptions);
-
-    revealElements.forEach(el => {
-        revealOnScroll.observe(el);
-    });
-
-    /* --- 🌟 4. 智能导航栏滚动变色 (Smart Scroll) --- */
-    const navbar = document.getElementById('navbar');
-    let lastScrollY = window.scrollY;
-
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-
-        // 向下滚动超过50px
-        if (currentScrollY > 50) {
-            if (navbar) navbar.classList.add('scrolled');
-        } else {
-            if (navbar) navbar.classList.remove('scrolled');
-        }
         
-        lastScrollY = currentScrollY;
+        row.addEventListener('mouseleave', () => {
+            if (hoverImgReveal) {
+                hoverImgReveal.classList.remove('visible');
+            }
+        });
     });
 
+    /* --- 4. 滚动检测触发动画 (Scroll Reveal) --- */
+    const revealElements = document.querySelectorAll('.reveal-up, .reveal-line');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach(el => observer.observe(el));
 });
