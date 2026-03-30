@@ -1,5 +1,5 @@
 /* =========================================
-   home.js - 高斯平滑海浪、渐变透明与走马灯
+   home.js - 高斯海浪 (Retina高清自适应版) & 走马灯
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { revealElements.forEach(el => el.classList.add('visible')); }, 500);
     }, 800);
 
-    // --- 2. 🌟 史诗级重构：高斯平滑海浪 (Gaussian Ocean Swell) ---
+    // --- 2. 🌟 史诗级重构：高斯平滑海浪 (Retina 高清版) ---
     const canvas = document.getElementById('particle-canvas');
     const heroContainer = document.querySelector('.hero-canvas-container');
 
@@ -21,8 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let particles = [];
         let time = 0; 
         
+        // 🌟 新增：独立出逻辑宽度和高度，与物理像素解耦
+        let logicalWidth = 0;
+        let logicalHeight = 0;
+        
         let mouse = { x: null, y: null };
-        // 🌟 引入 Lerp 缓冲鼠标：让交互如丝般顺滑，拒绝任何跳动
         let smoothMouse = { x: -1000, y: -1000 }; 
 
         const updateMousePosition = (x, y) => {
@@ -40,20 +43,36 @@ document.addEventListener('DOMContentLoaded', () => {
         heroContainer.addEventListener('mouseleave', resetMouse);
         heroContainer.addEventListener('touchend', resetMouse);
 
+        // 🌟 核心高清修复：Retina 屏幕自适应超采样算法
         function resizeCanvas() {
             const rect = heroContainer.getBoundingClientRect();
-            canvas.width = rect.width;
-            canvas.height = rect.height;
+            // 获取当前设备的像素密度 (比如普通电脑是1，Mac/iPhone 可能是2或3)
+            const dpr = window.devicePixelRatio || 1; 
+            
+            // 设定逻辑宽高 (我们在代码中计算用的尺寸)
+            logicalWidth = rect.width;
+            logicalHeight = rect.height;
+
+            // 设定画布的内部真实分辨率 (超采样放大)
+            canvas.width = logicalWidth * dpr;
+            canvas.height = logicalHeight * dpr;
+            
+            // 设定画布在网页上显示的 CSS 尺寸 (强行压缩)
+            canvas.style.width = `${logicalWidth}px`;
+            canvas.style.height = `${logicalHeight}px`;
+
+            // 缩放坐标系，这样我们后续画图时就不需要手动乘以 dpr 了
+            ctx.scale(dpr, dpr);
+            
             initSystem();
         }
         window.addEventListener('resize', resizeCanvas);
 
-        // 定义三个层次的正弦波浪
         const waveLayers = [
             {
                 yBase: 0.55, 
                 color: '160, 210, 240', 
-                speed: 0.5, // 🌟 速度大幅度降低，模拟沉稳的海浪
+                speed: 0.5, 
                 waves: [{freq: 0.002, amp: 40}, {freq: 0.005, amp: 15, speedMult: -0.5}]
             },
             {
@@ -70,26 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ];
 
-        // 🌟 核心算法：带高斯柔和排斥的坐标计算
         function getWaveY(x, t, layerIndex) {
             const layer = waveLayers[layerIndex];
-            let y = canvas.height * layer.yBase;
+            // 使用 logicalHeight 替代 canvas.height
+            let y = logicalHeight * layer.yBase; 
             
             layer.waves.forEach(w => {
                 const phase = t * layer.speed * (w.speedMult || 1);
                 y += Math.sin(x * w.freq + phase) * w.amp;
             });
 
-            // 🌟 完美交互：高斯钟形曲线排斥 (Gaussian Depression)
             let dx = x - smoothMouse.x;
             let dy = y - smoothMouse.y;
             let distSq = dx * dx + dy * dy;
 
-            // 影响半径扩大，但力道变得极其平缓
             if (distSq < 100000) { 
-                // e^(-x^2 / c) 产生完美的无缝过渡曲线，彻底消灭“跳动”
                 let force = Math.exp(-distSq / 25000); 
-                // 像一颗无形的玻璃球压在水面上，只会平滑地产生一个向下的涟漪凹陷
                 y += force * 45; 
             }
             return y;
@@ -98,10 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
         class WaveParticle {
             constructor(layerIndex) {
                 this.layerIndex = layerIndex;
-                this.x = Math.random() * canvas.width; 
-                this.offsetY = (Math.random() - 0.5) * 40; // 缩小粒子的上下离散度，更贴合海浪
-                this.size = Math.random() * 1.5 + 0.8; // 更精致的 0.8-2.3px 极简微粒
-                this.speed = Math.random() * 0.3 + 0.15; // 粒子漂流速度同样大幅减缓
+                this.x = Math.random() * logicalWidth; // 使用 logicalWidth
+                this.offsetY = (Math.random() - 0.5) * 40; 
+                this.size = Math.random() * 1.5 + 0.8; 
+                this.speed = Math.random() * 0.3 + 0.15; 
                 
                 const layerColor = waveLayers[layerIndex].color;
                 this.color = Math.random() > 0.5 
@@ -110,8 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             update() {
                 this.x += this.speed;
-                if (this.x > canvas.width + 50) this.x = -50;
-                // 完美贴合新版高斯波浪
+                if (this.x > logicalWidth + 50) this.x = -50; // 使用 logicalWidth
                 this.y = getWaveY(this.x, time, this.layerIndex) + this.offsetY;
             }
             draw() {
@@ -132,43 +146,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // 清理时使用逻辑尺寸
+            ctx.clearRect(0, 0, logicalWidth, logicalHeight); 
             
-            // 🌟 物理时间降速：从 0.015 降至 0.003，呈现极其缓慢的海洋涌动
             time += 0.003; 
 
-            // 🌟 鼠标线性插值 (Lerp)：吸收所有卡顿和突变
             if (mouse.x != null) {
                 smoothMouse.x += (mouse.x - smoothMouse.x) * 0.05;
                 smoothMouse.y += (mouse.y - smoothMouse.y) * 0.05;
             } else {
-                // 鼠标移出后，平滑重置到屏幕外
                 smoothMouse.x += (-1000 - smoothMouse.x) * 0.05;
                 smoothMouse.y += (-1000 - smoothMouse.y) * 0.05;
             }
 
             waveLayers.forEach((layer, i) => {
-                // 1. 🌟 渐变透明填充 (Gradient Fill)
                 ctx.beginPath();
-                ctx.moveTo(0, canvas.height); 
+                ctx.moveTo(0, logicalHeight); 
                 
-                for (let x = 0; x <= canvas.width + 10; x += 10) {
+                for (let x = 0; x <= logicalWidth + 10; x += 10) {
                     ctx.lineTo(x, getWaveY(x, time, i));
                 }
-                ctx.lineTo(canvas.width, canvas.height); 
+                ctx.lineTo(logicalWidth, logicalHeight); 
                 
-                // 创建从波峰向下消散的线性渐变
-                let waveTop = canvas.height * layer.yBase - 60; 
-                let gradient = ctx.createLinearGradient(0, waveTop, 0, canvas.height);
-                gradient.addColorStop(0, `rgba(${layer.color}, 0.15)`); // 顶部微蓝
-                gradient.addColorStop(1, `rgba(${layer.color}, 0.0)`);  // 底部完全透明融入白底
+                let waveTop = logicalHeight * layer.yBase - 60; 
+                let gradient = ctx.createLinearGradient(0, waveTop, 0, logicalHeight);
+                gradient.addColorStop(0, `rgba(${layer.color}, 0.15)`); 
+                gradient.addColorStop(1, `rgba(${layer.color}, 0.0)`);  
 
                 ctx.fillStyle = gradient;
                 ctx.fill();
                 
-                // 2. 绘制波浪极细边缘线
                 ctx.beginPath();
-                for (let x = 0; x <= canvas.width + 10; x += 10) {
+                for (let x = 0; x <= logicalWidth + 10; x += 10) {
                     let y = getWaveY(x, time, i);
                     if (x === 0) ctx.moveTo(x, y);
                     else ctx.lineTo(x, y);
@@ -190,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
-    // --- 3. 清晰无模糊的高级走马灯 (保持完美状态) ---
+    // --- 3. 清晰无模糊的高级走马灯 ---
     const marqueeSection = document.getElementById('dynamic-marquee');
     
     if (marqueeSection) {
