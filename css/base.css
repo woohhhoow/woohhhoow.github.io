@@ -1,0 +1,41 @@
+/* =========================================
+   base.css - 全局基建 (跨设备响应式优化)
+   ========================================= */
+:root {
+    --bg-color: #fdfcfb; 
+    --fg-color: #1a1a1a; 
+    --line-color: rgba(0, 0, 0, 0.1); 
+    --eco-green: #37865c; 
+    --font-serif: 'Playfair Display', serif; 
+    --font-sans: 'Inter', sans-serif;        
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; background-color: var(--bg-color); }
+body { font-family: var(--font-sans); color: var(--fg-color); line-height: 1.5; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+a:hover { opacity: 0.5; }
+
+.container { max-width: 90vw; margin: 0 auto; }
+.separator { width: 100%; height: 1px; background-color: var(--line-color); }
+
+/* --- 交互式游标 --- */
+.cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; background-color: #fff; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: width 0.3s, height 0.3s; }
+.cursor.active { width: 60px; height: 60px; background-color: rgba(255,255,255,1); mix-blend-mode: difference; }
+
+/* --- 全局极简导航栏 --- */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 25px 5vw; display: flex; justify-content: space-between; align-items: flex-start; z-index: 1000; mix-blend-mode: difference; color: #fff; }
+.logo { font-family: var(--font-serif); font-size: clamp(1rem, 1.2vw, 1.2rem); font-weight: 600; letter-spacing: 0.05em; opacity: 1 !important; white-space: nowrap; }
+.nav-right { display: flex; gap: clamp(15px, 3vw, 40px); flex-wrap: wrap; justify-content: flex-end; }
+.nav-link { font-size: clamp(9px, 1vw, 11px); text-transform: uppercase; letter-spacing: 0.1em; position: relative; opacity: 1 !important; white-space: nowrap; }
+.nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: #fff; transition: width 0.3s; }
+.nav-link:hover::after { width: 100%; }
+
+/* 🌟 全设备响应式：移动端适配 */
+@media (max-width: 768px) { 
+    /* 手机端导航栏变为上下结构，确保不拥挤 */
+    .navbar { flex-direction: column; align-items: center; gap: 15px; padding: 20px 5vw; }
+    .nav-right { justify-content: center; }
+}
