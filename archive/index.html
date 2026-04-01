@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive | WU HAIWEN</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/archive.css">
+    <link rel="stylesheet" href="../css/home.css">
+    
+    <script src="../js/i18n.js"></script>
 </head>
 <body>
 
@@ -19,15 +22,16 @@
             <a href="../index.html" class="logo">WU HAIWEN</a>
         </div>
         <div class="nav-right">
-            <a href="../index.html" class="nav-link">Home</a>
-            <a href="index.html" class="nav-link" style="border-bottom: 1px solid var(--fg-color);">Selected Works</a>
-            <a href="../about_me/index.html" class="nav-link">About Me</a>
+            <a href="../index.html" class="nav-link" data-i18n="nav-home">Home</a>
+            <a href="index.html" class="nav-link" style="border-bottom: 1px solid var(--fg-color);" data-i18n="nav-works">Selected Works</a>
+            <a href="../about_me/index.html" class="nav-link" data-i18n="nav-about">About Me</a>
+            <button class="lang-toggle hover-target">中 / CN</button>
         </div>
     </nav>
 
     <header class="archive-header">
-        <h1 class="archive-title">Project Archive</h1>
-        <p class="archive-subtitle">Chronological Index 2021—2026</p>
+        <h1 class="archive-title" data-i18n="arc-title">Project Archive</h1>
+        <p class="archive-subtitle" data-i18n="arc-sub">Chronological Index 2021—2026</p>
     </header>
 
     <section class="projects-section">
@@ -36,45 +40,71 @@
             
             <a href="../projects/project_01/index.html" class="project-row" data-image="https://picsum.photos/id/1047/800/1000">
                 <div class="proj-col proj-num">01</div>
-                <div class="proj-col proj-name">Suzhou Creek Waterfront</div>
-                <div class="proj-col proj-type">Ecological Restoration</div>
+                <div class="proj-col proj-name" data-i18n="p1-title">Suzhou Creek Waterfront</div>
+                <div class="proj-col proj-type" data-i18n="type-eco">Ecological Restoration</div>
                 <div class="proj-col proj-year">2024</div>
             </a>
             <div class="separator"></div>
 
             <a href="../projects/project_02/index.html" class="project-row" data-image="https://picsum.photos/id/1048/800/1000">
                 <div class="proj-col proj-num">02</div>
-                <div class="proj-col proj-name">Plaza Regeneration</div>
-                <div class="proj-col proj-type">Urban Public Space</div>
+                <div class="proj-col proj-name" data-i18n="p2-title">Plaza Regeneration</div>
+                <div class="proj-col proj-type" data-i18n="type-urban">Urban Public Space</div>
                 <div class="proj-col proj-year">2023</div>
             </a>
             <div class="separator"></div>
 
             <a href="../projects/project_03/index.html" class="project-row" data-image="https://picsum.photos/id/122/800/1000">
                 <div class="proj-col proj-num">03</div>
-                <div class="proj-col proj-name">Sustainable Camp</div>
-                <div class="proj-col proj-type">Rural Revitalization</div>
+                <div class="proj-col proj-name" data-i18n="p3-title">Sustainable Camp</div>
+                <div class="proj-col proj-type" data-i18n="type-rural">Rural Revitalization</div>
                 <div class="proj-col proj-year">2022</div>
             </a>
             <div class="separator"></div>
 
             <a href="../projects/project_04/index.html" class="project-row" data-image="https://picsum.photos/id/164/800/1000">
                 <div class="proj-col proj-num">04</div>
-                <div class="proj-col proj-name">Post-Industrial Park</div>
-                <div class="proj-col proj-type">Adaptive Reuse</div>
+                <div class="proj-col proj-name" data-i18n="p4-title">Post-Industrial Park</div>
+                <div class="proj-col proj-type" data-i18n="type-reuse">Adaptive Reuse</div>
                 <div class="proj-col proj-year">2021</div>
             </a>
             <div class="separator"></div>
 
             <a href="../projects/project_05/index.html" class="project-row" data-image="https://picsum.photos/id/225/800/1000">
                 <div class="proj-col proj-num">05</div>
-                <div class="proj-col proj-name">Rooftop Garden Details</div>
-                <div class="proj-col proj-type">Detail & Materiality</div>
+                <div class="proj-col proj-name" data-i18n="p5-title">Rooftop Garden Details</div>
+                <div class="proj-col proj-type" data-i18n="type-detail">Detail & Materiality</div>
                 <div class="proj-col proj-year">2020</div>
             </a>
             <div class="separator"></div>
         </div>
     </section>
+
+    <footer class="home-footer" style="padding-top: 50px;">
+        <div class="container fade-up">
+            <div class="footer-grid">
+                <div class="footer-bio">
+                    <span class="tiny-label" data-i18n="footer-profile-label">Profile / Milan & Xi'an</span>
+                    <p class="bio-description" data-i18n="footer-bio">MSc. Landscape Architecture at Politecnico di Milano. Advancing parametric and computational design through ASA. Specializing in resilient environments that bridge ecological infrastructure with human-centric spatial experiences.</p>
+                    <a href="../about_me/index.html" class="big-link hover-target" data-i18n="footer-bio-link">Full Biography →</a>
+                </div>
+                <div class="footer-contact">
+                    <div class="contact-block">
+                        <span class="tiny-label" data-i18n="footer-edu-label">Education</span>
+                        <p class="contact-text" data-i18n="footer-edu-text">POLITECNICO DI MILANO<br>ASA ADVANCED COURSES</p>
+                    </div>
+                    <div class="contact-block">
+                        <span class="tiny-label" data-i18n="footer-connect-label">Connect</span>
+                        <a href="mailto:w16026174@gmail.com" class="contact-link hover-target">W16026174@GMAIL.COM</a>
+                        <a href="tel:+393242612091" class="contact-link hover-target">+39 324 261 2091</a>
+                    </div>
+                    <div class="contact-block" style="margin-top: auto;">
+                        <span class="copyright" data-i18n="footer-rights">© 2026 WU HAIWEN. ALL RIGHTS RESERVED.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="../js/global.js"></script>
     <script src="../js/archive.js"></script>

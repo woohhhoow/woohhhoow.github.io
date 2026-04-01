@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WU HAIWEN | Landscape Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
+    
+    <script src="js/i18n.js"></script>
 </head>
 <body>
 
@@ -16,8 +19,9 @@
     <nav class="navbar reveal-on-load delay-3">
         <div class="nav-left"><a href="index.html" class="logo">WU HAIWEN</a></div>
         <div class="nav-right">
-            <a href="archive/index.html" class="nav-link">Selected Works</a>
-            <a href="about_me/index.html" class="nav-link">About Me</a>
+            <a href="archive/index.html" class="nav-link" data-i18n="nav-works">Selected Works</a>
+            <a href="about_me/index.html" class="nav-link" data-i18n="nav-about">About Me</a>
+            <button class="lang-toggle hover-target">中 / CN</button>
         </div>
     </nav>
 
@@ -27,15 +31,17 @@
         </div>
         
         <div class="hero-title-wrapper reveal-on-load delay-2">
-            <p class="hero-portfolio-label">LANDSCAPE PORTFOLIO</p>
+            <p class="hero-portfolio-label" data-i18n="hero-label">LANDSCAPE PORTFOLIO</p>
             <h1 class="hero-title">
-                <svg class="wu-ecology-canvas" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
-                    <text class="wu-text" x="50%" y="220" text-anchor="middle">WU</text>
-                </svg>
-                <br>
-                <span class="solid-text">HAIWEN</span>
+                <a href="archive/index.html" class="hero-name-link hover-target">
+                    <svg class="wu-ecology-canvas" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
+                        <text class="wu-text" x="50%" y="220" text-anchor="middle">WU</text>
+                    </svg>
+                    <br>
+                    <span class="solid-text">HAIWEN</span>
+                </a>
             </h1>
-            <p class="hero-subtitle">SYSTEMIC ECOLOGIES & SPATIAL NARRATIVES</p>
+            <p class="hero-subtitle" data-i18n="hero-subtitle">SYSTEMIC ECOLOGIES & SPATIAL NARRATIVES</p>
         </div>
     </header>
 
@@ -45,22 +51,22 @@
         <div class="container fade-up">
             <div class="footer-grid">
                 <div class="footer-bio">
-                    <span class="tiny-label">Profile / Milan & Xi'an</span>
-                    <p class="bio-description">MSc. Landscape Architecture at Politecnico di Milano. Advancing parametric and computational design through ASA. Specializing in resilient environments that bridge ecological infrastructure with human-centric spatial experiences.</p>
-                    <a href="about_me/index.html" class="big-link hover-target">Full Biography →</a>
+                    <span class="tiny-label" data-i18n="footer-profile-label">Profile / Milan & Xi'an</span>
+                    <p class="bio-description" data-i18n="footer-bio">MSc. Landscape Architecture at Politecnico di Milano. Advancing parametric and computational design through ASA. Specializing in resilient environments that bridge ecological infrastructure with human-centric spatial experiences.</p>
+                    <a href="about_me/index.html" class="big-link hover-target" data-i18n="footer-bio-link">Full Biography →</a>
                 </div>
                 <div class="footer-contact">
                     <div class="contact-block">
-                        <span class="tiny-label">Education</span>
-                        <p class="contact-text">POLITECNICO DI MILANO<br>ASA ADVANCED COURSES</p>
+                        <span class="tiny-label" data-i18n="footer-edu-label">Education</span>
+                        <p class="contact-text" data-i18n="footer-edu-text">POLITECNICO DI MILANO<br>ASA ADVANCED COURSES</p>
                     </div>
                     <div class="contact-block">
-                        <span class="tiny-label">Connect</span>
+                        <span class="tiny-label" data-i18n="footer-connect-label">Connect</span>
                         <a href="mailto:w16026174@gmail.com" class="contact-link hover-target">W16026174@GMAIL.COM</a>
                         <a href="tel:+393242612091" class="contact-link hover-target">+39 324 261 2091</a>
                     </div>
                     <div class="contact-block" style="margin-top: auto;">
-                        <span class="copyright">© 2026 WU HAIWEN. ALL RIGHTS RESERVED.</span>
+                        <span class="copyright" data-i18n="footer-rights">© 2026 WU HAIWEN. ALL RIGHTS RESERVED.</span>
                     </div>
                 </div>
             </div>

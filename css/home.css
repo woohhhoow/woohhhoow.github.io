@@ -1,5 +1,5 @@
 /* =========================================
-   home.css - 首页高级动态 (极致锐利排版)
+   home.css - 首页高级动态 (终极版)
    ========================================= */
 
 .preloader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: var(--bg-color); z-index: 99999; display: flex; justify-content: center; align-items: center; transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1); }
@@ -13,62 +13,41 @@
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
 
-/* --- 流体粒子画布首屏 --- */
 .hero { position: relative; height: 100vh; width: 100vw; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: var(--bg-color); }
 .hero-canvas-container { position: absolute; width: 100vw; height: 100vh; z-index: 1; overflow: hidden; opacity: 1; }
 #particle-canvas { width: 100%; height: 100%; display: block; }
 
 .hero-title-wrapper { position: relative; z-index: 2; text-align: center; pointer-events: none; mix-blend-mode: difference; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-.hero-portfolio-label { font-family: var(--font-sans); font-size: 14px; font-weight: 600; letter-spacing: 0.6em; text-transform: uppercase; margin-bottom: 30px; opacity: 0.9; }
+/* 🌟 名字超链接交互 (突破底层穿透限制) */
+.hero-name-link { display: inline-block; pointer-events: auto; color: inherit; text-decoration: none; transition: opacity 0.4s var(--ease-out-expo), transform 0.4s var(--ease-out-expo); }
+.hero-name-link:hover { opacity: 0.6; transform: scale(0.98); }
+.hero-name-link .wu-ecology-canvas { pointer-events: auto; cursor: pointer; }
 
+.hero-portfolio-label { font-family: var(--font-sans); font-size: 14px; font-weight: 600; letter-spacing: 0.6em; text-transform: uppercase; margin-bottom: 30px; opacity: 0.9; }
 .hero-title { font-family: var(--font-serif); line-height: 0.8; font-weight: 400; font-size: 0; margin-bottom: 25px;}
 .solid-text { font-size: clamp(3.5rem, 11vw, 11vw); display: inline-block; letter-spacing: -0.01em; }
 
 .wu-ecology-canvas { height: clamp(6.5rem, 18vw, 18rem); width: clamp(12rem, 32vw, 32vw); margin-left: 8px; pointer-events: none; }
-.wu-text { font-family: var(--font-serif); font-size: 220px; fill: transparent; stroke: rgba(255,255,255,0.7); stroke-width: 1px; letter-spacing: -0.05em; font-weight: 400; 
-           animation: eco-pulse 3s infinite alternate ease-in-out; }
+.wu-text { font-family: var(--font-serif); font-size: 220px; fill: transparent; stroke: rgba(255,255,255,0.7); stroke-width: 1px; letter-spacing: -0.05em; font-weight: 400; animation: eco-pulse 3s infinite alternate ease-in-out; }
 
 @keyframes eco-pulse {
     0% { stroke-width: 1px; stroke: rgba(255,255,255,0.4); filter: drop-shadow(0 0 0px rgba(255,255,255,0)); }
     100% { stroke-width: 1.5px; stroke: rgba(255,255,255,0.85); filter: drop-shadow(0 0 4px rgba(255,255,255,0.15)); }
 }
-
 .hero-subtitle { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; opacity: 0.8; }
 
-/* --- 🌟 升级：更小、更锐利的走马灯区域 --- */
-.marquee-section { 
-    padding: 60px 0; 
-    border-top: 1px solid var(--line-color); 
-    background-color: var(--bg-color); 
-    display: flex; flex-direction: column; 
-    overflow: hidden; position: relative; cursor: pointer; 
-}
+.marquee-section { padding: 60px 0; border-top: 1px solid var(--line-color); background-color: var(--bg-color); display: flex; flex-direction: column; overflow: hidden; position: relative; cursor: pointer; }
 .marquee-row { display: flex; white-space: nowrap; width: max-content; will-change: transform; align-items: center;}
-
-.marquee-word { 
-    font-family: var(--font-serif); 
-    /* 🌟 字体大幅缩小，呈现报纸级精密排版 */
-    font-size: clamp(1.2rem, 2.2vw, 2.5rem); 
-    letter-spacing: 0.05em; text-transform: uppercase; 
-    color: var(--fg-color); 
-    padding: 0 30px; 
-    display: inline-block; 
-    transition: opacity 0.6s var(--ease-out-expo); 
-}
-
-/* 悬停时提亮，无模糊 */
+.marquee-word { font-family: var(--font-serif); font-size: clamp(1.2rem, 2.2vw, 2.5rem); letter-spacing: 0.05em; text-transform: uppercase; color: var(--fg-color); padding: 0 30px; display: inline-block; transition: opacity 0.6s var(--ease-out-expo); }
 .marquee-section.is-hovered .marquee-word { opacity: 1 !important; color: var(--fg-color) !important;}
 
-/* 根据缩小后的字体，重新计算极其紧密的重叠错位 */
 .row-layer-0 .marquee-word { font-weight: 400; }
 .row-layer-1 { margin-top: -0.9em; mix-blend-mode: multiply; }
 .row-layer-1 .marquee-word { color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,0.7); }
 .row-layer-2 { margin-top: -1.3em; mix-blend-mode: multiply; }
-/* 第三层大字也同步缩小，保持比例 */
 .row-layer-2 .marquee-word { font-size: clamp(2rem, 3.5vw, 4.5rem); color: transparent; -webkit-text-stroke: 1.5px rgba(0,0,0,0.25); }
 
-/* --- 极简一体化页脚 --- */
 .home-footer { padding: 100px 0; background-color: var(--bg-color); border-top: 1px solid var(--line-color); }
 .footer-grid { display: grid; grid-template-columns: 6fr 4fr; gap: 100px; align-items: stretch; }
 .footer-bio { display: flex; flex-direction: column; align-items: flex-start; }

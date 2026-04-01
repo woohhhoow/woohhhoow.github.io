@@ -3,95 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suzhou Creek Waterfront | WU HAIWEN</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+    <title>Post-Industrial Park | WU HAIWEN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/project.css">
+    <link rel="stylesheet" href="../../css/home.css">
+    <script src="../../js/i18n.js"></script>
 </head>
 <body>
     <div class="cursor"></div>
 
     <nav class="navbar">
-        <div class="nav-left">
-            <a href="../../index.html" class="logo">WU HAIWEN</a>
-        </div>
+        <div class="nav-left"><a href="../../index.html" class="logo">WU HAIWEN</a></div>
         <div class="nav-right">
-            <a href="../../archive/index.html" class="nav-link">← Back to Archive</a>
+            <a href="../../archive/index.html" class="nav-link" data-i18n="nav-back">← Back to Archive</a>
+            <button class="lang-toggle hover-target">中 / CN</button>
         </div>
     </nav>
 
     <header class="project-hero">
-        <div class="project-meta-top reveal-fade">Ecological Restoration / 2024</div>
-        <h1 class="project-title reveal-fade">Suzhou Creek Waterfront</h1>
-        
+        <div class="project-meta-top reveal-fade" data-i18n="p4-meta">Adaptive Reuse / 2021</div>
+        <h1 class="project-title reveal-fade" data-i18n="p4-title">Post-Industrial Park</h1>
         <div class="project-info-grid reveal-fade">
-            <div class="info-col"><h5>Location</h5><p>Shanghai, China</p></div>
-            <div class="info-col"><h5>Scale</h5><p>12 Hectares</p></div>
-            <div class="info-col"><h5>Typology</h5><p>Riparian Wetland</p></div>
-            <div class="info-col"><h5>Status</h5><p>Built (Phase I)</p></div>
+            <div class="info-col"><h5 data-i18n="p1-loc-label">Location</h5><p data-i18n="p4-loc-val">Turin, Italy</p></div>
+            <div class="info-col"><h5 data-i18n="p1-scale-label">Scale</h5><p data-i18n="p4-scale-val">15 Hectares</p></div>
+            <div class="info-col"><h5 data-i18n="p1-type-label">Typology</h5><p data-i18n="p4-type-val">Brownfield</p></div>
+            <div class="info-col"><h5 data-i18n="p1-status-label">Status</h5><p data-i18n="p4-status-val">Built (Phase II)</p></div>
         </div>
     </header>
 
     <section class="project-statement">
-        <p class="reveal-fade">
-            Reimagining the fragmented urban edge into a resilient wetland system. The design fosters ecological diversity while providing an immersive spatial narrative, turning neglected infrastructure into a vital urban lung.
-        </p>
+        <p class="reveal-fade" data-i18n="p4-statement">Transforming a former automotive manufacturing plant into a post-industrial landscape. The design treats contamination through phytoremediation and preserves industrial ruins as cultural artifacts.</p>
     </section>
 
     <section class="parallax-container">
-        <img src="https://picsum.photos/id/1047/2000/1200" alt="Masterplan Aerial" class="parallax-img">
+        <img src="https://picsum.photos/id/164/2000/1200" alt="Aerial" class="parallax-img">
     </section>
 
     <section class="editorial-section">
         <div class="text-block reveal-fade" style="position: sticky; top: 150px;">
-            <h3>Parametric Water Logic</h3>
-            <p>The topography is computationally generated to simulate historical flood patterns. By utilizing Grasshopper, the terrain steps are optimized to accommodate a 50-year storm event, creating micro-habitats for native flora and fauna while maintaining human accessibility.</p>
+            <h3 data-i18n="p4-h3-1">Phytoremediation Grid</h3>
+            <p data-i18n="p4-p-1">A grid of hyperaccumulator plants is deployed across the site to extract heavy metals from the soil, turning the cleanup process into a visible, educational landscape.</p>
         </div>
-        
         <div class="img-group-offset">
             <div>
-                <div class="img-wrap">
-                    <img src="https://picsum.photos/id/1016/1000/1200" alt="Perspective Rendering">
-                </div>
-                <span class="caption">Fig 1. Sunken Boardwalk integrated with the tide cycle.</span>
+                <div class="img-wrap"><img src="https://picsum.photos/id/165/1000/1200" alt="Grid"></div>
+                <span class="caption" data-i18n="p4-cap-1">Fig 1. The remediation grid intersecting with factory ruins.</span>
             </div>
-            
-            <div style="margin-top: 100px;">
-                <div class="img-wrap">
-                    <img src="https://picsum.photos/id/175/1000/800" alt="Parametric Details">
-                </div>
-                <span class="caption">Fig 2. Algorithmic distribution of permeable paving.</span>
+            <div>
+                <div class="img-wrap"><img src="https://picsum.photos/id/166/1000/800" alt="Plants"></div>
+                <span class="caption" data-i18n="p4-cap-2">Fig 2. Seasonal changes of hyperaccumulator species.</span>
             </div>
         </div>
     </section>
 
     <section class="single-img-section">
-        <div class="img-wrap">
-            <img src="https://picsum.photos/id/116/1600/900" alt="Materiality">
-        </div>
-        <span class="caption">Fig 3. Material articulation: Pre-cast concrete and weathered steel.</span>
+        <div class="img-wrap"><img src="https://picsum.photos/id/167/1600/900" alt="Bridge"></div>
+        <span class="caption" data-i18n="p4-cap-3">Fig 3. Industrial steel repurposed as pedestrian bridges.</span>
     </section>
 
     <section class="single-img-section">
         <div class="text-block reveal-fade" style="margin-bottom: 40px; max-width: 800px;">
-            <h3>Ecological Transect</h3>
-            <p>A continuous section revealing the gradient from the dense urban fabric to the restorative riparian edge, highlighting soil bioengineering techniques.</p>
+            <h3 data-i18n="p4-h3-2">Ruin as Tectonics</h3>
+            <p data-i18n="p4-p-2">Retaining the concrete skeletons of the factory halls to frame new ecological successions, blurring the lines between nature and machine.</p>
         </div>
-        
-        <div class="img-wrap">
-            <img src="https://picsum.photos/id/135/2000/600" alt="Ecological Section">
-        </div>
-        <span class="caption">Fig 4. Transverse ecological section.</span>
+        <div class="img-wrap"><img src="https://picsum.photos/id/168/2000/600" alt="Ruins"></div>
+        <span class="caption" data-i18n="p4-cap-4">Fig 4. Succession planting within the concrete nave.</span>
     </section>
 
     <a href="../project_05/index.html" class="next-project">
-        <span class="next-label">Next Project</span>
-        <h2 class="next-title">Plaza Regeneration →</h2>
+        <span class="next-label" data-i18n="next-label">Next Project</span>
+        <h2 class="next-title"><span data-i18n="p4-next-title">Rooftop Garden Details →</span></h2>
     </a>
 
-    <script src="../../js/global.js"></script>
-    <script src="../../js/project.js"></script>
+    <footer class="home-footer" style="padding-top: 50px;">
+        <div class="container fade-up"><div class="footer-grid" style="grid-template-columns: 1fr;"><div class="footer-contact" style="border-left: none; padding-left: 0; text-align: center; align-items: center;"><div class="contact-block"><span class="copyright" data-i18n="footer-rights">© 2026 WU HAIWEN. ALL RIGHTS RESERVED.</span></div></div></div></div>
+    </footer>
+    <script src="../../js/global.js"></script><script src="../../js/project.js"></script>
 </body>
 </html>

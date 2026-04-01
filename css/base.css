@@ -1,5 +1,5 @@
 /* =========================================
-   base.css - 全局基建 (跨设备响应式优化)
+   base.css - 全局基建 (跨设备响应式 & 多语言版)
    ========================================= */
 :root {
     --bg-color: #fdfcfb; 
@@ -12,6 +12,9 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* PC 端隐藏系统鼠标，移动端保留原生触控 */
+@media (pointer: fine) { body, a, button { cursor: none; } }
 
 html { scroll-behavior: smooth; background-color: var(--bg-color); }
 body { font-family: var(--font-sans); color: var(--fg-color); line-height: 1.5; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
@@ -26,16 +29,76 @@ a:hover { opacity: 0.5; }
 .cursor.active { width: 60px; height: 60px; background-color: rgba(255,255,255,1); mix-blend-mode: difference; }
 
 /* --- 全局极简导航栏 --- */
-.navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 25px 5vw; display: flex; justify-content: space-between; align-items: flex-start; z-index: 1000; mix-blend-mode: difference; color: #fff; }
+.navbar { 
+    position: fixed; top: 0; left: 0; width: 100%; 
+    padding: 25px 5vw; 
+    display: flex; justify-content: space-between; align-items: center; /* 🌟 改为 center，保证收缩时居中平滑 */
+    z-index: 1000; mix-blend-mode: difference; color: #fff; 
+    /* 🌟 加入 padding, opacity 和 transform 的平滑过渡动画 */
+    transition: padding 0.5s var(--ease-out-expo), opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo); 
+}
 .logo { font-family: var(--font-serif); font-size: clamp(1rem, 1.2vw, 1.2rem); font-weight: 600; letter-spacing: 0.05em; opacity: 1 !important; white-space: nowrap; }
-.nav-right { display: flex; gap: clamp(15px, 3vw, 40px); flex-wrap: wrap; justify-content: flex-end; }
+.nav-right { display: flex; gap: clamp(15px, 3vw, 40px); flex-wrap: wrap; justify-content: flex-end; align-items: center;}
 .nav-link { font-size: clamp(9px, 1vw, 11px); text-transform: uppercase; letter-spacing: 0.1em; position: relative; opacity: 1 !important; white-space: nowrap; }
 .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: #fff; transition: width 0.3s; }
 .nav-link:hover::after { width: 100%; }
 
-/* 🌟 全设备响应式：移动端适配 */
+/* 🌟 新增：滚动时的“休眠吸附”状态 */
+.navbar.is-scrolled {
+    padding: 12px 5vw;           /* 上下内边距大幅收缩，变成细条 */
+    transform: translateY(-2px); /* 整体微微向上推，强化吸附感 */
+    opacity: 0.35;               /* 变淡，融入背景但不消失 */
+}
+
+/* 🌟 新增：休眠状态下的“悬浮唤醒”状态 */
+.navbar.is-scrolled:hover {
+    padding: 25px 5vw;           /* 恢复原本饱满的内边距 */
+    transform: translateY(0);    /* 恢复原位 */
+    opacity: 1;                  /* 恢复绝对清晰 */
+}
+
+/* --- 多语言切换按钮 (无痕极简版) --- */
+.lang-toggle { 
+    background: transparent; border: none; color: inherit; padding: 0; 
+    font-family: var(--font-sans); font-size: clamp(9px, 1vw, 11px); text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: opacity 0.3s; position: relative;
+}
+.lang-toggle::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: currentColor; transition: width 0.3s var(--ease-out-expo); }
+.lang-toggle:hover { opacity: 0.5; background: transparent; color: inherit; }
+.lang-toggle:hover::after { width: 100%; }
+
+/* 全设备响应式适配 */
 @media (max-width: 768px) { 
-    /* 手机端导航栏变为上下结构，确保不拥挤 */
+    .navbar { flex-direction: column; align-items: center; gap: 15px; padding: 20px 5vw; }
+    /* 移动端滚动的收缩逻辑 */
+    .navbar.is-scrolled { padding: 8px 5vw; gap: 5px; opacity: 0.25; } 
+    .navbar.is-scrolled:hover { padding: 20px 5vw; gap: 15px; opacity: 1; }
+    .lang-toggle { margin-top: 5px; }
+}
+
+/* --- 🌟 多语言切换按钮 (无痕极简版) --- */
+.lang-toggle { 
+    background: transparent; 
+    border: none; 
+    color: inherit; 
+    padding: 0; 
+    font-family: var(--font-sans); 
+    font-size: clamp(9px, 1vw, 11px); 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    cursor: pointer; 
+    transition: opacity 0.3s; 
+    position: relative;
+}
+.lang-toggle::after { 
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; 
+    background-color: currentColor; transition: width 0.3s var(--ease-out-expo); 
+}
+.lang-toggle:hover { opacity: 0.5; background: transparent; color: inherit; }
+.lang-toggle:hover::after { width: 100%; }
+
+/* 🌟 全设备响应式适配 */
+@media (max-width: 768px) { 
     .navbar { flex-direction: column; align-items: center; gap: 15px; padding: 20px 5vw; }
     .nav-right { justify-content: center; }
+    .lang-toggle { margin-top: 5px; }
 }
