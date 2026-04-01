@@ -1,5 +1,5 @@
 /* =========================================
-   base.css - 全局基建 (全设备响应式终极版)
+   base.css - 全局基建 (全设备适配 + 导航精准对齐版)
    ========================================= */
 :root {
     --bg-color: #fdfcfb; 
@@ -25,10 +25,24 @@ a:hover { opacity: 0.5; }
 .cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; background-color: #fff; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: width 0.3s, height 0.3s; }
 .cursor.active { width: 60px; height: 60px; background-color: rgba(255,255,255,1); mix-blend-mode: difference; }
 
-/* 导航栏 */
-.navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 25px 5vw; display: flex; justify-content: space-between; align-items: center; z-index: 1000; mix-blend-mode: difference; color: #fff; transition: padding 0.5s var(--ease-out-expo), opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo); }
+/* --- 导航栏基准 --- */
+.navbar { 
+    position: fixed; top: 0; left: 0; width: 100%; 
+    padding: 25px 5vw; 
+    display: flex; justify-content: space-between; align-items: center; 
+    z-index: 1000; mix-blend-mode: difference; color: #fff; 
+    transition: padding 0.5s var(--ease-out-expo), opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo); 
+}
 .logo { font-family: var(--font-serif); font-size: clamp(1rem, 1.2vw, 1.2rem); font-weight: 600; letter-spacing: 0.05em; opacity: 1 !important; white-space: nowrap; }
-.nav-right { display: flex; gap: clamp(15px, 3vw, 40px); flex-wrap: wrap; justify-content: flex-end; align-items: center;}
+
+/* 🌟 核心修改：确保内部元素永远垂直居中对齐 */
+.nav-right { 
+    display: flex; 
+    gap: clamp(15px, 3vw, 40px); 
+    align-items: center; /* 保证链接和按钮在一条线上 */
+    justify-content: flex-end;
+}
+
 .nav-link { font-size: clamp(9px, 1vw, 11px); text-transform: uppercase; letter-spacing: 0.1em; position: relative; opacity: 1 !important; white-space: nowrap; }
 .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: #fff; transition: width 0.3s; }
 .nav-link:hover::after { width: 100%; }
@@ -36,19 +50,48 @@ a:hover { opacity: 0.5; }
 .navbar.is-scrolled { padding: 12px 5vw; transform: translateY(-2px); opacity: 0.35; }
 .navbar.is-scrolled:hover { padding: 25px 5vw; transform: translateY(0); opacity: 1; }
 
-.lang-toggle { background: transparent; border: none; color: inherit; padding: 0; font-family: var(--font-sans); font-size: clamp(9px, 1vw, 11px); text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: opacity 0.3s; position: relative; }
+/* --- 语言按钮 --- */
+.lang-toggle { 
+    background: transparent; border: none; color: inherit; padding: 0; 
+    font-family: var(--font-sans); font-size: clamp(9px, 1vw, 11px); 
+    text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; 
+    transition: opacity 0.3s; position: relative;
+    line-height: 1; /* 🌟 强制行高为 1，防止按钮高度撑开导致不对齐 */
+}
 .lang-toggle::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background-color: currentColor; transition: width 0.3s var(--ease-out-expo); }
 .lang-toggle:hover { opacity: 0.5; background: transparent; color: inherit; }
 .lang-toggle:hover::after { width: 100%; }
 
-/* 🌟 核心设备响应式 */
+/* 🌟 全设备响应式适配 */
 @media (max-width: 1024px) {
     .nav-right { gap: 20px; }
 }
+
 @media (max-width: 768px) { 
-    .navbar { flex-direction: column; align-items: center; gap: 12px; padding: 15px 5vw; }
-    .nav-right { justify-content: center; gap: 15px; }
-    .navbar.is-scrolled { padding: 8px 5vw; gap: 5px; opacity: 0.25; } 
+    .navbar { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 12px; 
+        padding: 15px 5vw; 
+    }
+    .nav-right { 
+        justify-content: center; 
+        gap: 18px; /* 增加手机端项与项之间的间距，更方便点击 */
+        width: 100%;
+    }
+    
+    /* 🌟 核心修复：移除手机端多余的顶边距，确保与文字平行 */
+    .lang-toggle { 
+        margin-top: 0; 
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar.is-scrolled { padding: 10px 5vw; gap: 8px; opacity: 0.25; } 
     .navbar.is-scrolled:hover { padding: 15px 5vw; gap: 12px; opacity: 1; }
-    .lang-toggle { margin-top: 5px; }
+}
+
+@media (max-width: 480px) {
+    .nav-right { gap: 12px; }
+    .nav-link, .lang-toggle { font-size: 10px; }
 }
