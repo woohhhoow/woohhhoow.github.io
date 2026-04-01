@@ -1,0 +1,75 @@
+/* =========================================
+   gallery.css - 摄影横向画廊 & 草图瀑布流
+   ========================================= */
+
+/* 🌟 1. 暗黑电影模式 (针对摄影页) */
+body.dark-mode {
+    --bg-color: #0a0a0a;
+    --fg-color: #fdfcfb;
+    --line-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .nav-link::after { background-color: var(--fg-color); }
+
+/* --- 画廊通用头部 --- */
+.gallery-hero { 
+    padding: clamp(150px, 20vh, 200px) 5vw clamp(40px, 10vh, 100px); 
+    display: flex; flex-direction: column; align-items: flex-start; 
+}
+.gallery-title { 
+    font-family: var(--font-serif); 
+    font-size: clamp(3rem, 8vw, 8rem); 
+    font-weight: 400; line-height: 1; color: var(--fg-color); 
+    margin-bottom: 30px; 
+}
+.gallery-desc { 
+    font-size: clamp(1rem, 1.2vw, 1.2rem); 
+    max-width: 600px; line-height: 1.6; opacity: 0.7; font-weight: 300; 
+}
+
+/* 🌟 2. 摄影页：横向卷轴 (Horizontal Track) */
+body.horizontal-scroll-active { overflow-y: hidden; }
+
+.horizontal-track-container {
+    width: 100vw; height: 60vh; 
+    overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: none; -ms-overflow-style: none;
+}
+.horizontal-track-container::-webkit-scrollbar { display: none; }
+
+.horizontal-track {
+    display: flex; align-items: center; 
+    height: 100%; width: max-content; 
+    padding: 0 5vw; gap: clamp(40px, 8vw, 100px);
+}
+
+.photo-item { height: 80%; display: flex; flex-direction: column; gap: 15px; }
+.photo-item img { 
+    height: 100%; width: auto; object-fit: contain; 
+    filter: grayscale(20%) contrast(1.1); transition: filter 0.5s; 
+}
+.photo-item:hover img { filter: grayscale(0%) contrast(1.1); }
+.photo-caption { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.5; }
+
+/* 🌟 3. 草图页：不规则瀑布流 (Masonry Grid) */
+.masonry-container { padding: 0 5vw 150px; }
+.masonry-grid { column-count: 3; column-gap: clamp(20px, 4vw, 60px); }
+.sketch-item {
+    break-inside: avoid; margin-bottom: clamp(20px, 4vw, 60px); 
+    display: flex; flex-direction: column; gap: 10px;
+}
+.sketch-item img {
+    width: 100%; height: auto; display: block;
+    mix-blend-mode: multiply; filter: contrast(1.2);
+    transition: transform 0.5s var(--ease-out-expo);
+}
+.sketch-item:hover img { transform: scale(1.02); }
+
+@media (max-width: 900px) {
+    .horizontal-track-container { height: 50vh; }
+    .masonry-grid { column-count: 2; }
+}
+@media (max-width: 600px) {
+    .masonry-grid { column-count: 1; }
+    .photo-item { height: 60%; }
+}

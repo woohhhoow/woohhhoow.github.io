@@ -1,17 +1,36 @@
 /* =========================================
-   archive.css - 作品总览页 (移动端极致适配)
+   archive.css - 作品总览页 (手风琴折叠面板)
    ========================================= */
 
-/* 流体顶部留白 */
-.archive-header { padding: clamp(120px, 15vh, 200px) 5vw clamp(60px, 10vh, 100px); text-align: center; }
+.archive-header { padding: clamp(120px, 15vh, 200px) 5vw clamp(40px, 8vh, 60px); text-align: center; }
 .archive-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 6rem); font-weight: 400; line-height: 1; color: var(--fg-color); }
 .archive-subtitle { font-size: clamp(9px, 1vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 20px; opacity: 0.5; color: var(--fg-color); }
 
 .projects-section { padding: 0 5vw clamp(80px, 15vh, 150px); }
-.projects-list { display: flex; flex-direction: column; }
-.project-row { display: flex; padding: clamp(25px, 4vw, 40px) 0; align-items: center; transition: all 0.4s var(--ease-out-expo); position: relative; z-index: 10; color: var(--fg-color); }
 
-/* PC端悬停特效保留 */
+/* --- 🌟 手风琴面板核心样式 --- */
+.accordion-item { border-top: 1px solid var(--line-color); }
+.accordion-item:last-child { border-bottom: 1px solid var(--line-color); }
+
+.accordion-header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: clamp(25px, 4vw, 40px) 0; cursor: pointer; transition: opacity 0.3s; 
+}
+.accordion-header:hover { opacity: 0.6; }
+.accordion-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 400; color: var(--fg-color); }
+.accordion-icon { font-size: clamp(1.5rem, 2.5vw, 2.5rem); font-weight: 300; transition: transform 0.5s var(--ease-out-expo); color: var(--fg-color); }
+
+/* 丝滑高度动画魔法 */
+.accordion-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.7s var(--ease-out-expo); }
+.accordion-inner { overflow: hidden; min-height: 0; }
+
+.accordion-item.active .accordion-content { grid-template-rows: 1fr; }
+.accordion-item.active .accordion-icon { transform: rotate(45deg); }
+
+/* --- 内部项目列表样式 --- */
+.projects-list { display: flex; flex-direction: column; }
+.project-row { display: flex; padding: clamp(20px, 3vw, 30px) 0; align-items: center; transition: all 0.4s var(--ease-out-expo); position: relative; z-index: 10; color: var(--fg-color); }
+
 @media (hover: hover) and (pointer: fine) {
     .projects-list:hover .project-row { opacity: 0.3; }
     .projects-list:hover .project-row:hover { opacity: 1; }
@@ -24,18 +43,15 @@
 .proj-type { flex: 2; font-weight: 300; opacity: 0.6; font-size: clamp(10px, 1.2vw, 13px); letter-spacing: 0.05em; text-transform: uppercase; }
 .proj-year { flex: 0.5; text-align: right; font-size: 12px; }
 
-/* 幽灵图片 (仅 PC 端显示) */
+/* 幽灵图 */
 .hover-image-reveal { position: fixed; top: 0; left: 0; width: 350px; height: 450px; background-size: cover; background-position: center; pointer-events: none; z-index: 500; opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: opacity 0.4s var(--ease-out-expo), transform 0.6s var(--ease-out-expo); filter: grayscale(100%) contrast(1.1); box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
 .hover-image-reveal.visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 
-/* 🌟 全设备响应式：平板与手机适配 */
 @media (max-width: 900px) {
-    .hover-image-reveal { display: none !important; } /* 移动端彻底关闭幽灵图 */
-    
-    .project-row { flex-direction: column; align-items: flex-start; gap: 10px; padding: 30px 0; }
+    .hover-image-reveal { display: none !important; } 
+    .project-row { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px 0; }
     .proj-col { flex: none; width: 100%; text-align: left; }
-    
-    .proj-num { display: none; } /* 隐藏序号，节省空间 */
+    .proj-num { display: none; } 
     .proj-name { font-size: 2rem; margin-bottom: 5px; }
     .proj-type { font-size: 11px; opacity: 0.7; }
     .proj-year { text-align: left; font-size: 11px; opacity: 0.5; margin-top: 5px; }
