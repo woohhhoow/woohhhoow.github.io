@@ -1,75 +1,65 @@
 /* =========================================
-   gallery.css - 摄影横向画廊 & 草图瀑布流
+   gallery.css - 社论级网格 & 电影级灯箱 (全设备版)
    ========================================= */
 
-/* 🌟 1. 暗黑电影模式 (针对摄影页) */
-body.dark-mode {
-    --bg-color: #0a0a0a;
-    --fg-color: #fdfcfb;
-    --line-color: rgba(255, 255, 255, 0.1);
-}
-
+body.dark-mode { --bg-color: #0a0a0a; --fg-color: #fdfcfb; --line-color: rgba(255, 255, 255, 0.1); }
 body.dark-mode .nav-link::after { background-color: var(--fg-color); }
 
-/* --- 画廊通用头部 --- */
-.gallery-hero { 
-    padding: clamp(150px, 20vh, 200px) 5vw clamp(40px, 10vh, 100px); 
-    display: flex; flex-direction: column; align-items: flex-start; 
-}
-.gallery-title { 
-    font-family: var(--font-serif); 
-    font-size: clamp(3rem, 8vw, 8rem); 
-    font-weight: 400; line-height: 1; color: var(--fg-color); 
-    margin-bottom: 30px; 
-}
-.gallery-desc { 
-    font-size: clamp(1rem, 1.2vw, 1.2rem); 
-    max-width: 600px; line-height: 1.6; opacity: 0.7; font-weight: 300; 
+.gallery-hero { padding: clamp(120px, 20vh, 200px) 5vw clamp(40px, 10vh, 100px); display: flex; flex-direction: column; align-items: flex-start; }
+.gallery-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 8vw, 8rem); font-weight: 400; line-height: 1; color: var(--fg-color); margin-bottom: 25px; }
+.gallery-desc { font-size: clamp(0.95rem, 1.2vw, 1.2rem); max-width: 600px; line-height: 1.6; opacity: 0.7; font-weight: 300; }
+
+.photo-series { padding: 0 5vw clamp(60px, 10vw, 120px); }
+.series-title { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; opacity: 0.5; margin-bottom: 30px; border-bottom: 1px solid var(--line-color); padding-bottom: 12px; }
+
+.editorial-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(10px, 2vw, 30px); }
+.editorial-item { position: relative; overflow: hidden; cursor: crosshair; background-color: #1a1a1a; aspect-ratio: 4/3; }
+.editorial-item.portrait { aspect-ratio: 3/4; }
+.editorial-item.panorama { aspect-ratio: 16/9; }
+
+.span-12 { grid-column: span 12; }
+.span-8 { grid-column: span 8; }
+.span-6 { grid-column: span 6; }
+.span-4 { grid-column: span 4; }
+.span-7 { grid-column: span 7; }
+.span-5 { grid-column: span 5; }
+
+.editorial-item img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(30%) contrast(1.1); transform: scale(1.02); transition: transform 0.8s var(--ease-out-expo), filter 0.8s ease; }
+@media (hover: hover) {
+    .editorial-item:hover img { transform: scale(1.08); filter: grayscale(0%) contrast(1.1); }
+    .editorial-item:hover .hover-overlay { opacity: 1; }
+    .editorial-item:hover .hover-caption { transform: translateY(0); }
 }
 
-/* 🌟 2. 摄影页：横向卷轴 (Horizontal Track) */
-body.horizontal-scroll-active { overflow-y: hidden; }
+.hover-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%); opacity: 0; transition: opacity 0.5s ease; display: flex; align-items: flex-end; padding: clamp(15px, 3vw, 30px); }
+.hover-caption { color: #fff; font-family: var(--font-sans); font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; transform: translateY(10px); transition: transform 0.5s var(--ease-out-expo); }
 
-.horizontal-track-container {
-    width: 100vw; height: 60vh; 
-    overflow-x: auto; overflow-y: hidden;
-    scrollbar-width: none; -ms-overflow-style: none;
-}
-.horizontal-track-container::-webkit-scrollbar { display: none; }
+.lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); z-index: 99999; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.lightbox.active { opacity: 1; pointer-events: auto; }
+.lightbox-img { max-width: 95vw; max-height: 85vh; object-fit: contain; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.5s var(--ease-out-expo); }
+.lightbox.active .lightbox-img { transform: scale(1); }
+.lightbox-caption { margin-top: 15px; color: #fff; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; text-align: center; padding: 0 20px;}
+.lightbox-close { position: absolute; top: 20px; right: 5vw; color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none; padding: 10px; transition: opacity 0.3s; opacity: 0.5; font-family: var(--font-sans); line-height: 1; }
+.lightbox-close:hover { opacity: 1; }
 
-.horizontal-track {
-    display: flex; align-items: center; 
-    height: 100%; width: max-content; 
-    padding: 0 5vw; gap: clamp(40px, 8vw, 100px);
-}
+.masonry-container { padding: 0 5vw 100px; }
+.masonry-grid { column-count: 3; column-gap: clamp(15px, 4vw, 60px); }
+.sketch-item { break-inside: avoid; margin-bottom: clamp(15px, 4vw, 60px); display: flex; flex-direction: column; gap: 8px; }
+.sketch-item img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; filter: contrast(1.2); transition: transform 0.5s var(--ease-out-expo); }
+@media (hover: hover) { .sketch-item:hover img { transform: scale(1.02); } }
 
-.photo-item { height: 80%; display: flex; flex-direction: column; gap: 15px; }
-.photo-item img { 
-    height: 100%; width: auto; object-fit: contain; 
-    filter: grayscale(20%) contrast(1.1); transition: filter 0.5s; 
+/* 🌟 设备适配：iPad 与 手机 */
+@media (max-width: 1024px) {
+    /* 强制在平板和手机上显示图片遮罩和文字，因为没有 hover */
+    .hover-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 30%); }
+    .hover-caption { transform: translateY(0); }
 }
-.photo-item:hover img { filter: grayscale(0%) contrast(1.1); }
-.photo-caption { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.5; }
-
-/* 🌟 3. 草图页：不规则瀑布流 (Masonry Grid) */
-.masonry-container { padding: 0 5vw 150px; }
-.masonry-grid { column-count: 3; column-gap: clamp(20px, 4vw, 60px); }
-.sketch-item {
-    break-inside: avoid; margin-bottom: clamp(20px, 4vw, 60px); 
-    display: flex; flex-direction: column; gap: 10px;
-}
-.sketch-item img {
-    width: 100%; height: auto; display: block;
-    mix-blend-mode: multiply; filter: contrast(1.2);
-    transition: transform 0.5s var(--ease-out-expo);
-}
-.sketch-item:hover img { transform: scale(1.02); }
-
 @media (max-width: 900px) {
-    .horizontal-track-container { height: 50vh; }
+    .span-8, .span-6, .span-7, .span-5 { grid-column: span 12; }
+    .span-4 { grid-column: span 6; } 
     .masonry-grid { column-count: 2; }
 }
 @media (max-width: 600px) {
+    .span-4 { grid-column: span 12; } 
     .masonry-grid { column-count: 1; }
-    .photo-item { height: 60%; }
 }

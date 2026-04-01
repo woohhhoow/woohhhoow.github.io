@@ -25,31 +25,68 @@
         <p class="gallery-desc" data-i18n="photo-desc">Capturing spatial phenomenology, light, and the fleeting moments of urban metabolism.</p>
     </header>
 
-    <section class="horizontal-track-container fade-up">
-        <div class="horizontal-track">
-            <div class="photo-item hover-target">
-                <img src="https://picsum.photos/id/1015/800/1200" alt="Photo 1">
-                <span class="photo-caption">Milan, 2024</span>
+    <section class="photo-series fade-up">
+        <h3 class="series-title" data-i18n="series-1-title">SERIES 01: URBAN METABOLISM</h3>
+        
+        <div class="editorial-grid">
+            <div class="editorial-item span-7">
+                <img src="https://picsum.photos/id/1048/1200/800" alt="Urban 1">
+                <div class="hover-overlay"><span class="hover-caption">Milan / Navigli / 2024</span></div>
             </div>
-            <div class="photo-item hover-target">
-                <img src="https://picsum.photos/id/1016/1600/1000" alt="Photo 2">
-                <span class="photo-caption">Alps, 2023</span>
+            <div class="editorial-item portrait span-5">
+                <img src="https://picsum.photos/id/1015/800/1200" alt="Urban 2">
+                <div class="hover-overlay"><span class="hover-caption">Turin / Industrial Ruin / 2023</span></div>
             </div>
-            <div class="photo-item hover-target">
-                <img src="https://picsum.photos/id/1018/800/1200" alt="Photo 3">
-                <span class="photo-caption">Shanghai, 2023</span>
+            
+            <div class="editorial-item span-4">
+                <img src="https://picsum.photos/id/1029/800/600" alt="Urban 3">
+                <div class="hover-overlay"><span class="hover-caption">Shanghai / Alley / 2022</span></div>
             </div>
-            <div class="photo-item hover-target">
-                <img src="https://picsum.photos/id/1029/1400/1000" alt="Photo 4">
-                <span class="photo-caption">Turin, 2022</span>
+            <div class="editorial-item span-4">
+                <img src="https://picsum.photos/id/1031/800/600" alt="Urban 4">
+                <div class="hover-overlay"><span class="hover-caption">Shanghai / Bund / 2022</span></div>
             </div>
-            <div class="photo-item hover-target">
-                <img src="https://picsum.photos/id/1043/800/1200" alt="Photo 5">
-                <span class="photo-caption">Xi'an, 2021</span>
+            <div class="editorial-item span-4">
+                <img src="https://picsum.photos/id/1033/800/600" alt="Urban 5">
+                <div class="hover-overlay"><span class="hover-caption">Xi'an / Old City Wall / 2021</span></div>
             </div>
-            <div style="width: 10vw; height: 100%;"></div>
+            
+            <div class="editorial-item panorama span-12">
+                <img src="https://picsum.photos/id/1040/2000/900" alt="Urban 6">
+                <div class="hover-overlay"><span class="hover-caption">Milan / Porta Nuova District / 2024</span></div>
+            </div>
         </div>
     </section>
+
+    <section class="photo-series fade-up">
+        <h3 class="series-title" data-i18n="series-2-title">SERIES 02: SPATIAL PHENOMENOLOGY</h3>
+        
+        <div class="editorial-grid">
+            <div class="editorial-item portrait span-6">
+                <img src="https://picsum.photos/id/1043/1000/1400" alt="Space 1">
+                <div class="hover-overlay"><span class="hover-caption">Light Study 01 / Polimi</span></div>
+            </div>
+            <div class="editorial-item portrait span-6">
+                <img src="https://picsum.photos/id/106/1000/1400" alt="Space 2">
+                <div class="hover-overlay"><span class="hover-caption">Texture Study 02 / Concrete</span></div>
+            </div>
+
+            <div class="editorial-item span-12">
+                <img src="https://picsum.photos/id/1070/2000/1000" alt="Space 3">
+                <div class="hover-overlay"><span class="hover-caption">Atmosphere 03 / Fog / Swiss Alps</span></div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 50px 5vw; border-top: 1px solid var(--line-color); text-align: center;">
+        <span class="copyright" data-i18n="footer-rights" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.4;">© 2026 WU HAIWEN. ALL RIGHTS RESERVED.</span>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close hover-target">×</button>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Fullscreen Image">
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
 
     <script src="../../js/global.js"></script>
     <script src="../../js/gallery.js"></script>

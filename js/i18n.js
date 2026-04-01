@@ -40,7 +40,9 @@ const translations = {
         "photo-title": "Photography",
         "photo-desc": "Capturing spatial phenomenology, light, and the fleeting moments of urban metabolism.",
         "sketch-title": "Sketches & Drawings",
-        "sketch-desc": "Analog explorations of form, tectonics, and the raw dialogue between hand and paper."
+        "sketch-desc": "Analog explorations of form, tectonics, and the raw dialogue between hand and paper.",
+        "series-1-title": "SERIES 01: URBAN METABOLISM",
+        "series-2-title": "SERIES 02: SPATIAL PHENOMENOLOGY"
     },
     "cn": {
         "nav-home": "首页", "nav-works": "精选作品", "nav-about": "关于我", "nav-back": "← 返回作品集",
@@ -79,7 +81,9 @@ const translations = {
         "photo-title": "摄影记录",
         "photo-desc": "捕捉空间现象学、光影的流转，以及城市代谢的瞬间。",
         "sketch-title": "绘画与草图",
-        "sketch-desc": "关于形态与建构的模拟探索，记录手与纸之间最原始的对话。"
+        "sketch-desc": "关于形态与建构的模拟探索，记录手与纸之间最原始的对话。",
+        "series-1-title": "系列 01：城市代谢",
+        "series-2-title": "系列 02：空间现象学"
     }
 };
 

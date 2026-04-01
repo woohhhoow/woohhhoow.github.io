@@ -1,67 +1,52 @@
 /* =========================================
-   project.css - 项目详情页 (流体自适应排版)
+   project.css - 项目详情页 (全设备适配版)
    ========================================= */
 
 .navbar { mix-blend-mode: normal; }
 .logo, .nav-link { color: var(--fg-color); }
 .nav-link::after { background-color: var(--fg-color); }
 
-/* --- 1. 顶层信息区 --- */
-.project-hero { min-height: clamp(60vh, 85vh, 900px); display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(120px, 15vh, 150px) 5vw clamp(40px, 8vh, 80px); }
-.project-meta-top { font-family: var(--font-sans); font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 30px; opacity: 0.5; }
-.project-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 8vw, 8rem); line-height: 0.95; font-weight: 400; margin-bottom: clamp(40px, 6vw, 60px); max-width: 95%; }
+.project-hero { min-height: clamp(50vh, 85vh, 900px); display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(100px, 15vh, 150px) 5vw clamp(40px, 8vh, 80px); }
+.project-meta-top { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 20px; opacity: 0.5; }
+.project-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 8vw, 8rem); line-height: 1; font-weight: 400; margin-bottom: clamp(30px, 6vw, 60px); max-width: 95%; }
 
-/* 数据网格随屏幕缩小折叠 */
-.project-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(20px, 4vw, 40px); border-top: 1px solid var(--line-color); padding-top: 30px; }
-.info-col h5 { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.4; margin-bottom: 10px;}
-.info-col p { font-size: clamp(0.95rem, 1vw, 1rem); font-weight: 300; color: var(--fg-color); }
+.project-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: clamp(20px, 4vw, 40px); border-top: 1px solid var(--line-color); padding-top: 25px; }
+.info-col h5 { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.4; margin-bottom: 8px;}
+.info-col p { font-size: clamp(0.9rem, 1vw, 1rem); font-weight: 300; color: var(--fg-color); }
 
-/* --- 2. 核心理念区 --- */
-.project-statement { padding: clamp(60px, 8vw, 80px) 5vw clamp(80px, 12vw, 120px); }
-.project-statement p { font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 3rem); line-height: 1.4; max-width: 1400px; color: var(--fg-color); }
+.project-statement { padding: clamp(40px, 8vw, 80px) 5vw clamp(60px, 12vw, 120px); }
+.project-statement p { font-family: var(--font-serif); font-size: clamp(1.3rem, 3vw, 3rem); line-height: 1.5; max-width: 1400px; color: var(--fg-color); }
 
-/* --- 3. 全宽视差巨幕 --- */
-.parallax-container { width: 100vw; height: clamp(40vh, 80vh, 800px); overflow: hidden; position: relative; margin-bottom: clamp(80px, 15vw, 150px); }
+.parallax-container { width: 100vw; height: clamp(40vh, 80vh, 800px); overflow: hidden; position: relative; margin-bottom: clamp(60px, 15vw, 150px); }
 .parallax-img { width: 100%; height: 120%; object-fit: cover; position: absolute; top: -10%; will-change: transform; filter: contrast(1.05); }
 
-/* --- 4. 非对称社论网格 --- */
-.editorial-section { padding: 0 5vw clamp(80px, 15vw, 150px); display: grid; grid-template-columns: 4fr 6fr; gap: clamp(40px, 8vw, 100px); align-items: start; }
+.editorial-section { padding: 0 5vw clamp(60px, 15vw, 150px); display: grid; grid-template-columns: 4fr 6fr; gap: clamp(30px, 8vw, 100px); align-items: start; }
+.text-block h3 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2.5rem); font-weight: 400; margin-bottom: clamp(15px, 3vw, 30px); }
+.text-block p { font-size: clamp(0.9rem, 1.1vw, 1.1rem); line-height: 1.8; color: rgba(0,0,0,0.7); font-weight: 300; }
 
-.text-block h3 { font-family: var(--font-serif); font-size: clamp(1.8rem, 2.5vw, 2.5rem); font-weight: 400; margin-bottom: clamp(20px, 3vw, 30px); }
-.text-block p { font-size: clamp(0.95rem, 1.1vw, 1.1rem); line-height: 1.8; color: rgba(0,0,0,0.7); font-weight: 300; }
-
-.img-group-offset { display: flex; flex-direction: column; gap: clamp(40px, 8vw, 80px); }
+.img-group-offset { display: flex; flex-direction: column; gap: clamp(30px, 8vw, 80px); }
 .img-wrap { overflow: hidden; position: relative; background-color: #f0f0f0; }
 .img-wrap img { width: 100%; display: block; transform: scale(1.05); transition: transform 1.5s var(--ease-out-expo); }
 
-.single-img-section { padding: 0 5vw clamp(80px, 15vw, 150px); }
+.single-img-section { padding: 0 5vw clamp(60px, 15vw, 150px); }
+.caption { font-family: var(--font-sans); font-size: clamp(9px, 1vw, 10px); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-top: 12px; display: block; }
 
-/* 极其讲究的图注排版 */
-.caption { font-family: var(--font-sans); font-size: clamp(9px, 1vw, 10px); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-top: 15px; display: block; }
-
-/* --- 5. 底部平滑切换 --- */
-.next-project { padding: clamp(60px, 10vw, 100px) 5vw; border-top: 1px solid var(--line-color); text-align: center; display: block; transition: background-color 0.4s; }
+.next-project { padding: clamp(50px, 10vw, 100px) 5vw; border-top: 1px solid var(--line-color); text-align: center; display: block; transition: background-color 0.4s; }
 @media (hover: hover) { .next-project:hover { background-color: rgba(0,0,0,0.02); } .next-project:hover .next-title { transform: translateX(20px); } }
-.next-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.5; display: block; margin-bottom: 20px;}
-.next-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 5vw, 4rem); color: var(--fg-color); transition: transform 0.4s; display: inline-block; }
-
+.next-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.5; display: block; margin-bottom: 15px;}
+.next-title { font-family: var(--font-serif); font-size: clamp(1.5rem, 5vw, 4rem); color: var(--fg-color); transition: transform 0.4s; display: inline-block; }
 
 .reveal-fade { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
 .reveal-fade.is-visible { opacity: 1; transform: translateY(0); }
 .img-wrap.is-visible img { transform: scale(1); }
 
-/* 🌟 全设备响应式：解决错位空白问题 */
+/* 🌟 设备适配：抹平网格布局差异 */
 @media (max-width: 900px) {
-    /* 解除并排非对称网格，全部变单列 */
     .editorial-section { grid-template-columns: 1fr; gap: 40px; }
-    
-    /* 核心：抹平用于电脑端错位的巨大 margin-top (如之前HTML里写的 margin-top: 100px) */
     .img-group-offset > div { margin-top: 0 !important; }
-    
-    /* 解除文字块的吸顶粘滞，恢复自然滚动 */
     .text-block { position: relative !important; top: 0 !important; }
+    .project-info-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-@media (max-width: 600px) {
-    .project-info-grid { grid-template-columns: 1fr; gap: 25px; } /* 小屏下单栏数据 */
+@media (max-width: 480px) {
+    .project-info-grid { grid-template-columns: 1fr; gap: 15px; } 
 }

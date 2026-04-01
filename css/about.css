@@ -1,45 +1,77 @@
 /* =========================================
-   about.css - 关于我页面 (移动端流体适配)
+   about.css - 关于我页面 (全设备适配 + 圆形肖像版)
    ========================================= */
 
-.about-page-wrapper { padding: clamp(120px, 18vh, 180px) 5vw clamp(60px, 10vh, 100px); max-width: 1600px; margin: 0 auto; }
+.about-page-wrapper { padding: clamp(100px, 18vh, 180px) 5vw clamp(60px, 10vh, 100px); max-width: 1600px; margin: 0 auto; }
 
-/* 流体网格 */
 .about-grid { display: grid; grid-template-columns: 3fr 7fr; gap: clamp(40px, 8vw, 80px); align-items: start; }
 
 .about-sidebar { position: sticky; top: clamp(100px, 15vh, 150px); display: flex; flex-direction: column; gap: clamp(25px, 4vw, 40px); }
 .sidebar-block span { display: block; font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.4; margin-bottom: 10px; color: var(--fg-color); }
-.sidebar-link { font-family: var(--font-serif); font-size: clamp(1.1rem, 1.5vw, 1.5rem); color: var(--fg-color); transition: opacity 0.3s; display: inline-block; border-bottom: 1px solid transparent; word-break: break-all; }
+.sidebar-link { font-family: var(--font-serif); font-size: clamp(1rem, 1.5vw, 1.5rem); color: var(--fg-color); transition: opacity 0.3s; display: inline-block; border-bottom: 1px solid transparent; word-break: break-all; }
 .sidebar-link:hover { opacity: 0.5; border-bottom: 1px solid var(--fg-color); }
 
-.manifesto { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 4rem); line-height: 1.2; font-weight: 400; margin-bottom: clamp(40px, 6vw, 60px); color: var(--fg-color); }
-.bio-text { font-size: clamp(0.95rem, 1.1vw, 1.2rem); font-weight: 300; line-height: 1.8; color: rgba(0,0,0,0.7); margin-bottom: 30px; max-width: 800px; }
+.manifesto { font-family: var(--font-serif); font-size: clamp(1.5rem, 3.5vw, 4rem); line-height: 1.3; font-weight: 400; margin-bottom: clamp(30px, 6vw, 60px); color: var(--fg-color); }
+.bio-text { font-size: clamp(0.9rem, 1.1vw, 1.2rem); font-weight: 300; line-height: 1.8; color: rgba(0,0,0,0.7); margin-bottom: 30px; max-width: 800px; }
 
-.resume-section { margin-top: clamp(60px, 10vw, 100px); border-top: 1px solid var(--line-color); padding-top: clamp(30px, 5vw, 50px); }
-.section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 40px; color: var(--fg-color); opacity: 0.5; }
+.resume-section { margin-top: clamp(50px, 10vw, 100px); border-top: 1px solid var(--line-color); padding-top: clamp(30px, 5vw, 50px); }
+.section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 30px; color: var(--fg-color); opacity: 0.5; }
 
-.resume-item { display: grid; grid-template-columns: 1fr 3fr; gap: clamp(20px, 4vw, 40px); margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.resume-date { font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; color: var(--fg-color); }
-.resume-content h4 { font-family: var(--font-serif); font-size: clamp(1.2rem, 1.5vw, 1.5rem); font-weight: 400; margin-bottom: 8px; color: var(--fg-color); }
+.resume-item { display: grid; grid-template-columns: 1fr 3fr; gap: clamp(15px, 4vw, 40px); margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.resume-date { font-size: 11px; opacity: 0.6; letter-spacing: 0.1em; color: var(--fg-color); }
+.resume-content h4 { font-family: var(--font-serif); font-size: clamp(1.1rem, 1.5vw, 1.5rem); font-weight: 400; margin-bottom: 8px; color: var(--fg-color); }
 .resume-content p { font-size: clamp(0.85rem, 0.9vw, 0.9rem); color: rgba(0,0,0,0.6); font-weight: 300; line-height: 1.6; }
 
-.skills-container { display: flex; flex-direction: column; gap: 30px; }
-.skill-category h5 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 15px; color: var(--fg-color); }
+.skills-container { display: flex; flex-direction: column; gap: 25px; }
+.skill-category h5 { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-bottom: 12px; color: var(--fg-color); }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-tag { padding: 8px 16px; border: 1px solid rgba(0,0,0,0.15); border-radius: 50px; font-size: clamp(10px, 1vw, 11px); letter-spacing: 0.05em; transition: all 0.4s var(--ease-out-expo); color: var(--fg-color); }
+.skill-tag { padding: 6px 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 50px; font-size: clamp(10px, 1vw, 11px); letter-spacing: 0.05em; transition: all 0.4s var(--ease-out-expo); color: var(--fg-color); }
 @media (hover: hover) { .skill-tag:hover { background-color: var(--fg-color); color: var(--bg-color); border-color: var(--fg-color); transform: translateY(-2px); } }
 
 .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo); }
 .fade-up.is-visible { opacity: 1; transform: translateY(0); }
 
-/* 🌟 全设备响应式：手机端重构 */
+/* --- 🌟 肖像照片样式 (圆形版) --- */
+.profile-photo-container {
+    width: clamp(100px, 10vw, 130px); 
+    aspect-ratio: 1 / 1;              /* 🌟 强制正方形 */
+    border-radius: 50%;               /* 🌟 切成圆形 */
+    overflow: hidden;
+    margin-bottom: 20px;              
+    background-color: rgba(0,0,0,0.05); 
+    border: 1px solid var(--line-color); /* 给圆形加一个极细的边缘线 */
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    filter: grayscale(30%) contrast(1.05);
+    transform: scale(1.02);
+    transition: filter 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+
+@media (hover: hover) {
+    .profile-photo-container:hover .profile-photo {
+        filter: grayscale(0%) contrast(1.05);
+        transform: scale(1.1); /* 圆形下的拉近效果更明显一点 */
+    }
+}
+
+/* 🌟 设备适配 */
 @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-sidebar { position: relative; top: 0; flex-direction: row; flex-wrap: wrap; gap: 20px; justify-content: flex-start; border-bottom: 1px solid var(--line-color); padding-bottom: 25px; }
+    .sidebar-block { flex: 1 1 calc(50% - 20px); min-width: 140px; }
+    .resume-item { grid-template-columns: 1fr; gap: 8px; padding-bottom: 25px; margin-bottom: 25px; }
+    .resume-date { margin-bottom: 2px; }
     
-    /* 解除左侧吸顶，变为顶部横向展示块 */
-    .about-sidebar { position: relative; top: 0; flex-direction: row; flex-wrap: wrap; gap: 30px; justify-content: space-between; border-bottom: 1px solid var(--line-color); padding-bottom: 30px; }
-    .sidebar-block { flex: 1 1 40%; min-width: 140px; }
-    
-    .resume-item { grid-template-columns: 1fr; gap: 10px; padding-bottom: 30px; margin-bottom: 30px; }
-    .resume-date { margin-bottom: 5px; }
+    .profile-photo-container {
+        width: 100px; 
+        margin-bottom: 0; 
+    }
+}
+@media (max-width: 480px) {
+    .sidebar-block { flex: 1 1 100%; }
 }
