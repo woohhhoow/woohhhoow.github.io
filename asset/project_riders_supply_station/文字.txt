@@ -1,0 +1,80 @@
+Project Title / 项目名称
+RIDERS' SUPPLY STATION
+骑手补给站
+
+Project Folder Name / 项目文件夹名称
+riders_supply_station
+
+Project Type / 项目类型
+Urban Service Design / Public Space Design / Community Infrastructure
+城市公共服务设计 / 公共空间设计 / 社区基础设施设计
+
+Project Time / 项目时间
+September 2022
+2022年9月
+
+Location / 项目地点
+Wenjiang District, Chengdu, Sichuan, China
+中国四川省成都市温江区
+
+Target Users / 目标用户
+Takeaway delivery riders, local residents, pedestrians
+外卖骑手、社区居民、城市行人
+
+Design Focus / 设计重点
+Rider-friendly infrastructure, rest spaces, charging facilities, parking, smart service network
+骑手友好型基础设施、休息空间、充电补给、停车秩序、智慧服务网络
+
+Keywords / 关键词
+Urban Care, Delivery Riders, Modular Space, Mobility Network, Community Connection
+城市关怀、外卖骑手、模块化空间、流动网络、社区连接
+
+Project Introduction / 项目介绍
+English
+
+RIDERS' SUPPLY STATION is an urban service design project created for takeaway delivery riders and local citizens in Wenjiang District, Chengdu. The project responds to the lack of resting space, parking areas, charging facilities, and daily support infrastructure for riders in high-density urban environments. By transforming overlooked urban gaps into a modular network of supply stations, the design provides spaces for rest, recharge, parking, communication, and community interaction. Through the combination of physical infrastructure and a smart digital platform, the project proposes a more inclusive and rider-friendly urban support system.
+
+中文
+
+骑手补给站 是一个面向成都温江区外卖骑手与城市居民的公共服务设计项目。项目回应了高密度城市环境中骑手缺乏休息空间、停车区域、充电设施与日常支持系统的问题。设计将被忽视的城市灰空间转化为模块化的补给站网络，为骑手提供休息、充电、停车、交流与社区互动的场所。通过实体空间与智慧数字平台的结合，项目提出一种更具包容性和骑手友好性的城市公共支持系统。
+
+Image Captions / 每张图片简短介绍
+Image 01 — Cover / 封面图
+
+EN
+The cover presents the project’s core vision: creating a temporary urban refuge for delivery riders who constantly move through the city.
+
+CN
+封面呈现项目的核心愿景：为不断穿行于城市中的外卖骑手创造一个临时性的城市庇护所。
+
+Image 02 — Research Mapping / 调研地图
+
+EN
+The mapping analyzes rider routes, pick-up areas, gathering points, rest locations, and surrounding urban conditions to identify suitable intervention sites.
+
+CN
+该调研地图分析骑手路径、取餐区域、聚集点、休息位置及周边城市条件，用于定位适合介入的空间节点。
+
+Image 03 — Problem & Strategy / 问题与策略
+
+EN
+This page defines riders’ behavioral, psychological, and spatial challenges, then translates them into modular strategies for rest, parking, charging, and communication.
+
+CN
+这一页归纳骑手在行为、心理与空间层面的主要问题，并将其转化为休息、停车、充电与交流等模块化设计策略。
+
+Image 04 — Spatial Planning System / 空间规划系统
+
+EN
+The planning system organizes rider services through three spatial types: point nodes, linear corridors, and surface-based public spaces.
+
+CN
+空间规划系统通过点状节点、线性空间与面状公共空间三种类型，组织骑手服务网络。
+
+Image 05 — Smart Service Network & Scenario Simulation / 智慧服务网络与场景模拟
+
+EN
+The final proposal combines physical supply stations with a smart platform, supporting riders through battery exchange, parking, rest, and daily service rewards.
+
+CN
+最终方案将实体补给站与智慧平台结合，为骑手提供换电、停车、休息与日常服务奖励支持。

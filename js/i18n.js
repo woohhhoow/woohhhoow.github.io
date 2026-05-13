@@ -1,5 +1,5 @@
 /* =========================================
-   i18n.js - 国际化字典 (包含川农大本科学历)
+   i18n.js - 国际化字典 (全量项目：RSS + SOL + ISP + BOW)
    ========================================= */
 
 const translations = {
@@ -10,39 +10,76 @@ const translations = {
         "footer-bio": "MSc. Landscape Architecture at Politecnico di Milano. Advancing parametric and computational design through ASA. Specializing in resilient environments that bridge ecological infrastructure with human-centric spatial experiences.",
         "footer-bio-link": "Full Biography →", "footer-edu-label": "Education", "footer-edu-text": "POLITECNICO DI MILANO<br>ASA ADVANCED COURSES",
         "footer-connect-label": "Connect", "footer-rights": "© 2026 WU HAIWEN. ALL RIGHTS RESERVED.",
-        
         "arc-title": "Project Archive", "arc-sub": "Chronological Index 2021—2026",
         "arc-cat-selected": "Selected Works", "arc-cat-other": "Other Works",
         "type-eco": "Ecological Restoration", "type-urban": "Urban Public Space", "type-rural": "Rural Revitalization", "type-reuse": "Adaptive Reuse", "type-detail": "Detail & Materiality", "type-visual": "Visual Arts",
         "p-photo": "Photography", "p-sketch": "Sketches & Drawings",
-        
         "about-manifesto": "Landscape is not a static backdrop, but a dynamic, living system. We design frameworks for nature and humanity to co-author the future.",
         "about-edu-title": "Education", "about-skill-title": "Core Expertise", "skill-digital": "Digital Craft", "skill-strategy": "Design Strategy", "skill-analog": "Analog & Communication",
-        "next-label": "Next Project",
+        "about-edu-milan-date": "2024 — Present", "about-edu-milan-desc": "MSc. Landscape Architecture. Land Landscape Heritage.",
+        "about-edu-sicau-date": "2019 — 2024", "about-edu-sicau-title": "SICHUAN AGRICULTURAL UNIVERSITY", "about-edu-sicau-desc": "Bachelor of Landscape Architecture.",
+        "next-label": "Return to Journey",
+        "home-next-title": "HOME →",
 
-        /* 🌟 新增：教育背景的精准时间与描述翻译 */
-        "about-edu-milan-date": "2024 — Present",
-        "about-edu-milan-desc": "MSc. Landscape Architecture. Land Landscape Heritage.",
-        "about-edu-sicau-date": "2019 — 2024",
-        "about-edu-sicau-title": "SICHUAN AGRICULTURAL UNIVERSITY",
-        "about-edu-sicau-desc": "Bachelor of Landscape Architecture.",
-        
-        "p1-meta": "Ecological Restoration / 2024", "p1-title": "Suzhou Creek Waterfront", "p1-loc-label": "Location", "p1-loc-val": "Shanghai, China", "p1-scale-label": "Scale", "p1-scale-val": "12 Hectares", "p1-type-label": "Typology", "p1-type-val": "Riparian Wetland", "p1-status-label": "Status", "p1-status-val": "Built (Phase I)", "p1-statement": "Reimagining the fragmented urban edge into a resilient wetland system. The design fosters ecological diversity while providing an immersive spatial narrative, turning neglected infrastructure into a vital urban lung.", "p1-h3-1": "Parametric Water Logic", "p1-p-1": "The topography is computationally generated to simulate historical flood patterns. By utilizing Grasshopper, the terrain steps are optimized to accommodate a 50-year storm event.", "p1-cap-1": "Fig 1. Sunken Boardwalk integrated with the tide cycle.", "p1-cap-2": "Fig 2. Algorithmic distribution of permeable paving.", "p1-cap-3": "Fig 3. Material articulation: Pre-cast concrete and weathered steel.", "p1-h3-2": "Ecological Transect", "p1-p-2": "A continuous section revealing the gradient from the dense urban fabric to the restorative riparian edge, highlighting soil bioengineering techniques.", "p1-cap-4": "Fig 4. Transverse ecological section.", "p1-next-title": "Plaza Regeneration →",
+        // --- 🌟 Project 01: Riders' Supply Station (RSS) ---
+        "rss-meta": "Urban Service Design / 2022",
+        "rss-title": "RIDERS' SUPPLY STATION",
+        "rss-loc-label": "Location", "rss-loc-val": "Chengdu, China",
+        "rss-type-label": "Typology", "rss-type-val": "Urban Service / Infrastructure",
+        "rss-user-label": "Target Users", "rss-user-val": "Riders, Residents, Pedestrians",
+        "rss-status-label": "Status", "rss-status-val": "Academic Project / Concept",
+        "rss-statement": "RIDERS' SUPPLY STATION responds to the lack of daily support infrastructure for riders in high-density urban environments. By transforming overlooked urban gaps into a modular network, the design provides spaces for rest, recharge, and community interaction through a smart digital-physical platform.",
+        "rss-cap-1": "The cover presents the project’s core vision: creating a temporary urban refuge for delivery riders who constantly move through the city.",
+        "rss-cap-2": "The mapping analyzes rider routes, pick-up areas, gathering points, rest locations, and surrounding urban conditions to identify suitable intervention sites.",
+        "rss-cap-3": "This page defines riders’ behavioral, psychological, and spatial challenges, then translates them into modular strategies for rest, parking, charging, and communication.",
+        "rss-cap-4": "The planning system organizes rider services through three spatial types: point nodes, linear corridors, and surface-based public spaces.",
+        "rss-cap-5": "The final proposal combines physical supply stations with a smart platform, supporting riders through battery exchange, parking, rest, and daily service rewards.",
 
-        "p2-meta": "Urban Public Space / 2023", "p2-title": "Plaza Regeneration", "p2-loc-val": "Milan, Italy", "p2-scale-val": "5 Hectares", "p2-type-val": "Urban Plaza", "p2-status-val": "Competition - 1st Prize", "p2-statement": "A tactical urbanism intervention that reclaims vehicle-dominated intersections for pedestrians, creating a fluid, multi-functional civic space driven by micro-climate analysis.", "p2-h3-1": "Climate-Responsive Canopy", "p2-p-1": "Using environmental simulation tools to map solar radiation and wind corridors, proposing a modular shading system that lowers surface temperatures by 4°C during summer.", "p2-cap-1": "Fig 1. Radiation analysis and shading optimization.", "p2-cap-2": "Fig 2. Civic gathering space under the parametric canopy.", "p2-cap-3": "Fig 3. Permeable urban furniture details.", "p2-h3-2": "Social Choreography", "p2-p-2": "The paving pattern acts as a subtle guide for movement, defining zones of transit and lingering without physical barriers.", "p2-cap-4": "Fig 4. Paving pattern generation mapping.", "p2-next-title": "Sustainable Camp →",
+        // --- 🌟 Project 02: Subtraction of Land (SOL) ---
+        "sol-meta": "Rural Renewal Design / 2023",
+        "sol-title": "SUBTRACTION OF LAND",
+        "sol-loc-val": "Xianyang, Shaanxi, China",
+        "sol-type-val": "Rural Renewal / Heritage",
+        "sol-user-val": "Villagers, Visitors, Communities",
+        "sol-status-val": "Concept Proposal",
+        "sol-statement": "SUBTRACTION OF LAND is a rural renewal design project based on the transformation of Dikeng village in Sanyuan County, Shaanxi. The project focuses on the preservation and reinterpretation of traditional pit courtyard dwellings, using spatial renovation, public space reorganization, and ecological improvement to reconnect rural heritage with contemporary living needs. By integrating the daily life of villagers with the experience of visitors, the design proposes a shared village model that supports cultural tourism, community interaction, and long-term rural vitality.",
+        "sol-cap-1": "Fig 1. The cover introduces the project as a bridge between rural memory and contemporary village life.",
+        "sol-cap-2": "Fig 2. Site Research & Village Evolution: Mapping the decline and transformation potential of the site.",
+        "sol-cap-3": "Fig 3. Pit Courtyard Typology & Existing Issues: Identifying core spatial and structural challenges.",
+        "sol-cap-4": "Fig 4. Renovation Strategies & Master Plan: Reorganizing the village through a shared model.",
+        "sol-cap-5": "Fig 5. Architectural Space Transformation: Adapting traditional dwellings to contemporary needs.",
+        "sol-cap-6": "Fig 6. Public Spatial Combing: Creating visitor routes, shared courtyards, and woodland rest areas.",
+        "sol-cap-7": "Fig 7. Ecological Improvement & Shared Village Vision: A healthier and more sustainable living environment.",
 
-        "p3-meta": "Rural Revitalization / 2022", "p3-title": "Sustainable Camp", "p3-loc-val": "Xi'an, China", "p3-scale-val": "20 Hectares", "p3-type-val": "Eco-Tourism", "p3-status-val": "Concept Proposal", "p3-statement": "A low-impact eco-tourism framework nested in the Qinling Mountains. The project balances rural economic activation with strict ecological conservation boundaries.", "p3-h3-1": "Topographical Insertion", "p3-p-1": "Structures are delicately inserted into the steep terrain using stilt foundations, minimizing soil excavation and preserving the natural hydrological flows of the mountain.", "p3-cap-1": "Fig 1. Stilt cabins merging with the forest canopy.", "p3-cap-2": "Fig 2. Minimum-impact boardwalk construction.", "p3-cap-3": "Fig 3. Local timber tectonic joints.", "p3-h3-2": "Water Metabolism", "p3-p-2": "A closed-loop water system utilizing decentralized constructed wetlands to treat greywater on-site before releasing it back to the watershed.", "p3-cap-4": "Fig 4. Greywater treatment wetland diagram.", "p3-next-title": "Post-Industrial Park →",
+        // --- 🌟 Project 03: Island Survival Program (ISP) ---
+        "isp-meta": "Climate Adaptation Design / 2023",
+        "isp-title": "ISLAND SURVIVAL PROGRAM",
+        "isp-loc-val": "Pulau Poaboloki, Indonesia",
+        "isp-type-val": "Speculative Spatial Design",
+        "isp-user-val": "Island ecosystems, mariners, future communities",
+        "isp-status-val": "Concept Proposal",
+        "isp-statement": "ISLAND SURVIVAL PROGRAM is a speculative landscape and climate adaptation project based on Pulau Poaboloki Island in the Indonesian archipelago. Facing the long-term threat of sea-level rise, the project imagines the island as a living entity that seeks to protect itself, preserve its ecological value, and build a new relationship with human visitors before its gradual disappearance. Through coastal protection, ecological restoration, recreational routes, underwater experiences, and a memorial tower, the design transforms the island into a temporal landscape that records climate change, supports coexistence, and preserves collective memory.",
+        "isp-cap-1": "Fig 1. The vision rendering presents the island as a fragile yet poetic landscape, where the lighthouse becomes a symbolic marker of survival.",
+        "isp-cap-2": "Fig 2. The cover introduces the project as a monument to nature, imagining the island as both a carrier of time and a living landscape.",
+        "isp-cap-3": "Fig 3. Site Research & Threat Mapping: Analyzing geographic position, risk areas, and potential routes for future intervention.",
+        "isp-cap-4": "Fig 4. Sea-Level Rise Records & Design Aims: Visualizing gradual disappearance and defining aims of recognition, interaction, and memorization.",
+        "isp-cap-5": "Fig 5. Master Plan & Intervention System: Organizing the island through protection, construction, and commemoration strategies.",
+        "isp-cap-6": "Fig 6. Phased Sea-Level Adaptation: Showing how the island adapts across different future phases via elevated transport systems.",
+        "isp-cap-7": "Fig 7. Future Experience Scenarios: Imagining human encounters with the island across time, including underwater discovery.",
+        "isp-cap-8": "Fig 8. Tower of Memory: Preserving fragments of the island through viewing, storage, and memory collection as the final symbol of existence.",
 
-        "p4-meta": "Adaptive Reuse / 2021", "p4-title": "Post-Industrial Park", "p4-loc-val": "Turin, Italy", "p4-scale-val": "15 Hectares", "p4-type-val": "Brownfield", "p4-status-val": "Built (Phase II)", "p4-statement": "Transforming a former automotive manufacturing plant into a post-industrial landscape. The design treats contamination through phytoremediation and preserves industrial ruins as cultural artifacts.", "p4-h3-1": "Phytoremediation Grid", "p4-p-1": "A grid of hyperaccumulator plants is deployed across the site to extract heavy metals from the soil, turning the cleanup process into a visible, educational landscape.", "p4-cap-1": "Fig 1. The remediation grid intersecting with factory ruins.", "p4-cap-2": "Fig 2. Seasonal changes of hyperaccumulator species.", "p4-cap-3": "Fig 3. Industrial steel repurposed as pedestrian bridges.", "p4-h3-2": "Ruin as Tectonics", "p4-p-2": "Retaining the concrete skeletons of the factory halls to frame new ecological successions, blurring the lines between nature and machine.", "p4-cap-4": "Fig 4. Succession planting within the concrete nave.", "p4-next-title": "Rooftop Garden Details →",
-
-        "p5-meta": "Detail & Materiality / 2020", "p5-title": "Rooftop Garden Details", "p5-loc-val": "Shanghai, China", "p5-scale-val": "0.5 Hectares", "p5-type-val": "Commercial Roof", "p5-status-val": "Built", "p5-statement": "An intensive exploration of construction details in a constrained rooftop environment. The project focuses on lightweight soil substrates, precise water management, and bespoke material junctions.", "p5-h3-1": "Weight and Water", "p5-p-1": "Designing a layered substrate system that meets strict structural load limits while maximizing water retention capacity for intense summer storms.", "p5-cap-1": "Fig 1. Axonometric view of the lightweight planting substrate.", "p5-cap-2": "Fig 2. Invisible drainage channel details.", "p5-cap-3": "Fig 3. Custom corten steel planters meeting timber decking.", "p5-h3-2": "Sensory Materiality", "p5-p-2": "Selecting materials that weather gracefully—untreated timber, corten steel, and textured concrete—providing tactile richness to the urban oasis.", "p5-cap-4": "Fig 4. Material palette and aging process.", "p5-next-title": "Suzhou Creek Waterfront →",
-
-        "photo-title": "Photography",
-        "photo-desc": "Capturing spatial phenomenology, light, and the fleeting moments of urban metabolism.",
-        "sketch-title": "Sketches & Drawings",
-        "sketch-desc": "Analog explorations of form, tectonics, and the raw dialogue between hand and paper.",
-        "series-1-title": "SERIES 01: URBAN METABOLISM",
-        "series-2-title": "SERIES 02: SPATIAL PHENOMENOLOGY"
+        // --- 🌟 Project 04: Breath of the Wilderness (BOW) ---
+        "bow-meta": "Environmental Installation / 2023",
+        "bow-title": "BREATH OF THE WILDERNESS",
+        "bow-loc-val": "Orick, California, USA",
+        "bow-type-val": "Wilderness Shelter Design",
+        "bow-user-val": "Explorers, hikers, wildlife",
+        "bow-status-val": "Concept Proposal / Physical Model",
+        "bow-statement": "BREATH OF THE WILDERNESS is an experiential shelter project designed for explorers and wildlife in Redwood National Park. The project proposes a lightweight vertical structure that offers hikers a place for short rest, observation, and immersion within the forest. Inspired by the geometric logic of traditional Chinese lanterns, the design develops a modular folded skin that combines enclosure, transparency, and environmental responsiveness. More than a resting space, the project imagines architecture as a medium of communication between humans and animals, creating a shared atmosphere of curiosity, coexistence, and discovery in the wilderness.",
+        "bow-cap-1": "Fig 1. The cover introduces the project as a poetic meeting point between the explorer and the forest, presenting the shelter as a gift discovered in the wilderness.",
+        "bow-cap-2": "Fig 2. Concept Research & Component Generation: From lantern geometry to a modular wilderness shelter.",
+        "bow-cap-3": "Fig 3. Spatial Drawings & Experience Rendering: Highlighting stargazing, resting, and coexistence with animals.",
+        "bow-cap-4": "Fig 4. Handmade Model & Assembly Process: Emphasizing the tactile construction process and folded modular system."
     },
     "cn": {
         "nav-home": "首页", "nav-works": "精选作品", "nav-about": "关于我", "nav-back": "← 返回作品集",
@@ -51,39 +88,76 @@ const translations = {
         "footer-bio": "米兰理工大学景观建筑学硕士。目前通过 ASA 进修参数化与计算化设计。专注于打造具有韧性的生态环境，在宏观生态基础设施与微观人类空间体验之间建立连结。",
         "footer-bio-link": "完整履历 →", "footer-edu-label": "教育背景", "footer-edu-text": "米兰理工大学 (POLIMI)<br>ASA 建筑与景观高级计算",
         "footer-connect-label": "联系方式", "footer-rights": "© 2026 吴海闻. 保留所有权利.",
-        
         "arc-title": "作品档案库", "arc-sub": "作品编年索引 2021—2026",
         "arc-cat-selected": "日常作品", "arc-cat-other": "其他作品",
         "type-eco": "生态修复", "type-urban": "城市公共空间", "type-rural": "乡村振兴", "type-reuse": "适应性再利用", "type-detail": "构造与细节", "type-visual": "视觉艺术",
         "p-photo": "摄影", "p-sketch": "绘画草图",
-        
         "about-manifesto": "景观并非静态的背景，而是一个动态的生命系统。我们为自然与人类共同书写未来而设计框架。",
         "about-edu-title": "教育背景", "about-skill-title": "核心专长", "skill-digital": "数字营造", "skill-strategy": "设计策略", "skill-analog": "模拟与沟通",
-        "next-label": "下一个项目",
-        
-        /* 🌟 新增：教育背景的精准时间与描述翻译 */
-        "about-edu-milan-date": "2024 — 至今",
-        "about-edu-milan-desc": "景观建筑学硕士。土地景观遗产方向。",
-        "about-edu-sicau-date": "2019 — 2024",
-        "about-edu-sicau-title": "四川农业大学 (SICAU)",
-        "about-edu-sicau-desc": "风景园林学士。",
-        
-        "p1-meta": "生态修复 / 2024", "p1-title": "苏州河滨水空间", "p1-loc-label": "项目地点", "p1-loc-val": "中国，上海", "p1-scale-label": "项目规模", "p1-scale-val": "12 公顷", "p1-type-label": "项目类型", "p1-type-val": "滨水湿地", "p1-status-label": "项目状态", "p1-status-val": "已建成 (一期)", "p1-statement": "重塑破碎的城市边缘，将其转化为极具韧性的湿地系统。该设计在培育生态多样性的同时，提供了沉浸式的空间叙事，将废弃的基础设施转化为至关重要的城市绿肺。", "p1-h3-1": "参数化水文逻辑", "p1-p-1": "地形通过计算生成，以模拟历史洪水模式。借助 Grasshopper，地形阶地经过优化以抵御 50 年一遇的暴雨。", "p1-cap-1": "图 1. 与潮汐周期相融合的下沉栈道。", "p1-cap-2": "图 2. 透水铺装的算法分布。", "p1-cap-3": "图 3. 材质表达：预制混凝土与耐候钢。", "p1-h3-2": "生态剖面", "p1-p-2": "连续的剖面展示了从高密度城市肌理到生态修复边缘的过渡，突出了土壤生物工程技术的应用。", "p1-cap-4": "图 4. 横向生态剖面图。", "p1-next-title": "广场空间更新 →",
+        "about-edu-milan-date": "2024 — 至今", "about-edu-milan-desc": "景观建筑学硕士。土地景观遗产方向。",
+        "about-edu-sicau-date": "2019 — 2024", "about-edu-sicau-title": "四川农业大学 (SICAU)", "about-edu-sicau-desc": "风景园林学士。",
+        "next-label": "返回旅程",
+        "home-next-title": "返回首页 →",
 
-        "p2-meta": "城市公共空间 / 2023", "p2-title": "广场空间更新", "p2-loc-val": "意大利，米兰", "p2-scale-val": "5 公顷", "p2-type-val": "城市广场", "p2-status-val": "竞赛 - 一等奖", "p2-statement": "一项战术性城市主义干预，将机动车主导的十字路口归还给行人，通过微气候分析驱动，打造出一个流动的、多功能的市民空间。", "p2-h3-1": "气候响应型雨篷", "p2-p-1": "利用环境模拟工具绘制太阳辐射和风道映射，提出了一种模块化遮阳系统，使夏季地表温度降低 4°C。", "p2-cap-1": "图 1. 辐射分析与遮阳优化图解。", "p2-cap-2": "图 2. 参数化雨篷下的市民聚集空间。", "p2-cap-3": "图 3. 透水性城市家具细部。", "p2-h3-2": "社会性空间编舞", "p2-p-2": "铺装图案充当了细微的动线向导，在没有物理障碍的情况下界定了通行区和停留区。", "p2-cap-4": "图 4. 铺装图案生成映射。", "p2-next-title": "可持续生态营地 →",
+        // --- 🌟 Project 01: Riders' Supply Station (RSS) ---
+        "rss-meta": "城市服务设计 / 2022",
+        "rss-title": "骑手补给站",
+        "rss-loc-label": "项目地点", "rss-loc-val": "中国，成都",
+        "rss-type-label": "项目类型", "rss-type-val": "城市服务 / 社区基础设施",
+        "rss-user-label": "目标用户", "rss-user-val": "外卖骑手、居民、行人",
+        "rss-status-label": "项目状态", "rss-status-val": "学术项目 / 概念提案",
+        "rss-statement": "“骑手补给站”是一个面向外卖骑手与社区居民的公共服务设计。项目将被忽视的城市灰空间转化为模块化的补给网络，提供休息、换电与社交场所，并通过智慧平台构建更具包容性的城市支持系统。",
+        "rss-cap-1": "封面呈现项目的核心愿景：为不断穿行于城市中的外卖骑手创造一个临时性的城市庇护所。",
+        "rss-cap-2": "调研地图分析骑手路径、取餐区域、聚集点及休息位置，用于定位适合介入的空间节点。",
+        "rss-cap-3": "归纳骑手在行为、心理与空间层面的主要问题，并将其转化为休息、停车、充电与交流等模块化设计策略。",
+        "rss-cap-4": "空间规划系统通过点状节点、线性空间与面状公共空间三种类型，组织骑手服务网络。",
+        "rss-cap-5": "最终方案将实体补给站与智慧平台结合，为骑手提供换电、停车、休息与日常服务奖励支持。",
 
-        "p3-meta": "乡村振兴 / 2022", "p3-title": "可持续生态营地", "p3-loc-val": "中国，西安", "p3-scale-val": "20 公顷", "p3-type-val": "生态旅游", "p3-status-val": "概念提案", "p3-statement": "镶嵌于秦岭山脉中的低影响生态旅游框架。该项目在乡村经济激活与严格的生态保护红线之间取得了平衡。", "p3-h3-1": "地形的低干预植入", "p3-p-1": "建筑结构通过高脚柱基础轻巧地植入陡峭的地形中，最大限度地减少了土壤挖掘，保护了山体自然的表面水文径流。", "p3-cap-1": "图 1. 融入森林冠层的高脚木屋。", "p3-cap-2": "图 2. 最低环境影响的栈道施工图解。", "p3-cap-3": "图 3. 本土木材的建构节点。", "p3-h3-2": "水文代谢", "p3-p-2": "一个闭环水系统，利用分散式人工湿地在场地内处理中水，然后再将其释放回自然流域。", "p3-cap-4": "图 4. 灰水处理湿地系统图解。", "p3-next-title": "后工业遗址公园 →",
+        // --- 🌟 Project 02: Subtraction of Land (SOL) ---
+        "sol-meta": "乡村更新设计 / 2023",
+        "sol-title": "土地的减法",
+        "sol-loc-val": "中国，陕西咸阳",
+        "sol-type-val": "乡村更新 / 文旅规划",
+        "sol-user-val": "村民、游客、社区",
+        "sol-status-val": "概念提案",
+        "sol-statement": "“土地的减法”是一个基于陕西三原地坑村改造的乡村更新设计项目。项目以传统地坑院居住形态的保护与再转译为核心，通过建筑空间更新、公共空间梳理与生态环境改善，将乡村遗产与当代生活需求重新连接。设计在保留村民日常生活的基础上，引入游客体验与文旅功能，提出一种兼具文化传承、社区互动与乡村持续活力的共享村庄模式。",
+        "sol-cap-1": "图 1. 封面将项目呈现为乡村记忆与当代村庄生活之间的连接。",
+        "sol-cap-2": "图 2. 场地调研与演变：分析村庄结构、人口变化与更新潜力。",
+        "sol-cap-3": "图 3. 类型与现状问题：识别交通不便、建筑破损等核心矛盾。",
+        "sol-cap-4": "图 4. 更新策略与总体规划：构建面向村民与游客共享使用的乡村更新模式。",
+        "sol-cap-5": "图 5. 建筑空间转化：使传统居住空间适应当代使用需求。",
+        "sol-cap-6": "图 6. 公共空间梳理：形成游览路径、共享院落与林下休憩区。",
+        "sol-cap-7": "图 7. 生态改善与愿景：将村庄转化为更健康、可持续的生活环境。",
 
-        "p4-meta": "适应性再利用 / 2021", "p4-title": "后工业遗址公园", "p4-loc-val": "意大利，都灵", "p4-scale-val": "15 公顷", "p4-type-val": "棕地改造", "p4-status-val": "已建成 (二期)", "p4-statement": "将前汽车制造厂改造为后工业景观。该设计通过植物修复技术处理污染，并将工业废墟作为文化遗存加以保护。", "p4-h3-1": "植物修复网格", "p4-p-1": "在场地内部署了超富集植物网格，以提取土壤中的重金属，将清理过程转化为可见的、具有教育意义的景观。", "p4-cap-1": "图 1. 修复网格与工厂废墟的交汇。", "p4-cap-2": "图 2. 超富集植物物种的季节变化。", "p4-cap-3": "图 3. 工业钢材再利用改造为步行桥。", "p4-h3-2": "废墟即建构", "p4-p-2": "保留了工厂车间的混凝土骨架，以此来框定新的生态演替，模糊了自然与机器之间的界限。", "p4-cap-4": "图 4. 混凝土主厅内的自然演替种植。", "p4-next-title": "屋顶花园构造细节 →",
+        // --- 🌟 Project 03: Island Survival Program (ISP) ---
+        "isp-meta": "气候适应性设计 / 2023",
+        "isp-title": "岛屿生存计划",
+        "isp-loc-val": "印尼，Pulau Poaboloki 岛",
+        "isp-type-val": "推测性空间设计",
+        "isp-user-val": "生态系统、旅行者、滨海社区",
+        "isp-status-val": "概念提案",
+        "isp-statement": "“岛屿生存计划”是一个基于印度尼西亚群岛 Pulau Poaboloki 岛的推测性景观与气候适应设计项目。面对海平面上升带来的长期威胁，项目将岛屿想象为一个具有生命意识的主体：它希望在逐渐消失之前保护自身、保存生态价值，并与人类游客建立新的关系。设计通过海岸保护、生态修复、游览路径、水下体验与纪念塔系统，将岛屿转化为一个记录气候变化、支持共生关系并保存集体记忆的时间性景观。",
+        "isp-cap-1": "图 1. 愿景图将岛屿呈现为一个脆弱而诗性的景观空间，灯塔成为生存与记忆的象征。",
+        "isp-cap-2": "图 2. 封面将项目定义为一座献给自然的纪念碑，将岛屿想象为时间的载体。",
+        "isp-cap-3": "图 3. 场地调研与风险：分析岛屿地理位置、海平面威胁与未来空间介入路径。",
+        "isp-cap-4": "图 4. 海平面记录与目标：展示岛屿消失的过程，提出被认知、互动与记忆的目标。",
+        "isp-cap-5": "图 5. 总体规划与系统：通过保护、建构与纪念三类策略组织岛屿空间。",
+        "isp-cap-6": "图 6. 分阶段适应：展示岛屿在不同未来阶段的适应方式与架空交通系统。",
+        "isp-cap-7": "图 7. 未来体验场景：想象人类在不同阶段与岛屿相遇的方式，包括水下发现。",
+        "isp-cap-8": "图 8. 记忆之塔：通过观景与储存保存岛屿的碎片，并在海面上升中成为最终象征。",
 
-        "p5-meta": "构造与细节 / 2020", "p5-title": "屋顶花园构造细节", "p5-loc-val": "中国，上海", "p5-scale-val": "0.5 公顷", "p5-type-val": "商业屋顶", "p5-status-val": "已建成", "p5-statement": "在受限的屋顶环境中对构造细节的深入探索。该项目专注于轻质土壤基质、精确的水资源管理以及定制的材料连接节点。", "p5-h3-1": "重量与水文控制", "p5-p-1": "设计了一个多层基质系统，在满足严格的结构荷载限制的同时，最大限度地提高了应对夏季暴雨的蓄水能力。", "p5-cap-1": "图 1. 轻质种植基质轴测剖面。", "p5-cap-2": "图 2. 隐藏式排水沟构造细节。", "p5-cap-3": "图 3. 定制耐候钢种植池与木甲板的交接。", "p5-h3-2": "感官材料性", "p5-p-2": "选择能够优雅老化的材料——未经处理的木材、耐候钢和肌理混凝土——为这座城市绿洲提供了丰富的触觉体验。", "p5-cap-4": "图 4. 材料调色板及其岁月老化过程。", "p5-next-title": "苏州河滨水空间 →",
-
-        "photo-title": "摄影记录",
-        "photo-desc": "捕捉空间现象学、光影的流转，以及城市代谢的瞬间。",
-        "sketch-title": "绘画与草图",
-        "sketch-desc": "关于形态与建构的模拟探索，记录手与纸之间最原始的对话。",
-        "series-1-title": "系列 01：城市代谢",
-        "series-2-title": "系列 02：空间现象学"
+        // --- 🌟 Project 04: Breath of the Wilderness (BOW) ---
+        "bow-meta": "环境装置设计 / 2023",
+        "bow-title": "荒野之息",
+        "bow-loc-val": "美国加州，奥里克",
+        "bow-type-val": "荒野庇护空间设计",
+        "bow-user-val": "徒步者、访客、野生动物",
+        "bow-status-val": "概念提案 / 实体模型",
+        "bow-statement": "“荒野之息”是一个为探索者与野生动物而设计的体验式庇护空间项目，场地位于红木国家公园。项目提出一种轻型的垂直空间结构，为徒步者在森林中提供短暂停留、观察与沉浸体验的场所。设计受到传统中国灯笼几何逻辑的启发，发展出兼具围合感、通透性与环境回应性的折叠模块化表皮。它不仅是一个休息空间，也将建筑想象为人与动物之间的沟通媒介，在荒野中营造一种共处、好奇与发现的共享氛围。",
+        "bow-cap-1": "图 1. 封面将项目定义为探索者与森林相遇的诗性场所，是在荒野中被发现的“礼物”。",
+        "bow-cap-2": "图 2. 概念研究与构件：展示结构如何从灯笼几何演化为模块化的荒野庇护空间。",
+        "bow-cap-3": "图 3. 空间图纸与体验：突出观星、沐光、停留与野生动物共处的空间特质。",
+        "bow-cap-4": "图 4. 手工模型与组装：记录实体结构细节，突出项目具有触感的建构过程与模块系统。"
     }
 };
 
