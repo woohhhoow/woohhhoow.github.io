@@ -36,15 +36,13 @@
         <p class="reveal-fade" data-i18n="sol-statement">Loading project description...</p>
     </section>
 
-    <!-- 01 Cover -->
-    <section class="parallax-container">
-        <img src="../../asset/project_subtraction_of_land/01.jpg" alt="Cover" class="parallax-img">
-    </section>
-    <div class="single-img-section" style="padding-top: 20px;">
+    <section class="single-img-section">
+        <div class="img-wrap reveal-fade">
+            <img src="../../asset/project_subtraction_of_land/01.jpg" alt="Cover View">
+        </div>
         <span class="caption reveal-fade" data-i18n="sol-cap-1">Caption 01</span>
-    </div>
+    </section>
 
-    <!-- 02 Site Research -->
     <section class="single-img-section">
         <div class="img-wrap reveal-fade">
             <img src="../../asset/project_subtraction_of_land/02.jpg" alt="Site Research & Village Evolution">
@@ -52,23 +50,20 @@
         <span class="caption reveal-fade" data-i18n="sol-cap-2">Caption 02</span>
     </section>
 
-    <!-- 03 Typology -->
     <section class="single-img-section">
         <div class="img-wrap reveal-fade">
-            <img src="../../asset/project_subtraction_of_land/03.jpg" alt="Pit Courtyard Typology">
+            <img src="../../asset/project_subtraction_of_land/03.jpg" alt="Pit Courtyard Typology & Existing Issues">
         </div>
         <span class="caption reveal-fade" data-i18n="sol-cap-3">Caption 03</span>
     </section>
 
-    <!-- 04 Strategies -->
     <section class="single-img-section">
         <div class="img-wrap reveal-fade">
-            <img src="../../asset/project_subtraction_of_land/04.jpg" alt="Renovation Strategies">
+            <img src="../../asset/project_subtraction_of_land/04.jpg" alt="Renovation Strategies & Master Plan">
         </div>
         <span class="caption reveal-fade" data-i18n="sol-cap-4">Caption 04</span>
     </section>
 
-    <!-- 05 Architecture -->
     <section class="single-img-section">
         <div class="img-wrap reveal-fade">
             <img src="../../asset/project_subtraction_of_land/05.jpg" alt="Architectural Space Transformation">
@@ -76,7 +71,6 @@
         <span class="caption reveal-fade" data-i18n="sol-cap-5">Caption 05</span>
     </section>
 
-    <!-- 06 Spatial Combing -->
     <section class="single-img-section">
         <div class="img-wrap reveal-fade">
             <img src="../../asset/project_subtraction_of_land/06.jpg" alt="Public Spatial Combing">
@@ -84,15 +78,13 @@
         <span class="caption reveal-fade" data-i18n="sol-cap-6">Caption 06</span>
     </section>
 
-    <!-- 07 Ecological Improvement -->
-    <section class="single-img-section" style="margin-bottom: 100px;">
+    <section class="single-img-section" style="margin-bottom: clamp(60px, 10vh, 120px);">
         <div class="img-wrap reveal-fade">
-            <img src="../../asset/project_subtraction_of_land/07.jpg" alt="Ecological Improvement">
+            <img src="../../asset/project_subtraction_of_land/07.jpg" alt="Ecological Improvement & Vision">
         </div>
         <span class="caption reveal-fade" data-i18n="sol-cap-7">Caption 07</span>
     </section>
 
-    <!-- Footer Navigation (Jumps to Home) -->
     <a href="../../index.html" class="next-project hover-target">
         <span class="next-label" data-i18n="next-label">Return to Journey</span>
         <h2 class="next-title"><span data-i18n="home-next-title">HOME →</span></h2>
@@ -101,6 +93,12 @@
     <footer class="home-footer" style="padding-top: 50px;">
         <div class="container fade-up"><div class="footer-grid" style="grid-template-columns: 1fr;"><div class="footer-contact" style="border-left: none; padding-left: 0; text-align: center; align-items: center;"><div class="contact-block"><span class="copyright" data-i18n="footer-rights">© 2026 WU HAIWEN. ALL RIGHTS RESERVED.</span></div></div></div></div>
     </footer>
+
+    <div id="project-lightbox" class="project-lightbox">
+        <button id="project-lightbox-close" class="project-lightbox-close hover-target">×</button>
+        <img id="project-lightbox-img" class="project-lightbox-img" src="" alt="Fullscreen View">
+        <p id="project-lightbox-caption" class="project-lightbox-caption"></p>
+    </div>
 
     <script src="../../js/global.js"></script>
     <script src="../../js/project.js"></script>

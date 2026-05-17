@@ -1,5 +1,5 @@
 /* =========================================
-   home.js - 高斯海浪 (Retina高清) & 走马灯 (终极版)
+   home.js - 高斯海浪 (Retina高清) & 走马灯 (2行缓速版)
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -171,32 +171,28 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
-    // --- 双语支持的高级走马灯 ---
+    // --- 🌟 精调：双语支持的高级走马灯 (精简为 2 行，大幅降速) ---
     const marqueeSection = document.getElementById('dynamic-marquee');
     
     if (marqueeSection) {
         const currentLang = localStorage.getItem('whw_lang') || 'en';
         
         const wordsEn = [
-            'SYSTEMIC DESIGN', 'ECOLOGICAL RESILIENCE', 'SPATIAL NARRATIVE', 'MATERIAL TECTONICS', 
-            'ADAPTIVE INFRASTRUCTURE', 'PARAMETRIC COMPUTATION', 'CLIMATE RESPONSIVENESS', 
-            'DIGITAL CRAFT', 'URBAN METABOLISM', 'POST-INDUSTRIAL REGENERATION', 
-            'PHYTOREMEDIATION', 'HYDROLOGICAL DYNAMICS', 'MORPHOLOGICAL ANALYSIS', 
-            'PHENOMENOLOGICAL DESIGN', 'BIO-ENGINEERING', 'TERRITORIAL STRATEGY'
+            'URBAN RESILIENCE', 'SPATIAL EMPATHY', 'BLUE-GREEN INFRASTRUCTURE', 
+            'CLIMATE ADAPTATION', 'ECOLOGICAL RESTORATION', 'BUFFERING THE PULSE',
+            'SYSTEMIC ECOLOGIES', 'SPATIAL NARRATIVES'
         ];
         const wordsCn = [
-            '系统性设计', '生态韧性', '空间叙事', '材料建构', 
-            '适应性基础设施', '参数化计算', '气候响应', 
-            '数字营造', '城市代谢', '后工业复兴', 
-            '植物修复技术', '水文动力学', '形态学分析', 
-            '现象学设计', '生物工程', '宏观区域策略'
+            '城市韧性', '空间共情', '蓝绿基础设施', 
+            '气候适应', '生态修复', '缓冲脉动',
+            '系统化生态', '空间叙事'
         ];
         const words = currentLang === 'cn' ? wordsCn : wordsEn;
 
+        // 🌟 核心改动：仅保留 row-layer-0 和 row-layer-1 两行，且调低 baseSpeed 确保缓速
         const rows = [
-            { layerClass: 'row-layer-0', direction: -1, baseSpeed: 0.8, wordsCount: 16 },
-            { layerClass: 'row-layer-1', direction: 1, baseSpeed: 0.6, wordsCount: 18 },
-            { layerClass: 'row-layer-2', direction: -1, baseSpeed: 1.2, wordsCount: 12 }
+            { layerClass: 'row-layer-0', direction: -1, baseSpeed: 0.35, wordsCount: 16 },
+            { layerClass: 'row-layer-1', direction: 1, baseSpeed: 0.25, wordsCount: 18 }
         ];
 
         let marqueeData = [];
@@ -207,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let rowHtml = '';
             for(let i=0; i < rowConfig.wordsCount * 2; i++) {
                 const randomWord = words[Math.floor(Math.random() * words.length)];
-                const randomOpacity = (Math.random() * 0.7 + 0.3).toFixed(2); 
+                const randomOpacity = (Math.random() * 0.5 + 0.5).toFixed(2); 
                 rowHtml += `<span class="marquee-word" style="opacity: ${randomOpacity};">${randomWord}</span>`;
             }
             rowDiv.innerHTML = rowHtml;
@@ -218,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let speedMultiplier = 1;
         let targetSpeedMultiplier = 1;
 
+        // 触碰时优雅平滑减速
         marqueeSection.addEventListener('mouseenter', () => {
             targetSpeedMultiplier = 0.05; 
             marqueeSection.classList.add('is-hovered'); 

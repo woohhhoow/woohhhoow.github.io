@@ -36,15 +36,13 @@
         <p class="reveal-fade" data-i18n="bow-statement">Loading project description...</p>
     </section>
 
-    <!-- 01 Cover (Hero Parallax) -->
-    <section class="parallax-container">
-        <img src="../../asset/project_breath_of_the_wilderness/01.jpg" alt="Cover" class="parallax-img">
-    </section>
-    <div class="single-img-section" style="padding-top: 20px;">
+    <section class="single-img-section">
+        <div class="img-wrap reveal-fade">
+            <img src="../../asset/project_breath_of_the_wilderness/01.jpg" alt="Cover View">
+        </div>
         <span class="caption reveal-fade" data-i18n="bow-cap-1">Caption 01</span>
-    </div>
+    </section>
 
-    <!-- 02 Concept Research -->
     <section class="single-img-section">
         <div class="img-wrap reveal-fade">
             <img src="../../asset/project_breath_of_the_wilderness/02.jpg" alt="Concept Research & Component Generation">
@@ -52,7 +50,6 @@
         <span class="caption reveal-fade" data-i18n="bow-cap-2">Caption 02</span>
     </section>
 
-    <!-- 03 Spatial Drawings -->
     <section class="single-img-section">
         <div class="img-wrap reveal-fade">
             <img src="../../asset/project_breath_of_the_wilderness/03.jpg" alt="Spatial Drawings & Experience Rendering">
@@ -60,15 +57,13 @@
         <span class="caption reveal-fade" data-i18n="bow-cap-3">Caption 03</span>
     </section>
 
-    <!-- 04 Handmade Model -->
-    <section class="single-img-section" style="margin-bottom: 100px;">
+    <section class="single-img-section" style="margin-bottom: clamp(60px, 10vh, 120px);">
         <div class="img-wrap reveal-fade">
             <img src="../../asset/project_breath_of_the_wilderness/04.jpg" alt="Handmade Model & Assembly Process">
         </div>
         <span class="caption reveal-fade" data-i18n="bow-cap-4">Caption 04</span>
     </section>
 
-    <!-- Footer Navigation (Jumps to Home) -->
     <a href="../../index.html" class="next-project hover-target">
         <span class="next-label" data-i18n="next-label">Return to Journey</span>
         <h2 class="next-title"><span data-i18n="home-next-title">HOME →</span></h2>
@@ -77,6 +72,12 @@
     <footer class="home-footer" style="padding-top: 50px;">
         <div class="container fade-up"><div class="footer-grid" style="grid-template-columns: 1fr;"><div class="footer-contact" style="border-left: none; padding-left: 0; text-align: center; align-items: center;"><div class="contact-block"><span class="copyright" data-i18n="footer-rights">© 2026 WU HAIWEN. ALL RIGHTS RESERVED.</span></div></div></div></div>
     </footer>
+
+    <div id="project-lightbox" class="project-lightbox">
+        <button id="project-lightbox-close" class="project-lightbox-close hover-target">×</button>
+        <img id="project-lightbox-img" class="project-lightbox-img" src="" alt="Fullscreen View">
+        <p id="project-lightbox-caption" class="project-lightbox-caption"></p>
+    </div>
 
     <script src="../../js/global.js"></script>
     <script src="../../js/project.js"></script>

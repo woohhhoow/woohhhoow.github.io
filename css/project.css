@@ -1,52 +1,180 @@
 /* =========================================
-   project.css - 项目详情页 (全设备适配版)
+   project.css - 社论画册级项目详情页排版引擎
    ========================================= */
 
 .navbar { mix-blend-mode: normal; }
 .logo, .nav-link { color: var(--fg-color); }
 .nav-link::after { background-color: var(--fg-color); }
 
-.project-hero { min-height: clamp(50vh, 85vh, 900px); display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(100px, 15vh, 150px) 5vw clamp(40px, 8vh, 80px); }
-.project-meta-top { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 20px; opacity: 0.5; }
-.project-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 8vw, 8rem); line-height: 1; font-weight: 400; margin-bottom: clamp(30px, 6vw, 60px); max-width: 95%; }
-
-.project-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: clamp(20px, 4vw, 40px); border-top: 1px solid var(--line-color); padding-top: 25px; }
-.info-col h5 { font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.4; margin-bottom: 8px;}
-.info-col p { font-size: clamp(0.9rem, 1vw, 1rem); font-weight: 300; color: var(--fg-color); }
-
-.project-statement { padding: clamp(40px, 8vw, 80px) 5vw clamp(60px, 12vw, 120px); }
-.project-statement p { font-family: var(--font-serif); font-size: clamp(1.3rem, 3vw, 3rem); line-height: 1.5; max-width: 1400px; color: var(--fg-color); }
-
-.parallax-container { width: 100vw; height: clamp(40vh, 80vh, 800px); overflow: hidden; position: relative; margin-bottom: clamp(60px, 15vw, 150px); }
-.parallax-img { width: 100%; height: 120%; object-fit: cover; position: absolute; top: -10%; will-change: transform; filter: contrast(1.05); }
-
-.editorial-section { padding: 0 5vw clamp(60px, 15vw, 150px); display: grid; grid-template-columns: 4fr 6fr; gap: clamp(30px, 8vw, 100px); align-items: start; }
-.text-block h3 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2.5rem); font-weight: 400; margin-bottom: clamp(15px, 3vw, 30px); }
-.text-block p { font-size: clamp(0.9rem, 1.1vw, 1.1rem); line-height: 1.8; color: rgba(0,0,0,0.7); font-weight: 300; }
-
-.img-group-offset { display: flex; flex-direction: column; gap: clamp(30px, 8vw, 80px); }
-.img-wrap { overflow: hidden; position: relative; background-color: #f0f0f0; }
-.img-wrap img { width: 100%; display: block; transform: scale(1.05); transition: transform 1.5s var(--ease-out-expo); }
-
-.single-img-section { padding: 0 5vw clamp(60px, 15vw, 150px); }
-.caption { font-family: var(--font-sans); font-size: clamp(9px, 1vw, 10px); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-top: 12px; display: block; }
-
-.next-project { padding: clamp(50px, 10vw, 100px) 5vw; border-top: 1px solid var(--line-color); text-align: center; display: block; transition: background-color 0.4s; }
-@media (hover: hover) { .next-project:hover { background-color: rgba(0,0,0,0.02); } .next-project:hover .next-title { transform: translateX(20px); } }
-.next-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.5; display: block; margin-bottom: 15px;}
-.next-title { font-family: var(--font-serif); font-size: clamp(1.5rem, 5vw, 4rem); color: var(--fg-color); transition: transform 0.4s; display: inline-block; }
-
-.reveal-fade { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
-.reveal-fade.is-visible { opacity: 1; transform: translateY(0); }
-.img-wrap.is-visible img { transform: scale(1); }
-
-/* 🌟 设备适配：抹平网格布局差异 */
-@media (max-width: 900px) {
-    .editorial-section { grid-template-columns: 1fr; gap: 40px; }
-    .img-group-offset > div { margin-top: 0 !important; }
-    .text-block { position: relative !important; top: 0 !important; }
-    .project-info-grid { grid-template-columns: repeat(2, 1fr); }
+/* --- 1. 项目头部 (优雅呼吸感) --- */
+.project-hero { 
+    padding: clamp(120px, 16vh, 180px) 8vw clamp(40px, 6vh, 80px); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
 }
-@media (max-width: 480px) {
-    .project-info-grid { grid-template-columns: 1fr; gap: 15px; } 
+.project-meta-top { 
+    font-family: var(--font-sans); 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.25em; 
+    margin-bottom: 20px; 
+    opacity: 0.5; 
+}
+.project-title { 
+    font-family: var(--font-serif); 
+    font-size: clamp(2rem, 5.5vw, 5.5rem); 
+    line-height: 1.1; 
+    font-weight: 400; 
+    margin-bottom: clamp(40px, 6vw, 70px); 
+    max-width: 90%; 
+}
+
+/* 基础参数网格 */
+.project-info-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+    border-top: 1px solid var(--line-color); 
+    padding-top: 30px; 
+    width: 100%;
+}
+.info-col h5 { 
+    font-family: var(--font-sans); 
+    font-size: 10px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.2em; 
+    opacity: 0.4; 
+    margin-bottom: 10px;
+}
+.info-col p { 
+    font-size: clamp(0.9rem, 1.05vw, 1.1rem); 
+    font-weight: 400; 
+    color: var(--fg-color); 
+    line-height: 1.4;
+}
+
+/* --- 2. 核心陈述区 --- */
+.project-statement { 
+    padding: 0 8vw clamp(60px, 8vw, 100px); 
+}
+.project-statement p { 
+    font-family: var(--font-serif); 
+    font-size: clamp(1.2rem, 1.8vw, 2rem); 
+    line-height: 1.6; 
+    max-width: 1200px; 
+    color: var(--fg-color); 
+    font-weight: 400;
+}
+
+/* --- 3. 🌟 社论画册流布局 (核心重组) --- */
+.single-img-section { 
+    padding: 0 8vw clamp(60px, 10vh, 120px); 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 严格约束图片框，不抢夺视线，保护图纸不被任何设备裁剪 */
+.img-wrap { 
+    width: 100%;
+    max-width: 85vw; /* 绝不占满，预留书页白边 */
+    margin: 0 auto;
+    overflow: hidden; 
+    position: relative; 
+    background-color: rgba(0, 0, 0, 0.02);
+    /* 🌟 根据 3358*2381 锁定黄金高宽比 */
+    aspect-ratio: 3358 / 2381; 
+    max-height: 78vh; /* 确保一屏内绝对可以完整看清整张图 */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03); /* 极淡的艺术纸张阴影 */
+}
+
+.img-wrap img { 
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; /* 🌟 核心修改：改为内含，誓死保护图纸边缘 */
+    display: block; 
+    cursor: zoom-in; /* 放大提示 */
+    transform: scale(1); 
+    will-change: transform, filter;
+    transition: transform 0.8s var(--ease-out-expo), filter 0.8s ease; 
+}
+/* 微交互动画：悬停时极度细腻的拉近感 */
+@media (hover: hover) {
+    .img-wrap:hover img { transform: scale(1.015); }
+}
+
+/* 图注精确控制 */
+.caption { 
+    font-family: var(--font-sans); 
+    font-size: clamp(10px, 0.85vw, 12px); 
+    text-transform: uppercase; 
+    letter-spacing: 0.15em; 
+    opacity: 0.5; 
+    margin-top: 20px; 
+    display: block; 
+    width: 100%;
+    max-width: 85vw;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* --- 4. 🌟 项目详情页高级灯箱 (Lightbox) --- */
+.project-lightbox {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background-color: rgba(10, 10, 10, 0.98); 
+    backdrop-filter: blur(15px);
+    z-index: 100000; display: flex; flex-direction: column; 
+    justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+}
+.project-lightbox.active { opacity: 1; pointer-events: auto; }
+
+.project-lightbox-img { 
+    max-width: 92vw; max-height: 85vh; 
+    object-fit: contain; 
+    transform: scale(0.97); 
+    will-change: transform;
+    transition: transform 0.5s var(--ease-out-expo); 
+}
+.project-lightbox.active .project-lightbox-img { transform: scale(1); }
+
+.project-lightbox-caption { 
+    margin-top: 25px; color: #fff; font-size: 11px; 
+    letter-spacing: 0.2em; text-transform: uppercase; 
+    opacity: 0.6; text-align: center; padding: 0 40px;
+    max-width: 800px; line-height: 1.6;
+}
+.project-lightbox-close { 
+    position: absolute; top: 40px; right: 5vw; color: #fff; font-size: 2.5rem; 
+    cursor: pointer; background: none; border: none; padding: 10px; 
+    transition: opacity 0.3s; opacity: 0.4; font-family: var(--font-sans); line-height: 1; 
+}
+.project-lightbox-close:hover { opacity: 1; }
+
+/* --- 5. 尾部返回跳转区 --- */
+.next-project { padding: clamp(80px, 12vh, 150px) 8vw; border-top: 1px solid var(--line-color); text-align: center; display: block; }
+.next-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; opacity: 0.5; display: block; margin-bottom: 20px;}
+.next-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 3.5rem); color: var(--fg-color); transition: transform 0.4s var(--ease-out-expo); display: inline-block; }
+@media (hover: hover) { .next-project:hover .next-title { transform: translateY(5px); } }
+
+/* 滚动显影引擎 */
+.reveal-fade { opacity: 0; transform: translateY(25px); will-change: transform, opacity; transition: opacity 1.2s var(--ease-out-expo), transform 1.2s var(--ease-out-expo); }
+.reveal-fade.is-visible { opacity: 1; transform: translateY(0); }
+
+/* --- 6. 全端精密自适应断点 --- */
+@media (max-width: 1024px) {
+    .project-info-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    .single-img-section { padding: 0 5vw clamp(40px, 8vh, 80px); }
+    .img-wrap { max-width: 100%; }
+    .caption { max-width: 100%; }
+}
+@media (max-width: 600px) {
+    .project-hero { padding-top: 100px; padding-left: 5vw; padding-right: 5vw; }
+    .project-info-grid { grid-template-columns: 1fr; gap: 20px; padding-top: 20px; }
+    .project-statement { padding-left: 5vw; padding-right: 5vw; }
+    .project-statement p { font-size: 1.25rem; line-height: 1.5; }
+    .img-wrap { aspect-ratio: auto; height: auto; max-height: 60vh; } /* 手机端释放高度锁 */
+    .project-lightbox-close { top: 20px; right: 5vw; }
 }
