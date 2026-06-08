@@ -1,44 +1,27 @@
 /* =========================================
-   archive.js - 手风琴逻辑与幽灵图片引擎
+   archive.js - 图文画廊版逻辑引擎
    ========================================= */
+
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 🌟 1. 手风琴展开/收起逻辑
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
     
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const item = header.parentElement;
-            
-            // 切换当前面板的状态 (高度由 CSS grid 动画接管)
-            item.classList.toggle('active');
-        });
-    });
-
-    // 🌟 2. 幽灵图片悬停逻辑
-    const projectRows = document.querySelectorAll('.project-row');
-    const hoverImage = document.querySelector('.hover-image-reveal');
-    const isTouchDevice = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
-
-    if (projectRows.length > 0 && hoverImage && !isTouchDevice) {
-        
-        document.addEventListener('mousemove', (e) => {
-            hoverImage.style.left = e.clientX + 'px';
-            hoverImage.style.top = e.clientY + 'px';
-        });
-
-        projectRows.forEach(row => {
-            row.addEventListener('mouseenter', () => {
-                const imgUrl = row.getAttribute('data-image');
-                if (imgUrl) {
-                    hoverImage.style.backgroundImage = `url(${imgUrl})`;
-                    hoverImage.classList.add('visible');
+    // --- 1. 硬件级无延迟滚动显影 (IntersectionObserver) ---
+    const fadeElements = document.querySelectorAll('.fade-up');
+    
+    if (fadeElements.length > 0) {
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // 触发后立即取消观察，节省浏览器性能
+                    observer.unobserve(entry.target); 
                 }
             });
-
-            row.addEventListener('mouseleave', () => {
-                hoverImage.classList.remove('visible');
-            });
+        }, { 
+            threshold: 0.05, 
+            rootMargin: "0px 0px -30px 0px" 
         });
+
+        fadeElements.forEach(el => revealOnScroll.observe(el));
     }
+    
 });

@@ -12,7 +12,6 @@
 </head>
 <body>
     <div class="cursor"></div>
-    <div class="hover-image-reveal"></div>
 
     <nav class="navbar">
         <div class="nav-left"><a href="../index.html" class="logo">WU HAIWEN</a></div>
@@ -25,80 +24,134 @@
     </nav>
 
     <header class="archive-header">
-        <h1 class="archive-title" data-i18n="arc-title">Project Archive</h1>
-        <p class="archive-subtitle" data-i18n="arc-sub">Chronological Index 2021—2026</p>
+        <h1 class="archive-title fade-up" data-i18n="arc-title">Project Archive</h1>
+        <p class="archive-subtitle fade-up" data-i18n="arc-sub">Chronological Index 2021—2026</p>
     </header>
 
     <section class="projects-section">
         
-        <div class="accordion-item active">
-            <div class="accordion-header hover-target">
-                <h2 class="accordion-title" data-i18n="arc-cat-selected">Selected Works</h2>
-                <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <div class="accordion-inner projects-list">
-                    <!-- 项目 01: Riders' Supply Station -->
-                    <a href="../projects/project_riders_supply_station/index.html" class="project-row hover-target" data-image="../asset/project_riders_supply_station/01.jpg">
-                        <div class="proj-col proj-num">01</div>
-                        <div class="proj-col proj-name" data-i18n="rss-title">RIDERS' SUPPLY STATION</div>
-                        <div class="proj-col proj-type" data-i18n="rss-type-val">Urban Service / Infrastructure</div>
-                        <div class="proj-col proj-year">2022</div>
-                    </a>
-                    <div class="separator"></div>
-
-                    <!-- 项目 02: Subtraction of Land -->
-                    <a href="../projects/project_subtraction_of_land/index.html" class="project-row hover-target" data-image="../asset/project_subtraction_of_land/01.jpg">
-                        <div class="proj-col proj-num">02</div>
-                        <div class="proj-col proj-name" data-i18n="sol-title">SUBTRACTION OF LAND</div>
-                        <div class="proj-col proj-type" data-i18n="sol-type-val">Rural Renewal / Heritage</div>
-                        <div class="proj-col proj-year">2023</div>
-                    </a>
-                    <div class="separator"></div>
-
-                    <!-- 项目 03: Island Survival Program -->
-                    <a href="../projects/project_island_survival_program/index.html" class="project-row hover-target" data-image="../asset/project_island_survival_program/01.jpg">
-                        <div class="proj-col proj-num">03</div>
-                        <div class="proj-col proj-name" data-i18n="isp-title">ISLAND SURVIVAL PROGRAM</div>
-                        <div class="proj-col proj-type" data-i18n="isp-type-val">Speculative Spatial Design</div>
-                        <div class="proj-col proj-year">2023</div>
-                    </a>
-                    <div class="separator"></div>
-
-                    <!-- 🌟 项目 04: Breath of the Wilderness -->
-                    <a href="../projects/project_breath_of_the_wilderness/index.html" class="project-row hover-target" data-image="../asset/project_breath_of_the_wilderness/01.jpg">
-                        <div class="proj-col proj-num">04</div>
-                        <div class="proj-col proj-name" data-i18n="bow-title">BREATH OF THE WILDERNESS</div>
-                        <div class="proj-col proj-type" data-i18n="bow-type-val">Wilderness Shelter Design</div>
-                        <div class="proj-col proj-year">2023</div>
-                    </a>
-                    <div class="separator"></div>
+        <div class="archive-category-title fade-up" data-i18n="arc-cat-selected">Selected Works</div>
+        
+        <div class="archive-gallery">
+            
+            <a href="../projects/project_riders_supply_station/index.html" class="archive-card fade-up hover-target">
+                <div class="card-image-wrap">
+                    <img src="../asset/project_riders_supply_station/01.jpg" alt="Riders' Supply Station">
+                    <div class="card-overlay">
+                        <div class="overlay-gradient"></div>
+                        <div class="circle-btn">↗</div>
+                        <div class="overlay-text">
+                            <p data-i18n="rss-statement"></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span data-i18n="rss-type-val">Community Infrastructure</span>
+                        <span>2022</span>
+                    </div>
+                    <h2 class="card-title" data-i18n="rss-title">RIDERS' SUPPLY STATION</h2>
+                </div>
+            </a>
+
+            <a href="../projects/project_subtraction_of_land/index.html" class="archive-card fade-up hover-target">
+                <div class="card-image-wrap">
+                    <img src="../asset/project_subtraction_of_land/01.jpg" alt="Subtraction of Land">
+                    <div class="card-overlay">
+                        <div class="overlay-gradient"></div>
+                        <div class="circle-btn">↗</div>
+                        <div class="overlay-text">
+                            <p data-i18n="sol-statement"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span data-i18n="sol-type-val">Rural Renewal / Heritage</span>
+                        <span>2023</span>
+                    </div>
+                    <h2 class="card-title" data-i18n="sol-title">SUBTRACTION OF LAND</h2>
+                </div>
+            </a>
+
+            <a href="../projects/project_island_survival_program/index.html" class="archive-card fade-up hover-target">
+                <div class="card-image-wrap">
+                    <img src="../asset/project_island_survival_program/01.jpg" alt="Island Survival Program">
+                    <div class="card-overlay">
+                        <div class="overlay-gradient"></div>
+                        <div class="circle-btn">↗</div>
+                        <div class="overlay-text">
+                            <p data-i18n="isp-statement"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span data-i18n="isp-type-val">Speculative Spatial Design</span>
+                        <span>2023</span>
+                    </div>
+                    <h2 class="card-title" data-i18n="isp-title">ISLAND SURVIVAL PROGRAM</h2>
+                </div>
+            </a>
+
+            <a href="../projects/project_breath_of_the_wilderness/index.html" class="archive-card fade-up hover-target">
+                <div class="card-image-wrap">
+                    <img src="../asset/project_breath_of_the_wilderness/01.jpg" alt="Breath of the Wilderness">
+                    <div class="card-overlay">
+                        <div class="overlay-gradient"></div>
+                        <div class="circle-btn">↗</div>
+                        <div class="overlay-text">
+                            <p data-i18n="bow-statement"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span data-i18n="bow-type-val">Wilderness Shelter Design</span>
+                        <span>2023</span>
+                    </div>
+                    <h2 class="card-title" data-i18n="bow-title">BREATH OF THE WILDERNESS</h2>
+                </div>
+            </a>
+
         </div>
 
-        <div class="accordion-item">
-            <div class="accordion-header hover-target">
-                <h2 class="accordion-title" data-i18n="arc-cat-other">Other Works</h2>
-                <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-                <div class="accordion-inner projects-list">
-                    <a href="../projects/photography/index.html" class="project-row hover-target" data-image="https://picsum.photos/id/1048/800/1000">
-                        <div class="proj-col proj-num">06</div>
-                        <div class="proj-col proj-name" data-i18n="p-photo">Photography</div>
-                        <div class="proj-col proj-type" data-i18n="type-visual">Visual Arts</div>
-                        <div class="proj-col proj-year">2024</div>
-                    </a>
-                    <div class="separator"></div>
-                    <a href="../projects/sketches/index.html" class="project-row hover-target" data-image="https://picsum.photos/id/175/800/1000">
-                        <div class="proj-col proj-num">07</div>
-                        <div class="proj-col proj-name" data-i18n="p-sketch">Sketches & Drawings</div>
-                        <div class="proj-col proj-type" data-i18n="type-visual">Visual Arts</div>
-                        <div class="proj-col proj-year">2023</div>
-                    </a>
+        <div class="archive-category-title fade-up" style="margin-top: clamp(60px, 8vw, 100px);" data-i18n="arc-cat-other">Other Works</div>
+        
+        <div class="archive-gallery">
+            <a href="../projects/photography/index.html" class="archive-card fade-up hover-target">
+                <div class="card-image-wrap">
+                    <img src="https://picsum.photos/id/1048/800/600" alt="Photography">
+                    <div class="card-overlay">
+                        <div class="overlay-gradient"></div>
+                        <div class="circle-btn">↗</div>
+                    </div>
                 </div>
-            </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span data-i18n="type-visual">Visual Arts</span>
+                        <span>2024</span>
+                    </div>
+                    <h2 class="card-title" data-i18n="p-photo">Photography</h2>
+                </div>
+            </a>
+
+            <a href="../projects/sketches/index.html" class="archive-card fade-up hover-target">
+                <div class="card-image-wrap">
+                    <img src="https://picsum.photos/id/175/800/600" alt="Sketches">
+                    <div class="card-overlay">
+                        <div class="overlay-gradient"></div>
+                        <div class="circle-btn">↗</div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span data-i18n="type-visual">Visual Arts</span>
+                        <span>2023</span>
+                    </div>
+                    <h2 class="card-title" data-i18n="p-sketch">Sketches & Drawings</h2>
+                </div>
+            </a>
         </div>
 
     </section>
