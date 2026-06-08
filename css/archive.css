@@ -1,56 +1,192 @@
 /* =========================================
-   archive.css - 作品总览页 (全设备适配版)
+   archive.css - 图文画廊与悬停信息浮现引擎
    ========================================= */
 
-.archive-header { padding: clamp(120px, 15vh, 200px) 5vw clamp(40px, 8vh, 60px); text-align: center; }
-.archive-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 6rem); font-weight: 400; line-height: 1; color: var(--fg-color); }
-.archive-subtitle { font-size: clamp(9px, 1vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 20px; opacity: 0.5; color: var(--fg-color); }
-
-.projects-section { padding: 0 5vw clamp(80px, 15vh, 150px); }
-
-.accordion-item { border-top: 1px solid var(--line-color); }
-.accordion-item:last-child { border-bottom: 1px solid var(--line-color); }
-
-.accordion-header { display: flex; justify-content: space-between; align-items: center; padding: clamp(20px, 4vw, 40px) 0; cursor: pointer; transition: opacity 0.3s; }
-.accordion-header:hover { opacity: 0.6; }
-.accordion-title { font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 3rem); font-weight: 400; color: var(--fg-color); }
-.accordion-icon { font-size: clamp(1.5rem, 2.5vw, 2.5rem); font-weight: 300; transition: transform 0.5s var(--ease-out-expo); color: var(--fg-color); }
-
-.accordion-content { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.7s var(--ease-out-expo); }
-.accordion-inner { overflow: hidden; min-height: 0; }
-.accordion-item.active .accordion-content { grid-template-rows: 1fr; }
-.accordion-item.active .accordion-icon { transform: rotate(45deg); }
-
-.projects-list { display: flex; flex-direction: column; }
-.project-row { display: flex; padding: clamp(15px, 3vw, 30px) 0; align-items: center; transition: all 0.4s var(--ease-out-expo); position: relative; z-index: 10; color: var(--fg-color); }
-
-@media (hover: hover) and (pointer: fine) {
-    .projects-list:hover .project-row { opacity: 0.3; }
-    .projects-list:hover .project-row:hover { opacity: 1; }
-    .project-row:hover .proj-name { transform: translateX(20px); }
+/* 🌟 页头排版 */
+.archive-header {
+    padding: clamp(120px, 18vh, 200px) 8vw clamp(40px, 8vh, 80px);
+    border-bottom: 1px solid var(--line-color);
+}
+.archive-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 400;
+    color: var(--fg-color);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+.archive-subtitle {
+    font-family: var(--font-sans);
+    font-size: clamp(9px, 1vw, 11px);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
 }
 
-.proj-col { flex: 1; font-size: clamp(0.9rem, 1.5vw, 1.2rem); }
-.proj-num { flex: 0.5; font-size: 11px; opacity: 0.5; }
-.proj-name { flex: 3; font-family: var(--font-serif); font-size: clamp(1.2rem, 3vw, 3rem); transition: transform 0.4s var(--ease-out-expo); line-height: 1.1; padding-right: 15px;}
-.proj-type { flex: 2; font-weight: 300; opacity: 0.6; font-size: clamp(9px, 1.2vw, 13px); letter-spacing: 0.05em; text-transform: uppercase; }
-.proj-year { flex: 0.5; text-align: right; font-size: 11px; }
+.projects-section {
+    padding-bottom: clamp(60px, 10vh, 120px);
+}
 
-.hover-image-reveal { position: fixed; top: 0; left: 0; width: 350px; height: 450px; background-size: cover; background-position: center; pointer-events: none; z-index: 500; opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: opacity 0.4s var(--ease-out-expo), transform 0.6s var(--ease-out-expo); filter: grayscale(100%) contrast(1.1); box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
-.hover-image-reveal.visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+/* 分类界线 */
+.archive-category-title {
+    font-family: var(--font-sans);
+    font-size: clamp(10px, 1.2vw, 12px);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    opacity: 0.4;
+    margin: clamp(40px, 6vw, 60px) 8vw 30px;
+    border-bottom: 1px solid var(--line-color);
+    padding-bottom: 15px;
+}
 
-/* 🌟 设备适配 */
+/* 🌟 画廊网格系统 */
+.archive-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(40px, 6vw, 80px) clamp(30px, 4vw, 50px);
+    padding: 0 8vw;
+}
+
+/* 🌟 项目卡片基座 */
+.archive-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--fg-color);
+    cursor: pointer;
+}
+
+.card-image-wrap {
+    position: relative;
+    width: 100%;
+    /* 锁定建筑图纸的高宽比 */
+    aspect-ratio: 3358 / 2381;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.03);
+    margin-bottom: 25px;
+}
+
+.card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 1.2s var(--ease-out-expo);
+}
+
+/* 🌟 悬停遮罩层 (暗黑景深) */
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    backdrop-filter: blur(0px); /* 默认无模糊 */
+}
+
+/* 底部黑色渐变，确保白色字体绝对清晰 */
+.overlay-gradient {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+}
+
+/* 🌟 右上角跃动箭头 */
+.circle-btn {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-family: var(--font-sans);
+    transform: scale(0.5) translate(-20px, 20px);
+    opacity: 0;
+    z-index: 2;
+    transition: transform 0.6s var(--ease-out-expo), opacity 0.4s ease;
+}
+
+/* 🌟 悬停浮现的简介文本 */
+.overlay-text {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding: clamp(20px, 3vw, 40px);
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.8s var(--ease-out-expo), opacity 0.6s ease;
+}
+
+.overlay-text p {
+    font-family: var(--font-serif);
+    font-size: clamp(0.95rem, 1.2vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+    font-weight: 300;
+    margin: 0;
+    /* 核心：只保留 4 行文本，超出显示省略号 */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 🌟 核心 Hover 交互群组 */
+@media (hover: hover) {
+    .archive-card:hover .card-image-wrap img { 
+        transform: scale(1.04); 
+    }
+    .archive-card:hover .card-overlay { 
+        opacity: 1; 
+        backdrop-filter: blur(4px); /* 悬停时轻微磨砂感 */
+    }
+    .archive-card:hover .circle-btn { 
+        transform: scale(1) translate(0, 0); 
+        opacity: 1; 
+        transition-delay: 0.1s; /* 箭头稍微延迟出现，产生节奏感 */
+    }
+    .archive-card:hover .overlay-text {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: 0.15s; /* 文本最后浮现，产生叙事感 */
+    }
+}
+
+/* 🌟 卡片外部文本信息 */
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: clamp(9px, 0.9vw, 11px);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.5;
+    margin-bottom: 12px;
+}
+.card-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 1.8vw, 2rem);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo); }
+.fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+/* 🌟 全设备流体自适应断点 */
 @media (max-width: 900px) {
-    .hover-image-reveal { display: none !important; } 
-    .project-row { flex-direction: column; align-items: flex-start; gap: 8px; padding: 25px 0; border-bottom: 1px solid rgba(0,0,0,0.05);}
-    .project-row:last-child { border-bottom: none; }
-    .proj-col { flex: none; width: 100%; text-align: left; }
-    .proj-num { display: none; } 
-    .proj-name { font-size: 1.5rem; margin-bottom: 5px; }
-    .proj-type { font-size: 10px; opacity: 0.7; }
-    .proj-year { text-align: left; font-size: 10px; opacity: 0.5; margin-top: 2px; }
-}
-@media (max-width: 480px) {
-    .archive-title { font-size: 2.2rem; }
-    .accordion-title { font-size: 1.3rem; }
+    .archive-header { padding-top: 140px; }
+    /* 平板及手机端自动变为单列瀑布流 */
+    .archive-gallery { grid-template-columns: 1fr; gap: clamp(50px, 8vh, 80px); }
+    .overlay-text p { -webkit-line-clamp: 3; } /* 屏幕变窄时缩减行数 */
 }
