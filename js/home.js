@@ -143,8 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 let waveTop = logicalHeight * layer.yBase - 60; 
                 let gradient = ctx.createLinearGradient(0, waveTop, 0, logicalHeight);
-                gradient.addColorStop(0, `rgba(${layer.color}, 0.15)`); 
-                gradient.addColorStop(1, `rgba(${layer.color}, 0.0)`);  
+                gradient.addColorStop(0, `rgba(${layer.color}, 0.2)`); 
+                
+                // 🌟 核心修复：将底部的透明度从 0.0 改为 0.06，赋予底部水体真实厚度，不再留白
+                gradient.addColorStop(1, `rgba(${layer.color}, 0.06)`);  
 
                 ctx.fillStyle = gradient;
                 ctx.fill();
@@ -171,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animate();
     }
 
-    // --- 🌟 精调：双语支持的高级走马灯 (精简为 2 行，大幅降速) ---
+    // --- 🌟 双语支持的高级走马灯 ---
     const marqueeSection = document.getElementById('dynamic-marquee');
     
     if (marqueeSection) {
@@ -189,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
         const words = currentLang === 'cn' ? wordsCn : wordsEn;
 
-        // 🌟 核心改动：仅保留 row-layer-0 和 row-layer-1 两行，且调低 baseSpeed 确保缓速
         const rows = [
             { layerClass: 'row-layer-0', direction: -1, baseSpeed: 0.35, wordsCount: 16 },
             { layerClass: 'row-layer-1', direction: 1, baseSpeed: 0.25, wordsCount: 18 }
@@ -214,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let speedMultiplier = 1;
         let targetSpeedMultiplier = 1;
 
-        // 触碰时优雅平滑减速
         marqueeSection.addEventListener('mouseenter', () => {
             targetSpeedMultiplier = 0.05; 
             marqueeSection.classList.add('is-hovered'); 
