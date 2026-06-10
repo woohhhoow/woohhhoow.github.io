@@ -1,0 +1,226 @@
+# Project Basic Information / 项目基本信息
+
+**Project Title / 项目名称**
+
+ORBA RIVER SUSTAINABILITY
+
+奥尔巴河流域可持续更新
+
+**Project Subtitle / 项目副标题**
+
+A Blue-Green Framework Reconnecting River, Town, and Agriculture
+
+以蓝绿框架重新连接河流、城镇与农业景观
+
+**Project Folder Name / 项目文件夹名称**
+
+`project_orba_river_sustainability`
+
+**Project Type / 项目类型**
+
+Regional Landscape Planning / Ecological Restoration / Riparian Public Space Design
+
+区域景观规划 / 生态修复 / 河岸公共空间设计
+
+**Project Time / 项目时间**
+
+January 2025
+
+2025年1月
+
+**Location / 项目地点**
+
+Orba River Basin, Province of Alessandria, Piedmont, Italy
+
+意大利皮埃蒙特大区亚历山德里亚省，奥尔巴河流域
+
+**Target Users / 目标用户**
+
+Local Residents / Riparian Communities / Visitors / Cyclists / Agricultural Communities
+
+当地居民 / 河岸社区 / 游客 / 骑行者 / 农业社区
+
+**Design Focus / 设计重点**
+
+Blue-Green Infrastructure / Riparian Restoration / Flood Resilience / Agricultural Landscape Integration / Community Connectivity
+
+蓝绿基础设施 / 河岸生态修复 / 洪水韧性 / 农业景观融合 / 社区连通
+
+**Keywords / 关键词**
+
+Orba River / Regional Strategy / Ecological Baseline / Floodplain Restoration / Mine Park / Community Parks / Slow Mobility Network
+
+奥尔巴河 / 区域策略 / 生态基底 / 洪泛区修复 / 矿坑公园 / 社区公园 / 慢行网络
+
+---
+
+# Project Introduction / 项目介绍
+
+## English
+
+Orba River Sustainability is a regional landscape strategy for restoring the ecological baseline of the Orba River basin. Responding to fragmented habitats, flood vulnerability, agricultural pressure and disturbed extraction sites, the project establishes a continuous blue-green framework along the river corridor. Ecological restoration is combined with recreational spaces and slow-mobility connections, linking the river landscape with nearby communities. Three site-specific interventions translate the territorial strategy into local actions: the regeneration of a former mining area, a new entrance park and an inner-town green corridor.
+
+## 中文
+
+Orba River Sustainability 是一项面向奥尔巴河流域的区域景观规划。项目回应栖息地破碎化、洪水风险、农业生产压力以及采砂遗留场地等问题，通过连续的蓝绿基础设施重建河岸地区的生态基底。设计将洪泛区修复、植被恢复、公共休闲空间与慢行网络结合起来，使河流景观与周边社区重新建立联系。区域尺度的策略进一步落实为三个具有代表性的节点：废弃采砂场改造、城镇入口公园以及贯穿居住区的内部绿色廊道。
+
+---
+
+# Image Captions / 每张图片简短介绍
+
+## Image 00 — Cover / 项目封面
+
+**EN**
+
+The cover presents the Orba River as the central structure of a renewed riparian territory. River restoration, agricultural landscapes, local settlements and slow-mobility routes are layered together to express a blue-green framework reconnecting ecology and community life.
+
+**CN**
+
+封面将奥尔巴河呈现为河岸地区更新的核心结构。河流修复、农业景观、地方聚落与慢行路径相互叠加，共同表达连接生态系统与社区生活的蓝绿框架。
+
+---
+
+## Image 01 — Territorial Strategy / 区域尺度策略
+
+**EN**
+
+The territorial analysis identifies the ecological structure, flood-prone areas, vegetation systems and topographic conditions of the Orba River basin. A continuous blue-green corridor connects natural reserves, agricultural landscapes and nearby settlements through a shared regional framework.
+
+**CN**
+
+区域分析梳理了奥尔巴河流域的生态结构、洪水风险、植被系统与地形条件。设计通过连续的蓝绿廊道串联自然保护地、农业景观与周边聚落，形成区域尺度的整体修复框架。
+
+---
+
+## Image 02 — Design Process / 设计推演过程
+
+**EN**
+
+The hand-drawn studies record the development of the initial territorial concept into a spatial strategy. River dynamics, vegetation buffers, circulation routes and activity nodes are gradually coordinated within a continuous landscape system.
+
+**CN**
+
+手绘草图记录了区域构想逐步转化为空间策略的过程。河流动态、植被缓冲带、慢行路径与活动节点被逐渐整合为连续的景观系统。
+
+---
+
+## Image 03 — Casal Cermelli Mine Park / 卡萨尔切尔梅利矿坑公园
+
+**EN**
+
+A former extraction site is transformed into a riverside ecological park. Reforestation, floodplain restoration and lightweight recreational paths preserve the traces of the disturbed landscape while introducing new public uses.
+
+**CN**
+
+原有采砂场被改造为河岸生态公园。通过植被恢复、洪泛区修复与轻量化游憩路径，场地在保留扰动地貌痕迹的同时，获得新的公共活动功能。
+
+---
+
+## Image 04 — Town Entrance Park / 城镇入口公园
+
+**EN**
+
+The entrance park creates a transitional landscape between farmland, water channels and the residential edge. Wetland planting, open spaces and cycling routes establish a recognisable gateway while reconnecting the town with its agricultural surroundings.
+
+**CN**
+
+入口公园在农田、水渠与居住区边缘之间构建过渡性景观。湿地种植、开放空间与骑行路径共同形成具有识别度的城镇门户，并重新连接聚落与周边农业环境。
+
+---
+
+## Image 05 — Town Inner Park / 城镇内部公园
+
+**EN**
+
+The inner-town intervention follows the existing wall and canal system to create a linear public landscape. Tree-lined paths, productive gardens and small gathering spaces extend the regional ecological network into the everyday life of the community.
+
+**CN**
+
+城镇内部公园依托原有墙体与水渠系统形成线性公共空间。林荫步道、生产性花园与小型活动场地将区域生态网络延伸至社区日常生活之中。
+
+---
+
+# Recommended Image Naming / 推荐图片命名
+
+项目图片建议放置在：
+
+```text
+assets/images/project_orba_river_sustainability/
+```
+
+完整项目名前缀命名方式：
+
+```text
+project_orba_river_sustainability_00_cover.jpg
+project_orba_river_sustainability_01_territorial_strategy.jpg
+project_orba_river_sustainability_02_design_process.jpg
+project_orba_river_sustainability_03_casal_cermelli_mine_park.jpg
+project_orba_river_sustainability_04_town_entrance_park.jpg
+project_orba_river_sustainability_05_town_inner_park.jpg
+```
+
+文件夹内部简洁命名方式：
+
+```text
+00_cover.jpg
+01_territorial_strategy.jpg
+02_design_process.jpg
+03_casal_cermelli_mine_park.jpg
+04_town_entrance_park.jpg
+05_town_inner_park.jpg
+```
+
+由于图片已经位于独立项目文件夹中，推荐采用第二种方式。文件名简洁，也更适合直接写入项目详情页代码。
+
+---
+
+# Website Caption Set / 可直接用于网站的图注组
+
+## 00 Cover
+
+**EN:** A blue-green framework reconnecting river, town, and agriculture.
+
+**CN:** 以蓝绿框架重新连接河流、城镇与农业景观。
+
+## 01 Territorial Strategy
+
+**EN:** A regional corridor links river ecosystems, farmland and settlements.
+
+**CN:** 区域廊道串联河流生态、农业景观与周边聚落。
+
+## 02 Design Process
+
+**EN:** River dynamics evolve into a continuous landscape strategy.
+
+**CN:** 从河流动态推演至连续的景观策略。
+
+## 03 Casal Cermelli Mine Park
+
+**EN:** A former extraction site becomes a restored riverside landscape.
+
+**CN:** 废弃采砂场转化为修复后的河岸景观。
+
+## 04 Town Entrance Park
+
+**EN:** A new gateway reconnects the town with its agricultural edge.
+
+**CN:** 新的入口公园重新连接城镇与农业边界。
+
+## 05 Town Inner Park
+
+**EN:** The ecological network extends into everyday community spaces.
+
+**CN:** 生态网络延伸至社区的日常公共空间。
+
+---
+
+# Recommended Website Image Order / 网站图片顺序建议
+
+```text
+00_cover.jpg
+01_territorial_strategy.jpg
+02_design_process.jpg
+03_casal_cermelli_mine_park.jpg
+04_town_entrance_park.jpg
+05_town_inner_park.jpg
+```

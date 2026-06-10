@@ -1,5 +1,5 @@
 /* =========================================
-   home.js - 高斯海浪 (Retina高清) & 走马灯 (2行缓速版)
+   home.js - 高斯海浪 (Retina高清) & 互动生态鱼群 & 走马灯 
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -12,13 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { revealElements.forEach(el => el.classList.add('visible')); }, 500);
     }, 800);
 
-    // --- 高斯平滑海浪 (Retina 高清版) ---
+    // --- 高斯平滑海浪 & 互动鱼群生态系统 ---
     const canvas = document.getElementById('particle-canvas');
     const heroContainer = document.querySelector('.hero-canvas-container');
 
     if (canvas && heroContainer) {
         const ctx = canvas.getContext('2d');
         let particles = [];
+        let fishes = []; // 新增生态鱼群数组
         let time = 0; 
         
         let logicalWidth = 0;
@@ -86,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return y;
         }
 
+        // --- 原有：气泡粒子 ---
         class WaveParticle {
             constructor(layerIndex) {
                 this.layerIndex = layerIndex;
@@ -112,6 +114,177 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // --- 🌟 新增：高级交互鱼类物理引擎 ---
+        class Fish {
+            constructor() {
+                this.respawn();
+            }
+            respawn() {
+                this.x = Math.random() * logicalWidth;
+                this.targetY = logicalHeight * 0.8 + Math.random() * (logicalHeight * 0.15); // 初始深水区
+                this.y = this.targetY;
+                this.vx = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 0.8 + 0.5); // 缓慢自然游动
+                this.vy = 0;
+                this.state = 'SWIMMING'; // 状态: SWIMMING, AIR, BONE_SINKING
+                this.isBone = false;
+                this.angle = this.vx > 0 ? 0 : Math.PI;
+                this.size = Math.random() * 0.4 + 0.6; // 鱼群大小不一
+                this.jumpTimer = Math.random() * 800 + 400; // 蓄力倒计时
+            }
+            update() {
+                const surfaceY = getWaveY(this.x, time, 2); // 取最顶层海浪作为水面基准
+
+                if (this.state === 'SWIMMING') {
+                    this.x += this.vx;
+                    // 正弦波产生自然的身体上下摇摆
+                    this.y += (this.targetY - this.y) * 0.05 + Math.sin(time * 6 + this.x * 0.02) * 0.4;
+
+                    // 边界环绕
+                    if (this.x < -50) this.x = logicalWidth + 50;
+                    if (this.x > logicalWidth + 50) this.x = -50;
+
+                    // 🌟 躲避鼠标逻辑
+                    let dx = this.x - smoothMouse.x;
+                    let dy = this.y - smoothMouse.y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 180) {
+                        this.vx += (dx / dist) * 0.15; // 惊吓加速
+                        this.targetY += (dy / dist) * 3;  // 向反方向下潜或上浮
+                    }
+
+                    // 游动速度摩擦力与恢复
+                    let speed = Math.abs(this.vx);
+                    if (speed > 2.5) this.vx *= 0.95; // 减速
+                    else if (speed < 0.6) this.vx += Math.sign(this.vx) * 0.02; // 恢复巡航速度
+
+                    // 平滑转向
+                    let targetAngle = this.vx > 0 ? Math.sin(time * 4) * 0.1 : Math.PI + Math.sin(time * 4) * 0.1;
+                    this.angle += (targetAngle - this.angle) * 0.1;
+
+                    // 🌟 蓄力跃出水面逻辑
+                    this.jumpTimer--;
+                    if (this.jumpTimer <= 0 && this.y < surfaceY + 100) {
+                        this.state = 'AIR';
+                        this.vy = -(Math.random() * 8 + 14); // 极强的初始向上爆发力
+                        this.vx = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 4 + 3); // 决定左右跳跃抛物线距离
+                    }
+
+                } else if (this.state === 'AIR') {
+                    // 🌟 子弹时间流速控制
+                    let timeScale = 0.22; // 空中减慢5倍，提供充足点击时间
+                    this.x += this.vx * timeScale;
+                    this.y += this.vy * timeScale;
+                    this.vy += 0.5 * timeScale; // 重力加速度
+
+                    // 身体倾斜严格遵循运动抛物线轨迹
+                    this.angle = Math.atan2(this.vy, this.vx);
+
+                    // 落回水面判定
+                    if (this.vy > 0 && this.y > surfaceY) {
+                        if (this.isBone) {
+                            this.state = 'BONE_SINKING';
+                            this.vy = 1; // 缓慢下沉速度
+                            this.vx = 0;
+                        } else {
+                            this.state = 'SWIMMING'; // 平稳入水，继续游动
+                            this.vy = 0;
+                            this.jumpTimer = Math.random() * 1000 + 500;
+                            this.targetY = logicalHeight * 0.7; // 潜入深水
+                        }
+                    }
+                } else if (this.state === 'BONE_SINKING') {
+                    // 🌟 鱼骨头缓缓沉底
+                    this.y += 0.8; // 下沉
+                    this.x += Math.sin(time * 2) * 0.3; // 随波逐流左右晃动
+                    // 骨头角度朝下晃动
+                    let baseAngle = this.vx >= 0 ? Math.PI/4 : (Math.PI - Math.PI/4);
+                    this.angle = baseAngle + Math.sin(time * 3) * 0.15; 
+
+                    // 沉出屏幕后重生为新鱼
+                    if (this.y > logicalHeight + 50) {
+                        this.respawn();
+                    }
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                
+                // 翻转逻辑：如果鱼向左游，垂直翻转以防腹部朝上
+                if (Math.cos(this.angle) < 0) {
+                    ctx.scale(this.size, -this.size);
+                } else {
+                    ctx.scale(this.size, this.size);
+                }
+
+                ctx.fillStyle = '#18181b'; // 高级克制的深墨色
+                ctx.strokeStyle = '#18181b';
+                ctx.lineJoin = 'round';
+                ctx.lineCap = 'round';
+
+                if (!this.isBone) {
+                    // 绘制简约实心鱼
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, 14, 7, 0, 0, Math.PI * 2); // 鱼身
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.moveTo(-10, 0); // 鱼尾
+                    ctx.lineTo(-22, -8);
+                    ctx.lineTo(-22, 8);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.moveTo(-2, 2); // 鱼鳍
+                    ctx.lineTo(-6, 8);
+                    ctx.lineTo(3, 6);
+                    ctx.fill();
+                } else {
+                    // 绘制简约实心鱼骨
+                    ctx.lineWidth = 2.5;
+                    ctx.beginPath();
+                    ctx.moveTo(-16, 0); // 脊椎
+                    ctx.lineTo(10, 0);
+                    ctx.stroke();
+                    for(let i = -8; i <= 4; i += 4) { // 鱼刺
+                        ctx.beginPath();
+                        ctx.moveTo(i, -6);
+                        ctx.lineTo(i, 6);
+                        ctx.stroke();
+                    }
+                    ctx.beginPath(); // 骨尾
+                    ctx.moveTo(-16, 0);
+                    ctx.lineTo(-24, -6);
+                    ctx.lineTo(-24, 6);
+                    ctx.closePath();
+                    ctx.stroke();
+                    ctx.beginPath(); // 头骨
+                    ctx.arc(12, 0, 5, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#fff'; // 镂空眼窝
+                    ctx.beginPath();
+                    ctx.arc(13, -1, 1.5, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+            
+            checkClick(cx, cy) {
+                // 仅允许点击处于空中的活鱼
+                if (this.state === 'AIR' && !this.isBone) {
+                    let dx = this.x - cx;
+                    let dy = this.y - cy;
+                    // 给予极其宽容的点击判定区域（防手抖）
+                    if (Math.sqrt(dx * dx + dy * dy) < 50 * this.size) { 
+                        this.isBone = true;
+                        // 击中瞬间产生轻微的停顿与额外翻滚
+                        this.vy = -2; 
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
         function initSystem() {
             particles = [];
             const pCount = window.innerWidth < 768 ? 300 : 600;
@@ -119,7 +292,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const layer = i % 3; 
                 particles.push(new WaveParticle(layer));
             }
+
+            // 初始化生态鱼群 (电脑端6只，手机端3只防重叠)
+            fishes = [];
+            const fCount = window.innerWidth < 768 ? 3 : 6;
+            for (let i = 0; i < fCount; i++) {
+                fishes.push(new Fish());
+            }
         }
+
+        // 🌟 点击击杀监听器
+        heroContainer.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const cx = e.clientX - rect.left;
+            const cy = e.clientY - rect.top;
+            fishes.forEach(f => f.checkClick(cx, cy));
+        });
 
         function animate() {
             ctx.clearRect(0, 0, logicalWidth, logicalHeight); 
@@ -133,6 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 smoothMouse.y += (-1000 - smoothMouse.y) * 0.05;
             }
 
+            // 更新生态系统
+            fishes.forEach(f => f.update());
+
+            // 🌟 景深交错渲染引擎 (Interleaved Rendering)
             waveLayers.forEach((layer, i) => {
                 ctx.beginPath();
                 ctx.moveTo(0, logicalHeight); 
@@ -144,8 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 let waveTop = logicalHeight * layer.yBase - 60; 
                 let gradient = ctx.createLinearGradient(0, waveTop, 0, logicalHeight);
                 gradient.addColorStop(0, `rgba(${layer.color}, 0.2)`); 
-                
-                // 🌟 核心修复：将底部的透明度从 0.0 改为 0.06，赋予底部水体真实厚度，不再留白
                 gradient.addColorStop(1, `rgba(${layer.color}, 0.06)`);  
 
                 ctx.fillStyle = gradient;
@@ -160,8 +350,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.strokeStyle = `rgba(${layer.color}, 0.5)`; 
                 ctx.lineWidth = 1;
                 ctx.stroke();
+
+                // 核心：在绘制最后一层顶级海浪之前，渲染水底的鱼！这会产生透过海水看鱼的半透明朦胧效果
+                if (i === 1) { 
+                    fishes.forEach(f => {
+                        if (f.state === 'SWIMMING' || f.state === 'BONE_SINKING') f.draw();
+                    });
+                }
             });
 
+            // 最后在所有波浪之上，渲染处于空中（子弹时间）的鱼
+            fishes.forEach(f => {
+                if (f.state === 'AIR') f.draw();
+            });
+
+            // 绘制气泡粒子
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
                 particles[i].draw();

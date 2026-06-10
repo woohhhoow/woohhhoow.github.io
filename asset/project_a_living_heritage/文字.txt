@@ -1,0 +1,205 @@
+# Project Basic Information / 项目基本信息
+
+**Project Title / 项目名称**
+
+A LIVING HERITAGE
+
+活态遗产
+
+**Project Subtitle / 项目副标题**
+
+Renewing the Spatial Dialogue Between Heritage and Ecology
+
+重塑历史遗产与生态环境之间的空间对话
+
+**Project Folder Name / 项目文件夹名称**
+
+`project_a_living_heritage`
+
+**Project Type / 项目类型**
+
+Historic Garden Renewal / Cultural Landscape Conservation / Urban Public Space Design
+
+历史花园更新 / 文化景观保护 / 城市公共空间设计
+
+**Project Time / 项目时间**
+
+February 2026
+
+2026年2月
+
+**Location / 项目地点**
+
+Giardini Indro Montanelli, Milan, Italy
+
+意大利米兰，蒙塔内利公共花园
+
+**Target Users / 目标用户**
+
+Local Residents / Families / Visitors / Museum Users / Daily Park Users
+
+当地居民 / 家庭使用者 / 游客 / 博物馆访客 / 日常公园使用者
+
+**Design Focus / 设计重点**
+
+Historic Garden Conservation / Spatial Renewal / Planting Strategy / Public Accessibility / Ecological Continuity
+
+历史花园保护 / 空间更新 / 植物策略 / 公共可达性 / 生态连续性
+
+**Keywords / 关键词**
+
+Living Heritage / Historic Garden / Urban Park / Spatial Stratification / Planting Renewal / Cultural Landscape / Public Life
+
+活态遗产 / 历史花园 / 城市公园 / 空间层积 / 植物更新 / 文化景观 / 公共生活
+
+---
+
+# Project Introduction / 项目介绍
+
+## English
+
+A Living Heritage explores the renewal of Giardini Indro Montanelli, one of Milan’s historic public gardens. Rather than treating heritage as a fixed image, the project understands the park as a layered and evolving landscape. Through historical research, spatial analysis and a detailed study of the existing tree system, the proposal strengthens the relationship between the garden, the Natural History Museum and the surrounding urban fabric. Carefully inserted planting areas, reorganised paths and renewed public spaces preserve the park’s identity while supporting contemporary civic life.
+
+## 中文
+
+A Living Heritage 聚焦于米兰历史公共花园 Giardini Indro Montanelli 的更新设计。项目并未将遗产视为静态保存的对象，而是将公园理解为一个持续演变、不断叠加的城市景观。通过历史资料研究、空间结构分析与现状树木系统梳理，设计重新强化花园、自然历史博物馆与周边城市环境之间的联系。新的植物空间、路径组织与公共活动区域以克制的方式嵌入既有格局，在保留历史特征的同时，使公园重新适应当代城市生活。
+
+---
+
+# Image Captions / 每张图片简短介绍
+
+## Image 00 — Cover / 项目封面
+
+**EN**
+
+The cover presents Giardini Indro Montanelli as a living urban heritage landscape. Historical garden imagery, mature vegetation, civic activities and the surrounding urban fabric are layered together to express the continuing dialogue between conservation, ecology and public life.
+
+**CN**
+
+封面将 Giardini Indro Montanelli 呈现为持续生长的城市遗产景观。历史花园意象、成熟植被、市民活动与周边城市结构相互叠加，共同表达保护、生态与公共生活之间不断延续的对话。
+
+---
+
+## Image 01 — Urban and Historical Background / 城市与历史背景
+
+**EN**
+
+The opening analysis situates Giardini Indro Montanelli within Milan’s wider urban structure and traces its relationship with the city’s historical growth. The garden is understood as both a civic space and a layered cultural landscape.
+
+**CN**
+
+开篇分析将 Giardini Indro Montanelli 放置于米兰整体城市结构中，并梳理其与城市历史发展的关系。花园既是公共生活空间，也是具有多重历史层积的文化景观。
+
+---
+
+## Image 02 — Site Analysis and Historical Evolution / 场地解析与历史演变
+
+**EN**
+
+Urban connections, internal circulation, spatial elements and historical transformations are analysed together. The diagrams reveal how paths, water bodies, vegetation and built elements have gradually shaped the identity of the garden.
+
+**CN**
+
+场地分析综合梳理了城市联系、内部流线、空间构成与历史演变。图解呈现了路径、水体、植被与建筑元素如何在长期发展中共同塑造花园的空间特征。
+
+---
+
+## Image 03 — General Strategy and Design Proposal / 总体策略与更新方案
+
+**EN**
+
+The proposal focuses on the eastern portion of the park, introducing renewed planting areas and public spaces around the existing museum complex. The intervention preserves mature vegetation while establishing a clearer and more accessible spatial structure.
+
+**CN**
+
+总体方案重点更新公园东侧区域，在既有博物馆建筑周边植入新的植物空间与公共场所。设计尽可能保留成熟树木，同时建立更加清晰、开放且易于使用的空间结构。
+
+---
+
+## Image 04 — Focus Areas and Planting Sections / 重点区域与植物剖面
+
+**EN**
+
+Two focus areas demonstrate how the renewal strategy is translated into detailed planting design. Layered vegetation, framed garden rooms and carefully controlled clearings create a balance between historical continuity, seasonal change and everyday use.
+
+**CN**
+
+两个重点区域展示了总体更新策略如何转化为具体的植物设计。多层次植被、围合式花园空间与尺度克制的林下开敞区域，在历史延续、季相变化与日常使用之间建立平衡。
+
+---
+
+# Recommended Image Naming / 推荐图片命名
+
+项目图片建议放置在：
+
+```text
+assets/images/project_a_living_heritage/
+```
+
+完整项目名前缀命名方式：
+
+```text
+project_a_living_heritage_00_cover.jpg
+project_a_living_heritage_01_urban_historical_background.jpg
+project_a_living_heritage_02_site_analysis_timeline.jpg
+project_a_living_heritage_03_general_strategy.jpg
+project_a_living_heritage_04_focus_areas_sections.jpg
+```
+
+文件夹内部简洁命名方式：
+
+```text
+00_cover.jpg
+01_urban_historical_background.jpg
+02_site_analysis_timeline.jpg
+03_general_strategy.jpg
+04_focus_areas_sections.jpg
+```
+
+由于图片已经位于独立项目文件夹中，推荐采用第二种方式。文件名简洁，也更适合直接写入项目详情页代码。
+
+---
+
+# Website Caption Set / 可直接用于网站的图注组
+
+## 00 Cover
+
+**EN:** A historic garden renewed as a living civic landscape.
+
+**CN:** 将历史花园更新为持续生长的城市公共景观。
+
+## 01 Urban and Historical Background
+
+**EN:** The garden is understood within Milan’s broader urban and historical structure.
+
+**CN:** 从米兰城市与历史结构中重新理解这座花园。
+
+## 02 Site Analysis and Historical Evolution
+
+**EN:** Paths, vegetation and built elements reveal the layered identity of the park.
+
+**CN:** 路径、植被与建筑元素共同呈现公园的历史层积。
+
+## 03 General Strategy
+
+**EN:** Subtle interventions strengthen the dialogue between heritage and contemporary use.
+
+**CN:** 克制的更新方式强化历史空间与当代使用之间的联系。
+
+## 04 Focus Areas and Planting Sections
+
+**EN:** Layered planting creates a renewed spatial rhythm within the historic garden.
+
+**CN:** 层次丰富的植物设计重塑历史花园的空间节奏。
+
+---
+
+# Recommended Website Image Order / 网站图片顺序建议
+
+```text
+00_cover.jpg
+01_urban_historical_background.jpg
+02_site_analysis_timeline.jpg
+03_general_strategy.jpg
+04_focus_areas_sections.jpg
+```

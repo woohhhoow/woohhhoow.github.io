@@ -1,0 +1,226 @@
+# Project Basic Information / 项目基本信息
+
+**Project Title / 项目名称**
+
+RE:LINE
+
+重构线性连接
+
+**Project Subtitle / 项目副标题**
+
+Transforming Disused Tracks into a Living Linear Landscape
+
+将废弃铁轨转化为具有生命力的线性景观
+
+**Project Folder Name / 项目文件夹名称**
+
+`project_reline`
+
+**Project Type / 项目类型**
+
+Urban Regeneration / Slow Mobility Network / Ecological Corridor Design
+
+城市更新 / 慢行网络设计 / 生态廊道设计
+
+**Project Time / 项目时间**
+
+January 2026
+
+2026年1月
+
+**Location / 项目地点**
+
+Southern Milan Metropolitan Area, Lombardy, Italy
+
+意大利伦巴第大区，米兰南部都市边缘地区
+
+**Target Users / 目标用户**
+
+Local Residents / Cyclists / Pedestrians / Nearby Communities / Recreational Visitors
+
+当地居民 / 骑行者 / 步行者 / 周边社区 / 休闲游客
+
+**Design Focus / 设计重点**
+
+Abandoned Railway Regeneration / Slow Mobility / Ecological Connectivity / Quarry Lake Revitalisation / Urban-Rural Interface
+
+废弃铁路更新 / 慢行交通 / 生态连通 / 采石湖更新 / 城乡边缘重构
+
+**Keywords / 关键词**
+
+Linear Landscape / Railway Corridor / Cycling Network / Green Infrastructure / Quarry Lake Park / Community Garden / Repeatable Design Modules
+
+线性景观 / 铁路廊道 / 骑行网络 / 绿色基础设施 / 采石湖公园 / 社区花园 / 可复制设计模块
+
+---
+
+# Project Introduction / 项目介绍
+
+## English
+
+RE:LINE transforms a disused railway corridor in southern Milan into an ecological and cultural spine. The project introduces a continuous slow-mobility network that reconnects fragmented neighbourhoods, farmland and open landscapes while preserving the spatial memory of the former railway. A revitalised quarry lake becomes a major recreational node, integrating water-accessible spaces, community gardens and wetland habitats. Along the wider corridor, repeatable landscape modules adapt to changing urban and rural conditions, turning obsolete infrastructure into a connected public landscape.
+
+## 中文
+
+RE:LINE 以米兰南部一条废弃铁路为线性骨架，将其转化为连接城市社区、农业景观与开放空间的生态文化廊道。项目通过连续的步行和骑行网络重新缝合被基础设施割裂的城乡边缘，同时保留旧铁路的空间记忆。原有采石湖被改造为核心休闲节点，结合亲水空间、社区花园、湿地生境与公共活动场地。沿线设计采用可复制、可调整的景观模块，以适应不同的城市和乡村环境，使废弃基础设施重新成为具有公共价值的绿色网络。
+
+---
+
+# Image Captions / 每张图片简短介绍
+
+## Image 00 — Cover / 项目封面
+
+**EN**
+
+The cover presents the abandoned railway as a new linear public landscape. Existing tracks, cycling routes, industrial traces and quarry lakes are layered together to express the transformation of obsolete infrastructure into a slow-mobility and ecological corridor.
+
+**CN**
+
+封面将废弃铁路呈现为新的线性公共景观。旧铁轨、骑行路径、工业遗存与采石湖相互叠加，共同表达废弃基础设施向慢行生态廊道的转化过程。
+
+---
+
+## Image 01 — Overall Strategy / 整体策略
+
+**EN**
+
+The regional strategy identifies the abandoned railway as a continuous landscape spine connecting Porto di Mare, Chiaravalle, farmland areas and Sorigherio. Slow-mobility routes and ecological interventions are coordinated through a sequence of entrances, transitional spaces and public nodes.
+
+**CN**
+
+区域策略将废弃铁路转化为贯穿 Porto di Mare、Chiaravalle、农业区与 Sorigherio 的连续景观骨架。慢行路径与生态修复措施通过入口、过渡空间和公共节点形成完整的线性系统。
+
+---
+
+## Image 02 — Corridor Master Plan and Nodes / 廊道总平面与节点设计
+
+**EN**
+
+The corridor master plan translates the regional concept into a detailed linear landscape system. Selected nodes respond to different spatial conditions, including preserved railway traces, cycling paths, pedestrian routes, seating areas, bridges and connections to surrounding communities.
+
+**CN**
+
+廊道总平面将区域构想落实为具体的线性景观系统。不同节点根据场地条件配置旧铁路遗迹、骑行道、步行路径、休憩空间、跨越设施以及通往周边社区的连接界面。
+
+---
+
+## Image 03 — Quarry Lake Park Master Plan / 采石湖公园总体设计
+
+**EN**
+
+The former quarry lake is reimagined as a recreational and ecological destination. The design integrates a swimming pool, water-accessible platforms, community gardens, activity lawns, wetland planting and a continuous circulation network.
+
+**CN**
+
+原有采石湖被重新塑造为兼具休闲和生态价值的公共目的地。设计整合泳池、亲水平台、社区花园、活动草坪、湿地种植与连续的慢行系统。
+
+---
+
+## Image 04 — Waterfront Park Details / 滨水公园节点深化
+
+**EN**
+
+Detailed plans and sections illustrate the relationship between the swimming pool, service facilities, wetland edges and elevated waterfront platforms. The design creates a gradual transition from active public spaces to restored aquatic habitats.
+
+**CN**
+
+节点深化图展示了泳池、服务设施、湿地边缘与架高滨水平台之间的空间关系。设计在公共活动区域与修复后的水生生境之间建立渐进式过渡。
+
+---
+
+## Image 05 — Repeatable Railway Modules / 铁路廊道模块化设计
+
+**EN**
+
+Four repeatable design modules demonstrate how the former railway can adapt to changing contexts along the corridor. Existing tracks, cycling lanes, pedestrian paths, vegetation buffers and small resting platforms form a flexible landscape toolkit.
+
+**CN**
+
+四组可复制的设计模块展示了废弃铁路如何适应沿线不同环境。原有铁轨、骑行道、步行路径、植被缓冲带与小型休憩平台共同构成灵活的线性景观工具箱。
+
+---
+
+# Recommended Image Naming / 推荐图片命名
+
+项目图片建议放置在：
+
+```text
+assets/images/project_reline/
+```
+
+完整项目名前缀命名方式：
+
+```text
+project_reline_00_cover.jpg
+project_reline_01_overall_strategy.jpg
+project_reline_02_corridor_masterplan.jpg
+project_reline_03_quarry_lake_park.jpg
+project_reline_04_waterfront_details.jpg
+project_reline_05_railway_modules.jpg
+```
+
+文件夹内部简洁命名方式：
+
+```text
+00_cover.jpg
+01_overall_strategy.jpg
+02_corridor_masterplan.jpg
+03_quarry_lake_park.jpg
+04_waterfront_details.jpg
+05_railway_modules.jpg
+```
+
+由于图片已经位于独立项目文件夹中，推荐采用第二种方式。文件名简洁，也更适合直接写入项目详情页代码。
+
+---
+
+# Website Caption Set / 可直接用于网站的图注组
+
+## 00 Cover
+
+**EN:** Transforming disused tracks into a living linear landscape.
+
+**CN:** 将废弃铁轨转化为具有生命力的线性景观。
+
+## 01 Overall Strategy
+
+**EN:** A slow-mobility corridor reconnects fragmented urban and rural landscapes.
+
+**CN:** 慢行廊道重新连接破碎的城乡景观。
+
+## 02 Corridor Master Plan
+
+**EN:** Railway traces, ecological buffers and public nodes form a linear network.
+
+**CN:** 铁路遗迹、生态缓冲带与公共节点共同构成线性网络。
+
+## 03 Quarry Lake Park
+
+**EN:** A former quarry becomes an accessible recreational landscape.
+
+**CN:** 废弃采石湖转化为开放共享的休闲景观。
+
+## 04 Waterfront Details
+
+**EN:** Active waterfront spaces transition gradually into restored wetland habitats.
+
+**CN:** 活力滨水空间逐步过渡为修复后的湿地生境。
+
+## 05 Railway Modules
+
+**EN:** Repeatable modules adapt the corridor to changing spatial conditions.
+
+**CN:** 可复制模块使廊道适应沿线不同空间条件。
+
+---
+
+# Recommended Website Image Order / 网站图片顺序建议
+
+```text
+00_cover.jpg
+01_overall_strategy.jpg
+02_corridor_masterplan.jpg
+03_quarry_lake_park.jpg
+04_waterfront_details.jpg
+05_railway_modules.jpg
+```

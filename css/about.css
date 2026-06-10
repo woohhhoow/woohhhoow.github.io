@@ -2,9 +2,9 @@
    about.css - 关于我页面 (全设备适配 + 简历折叠版)
    ========================================= */
 
-.about-page-wrapper { padding: clamp(100px, 18vh, 180px) 5vw clamp(60px, 10vh, 100px); max-width: 1600px; margin: 0 auto; }
+.about-page-wrapper { position: relative; padding: clamp(100px, 18vh, 180px) 5vw clamp(60px, 10vh, 100px); max-width: 1600px; margin: 0 auto; overflow: hidden; }
 
-.about-grid { display: grid; grid-template-columns: 3fr 7fr; gap: clamp(40px, 8vw, 80px); align-items: start; }
+.about-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 3fr 7fr; gap: clamp(40px, 8vw, 80px); align-items: start; }
 
 .about-sidebar { position: sticky; top: clamp(100px, 15vh, 150px); display: flex; flex-direction: column; gap: clamp(25px, 4vw, 40px); }
 .sidebar-block span { display: block; font-family: var(--font-sans); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.4; margin-bottom: 10px; color: var(--fg-color); }
@@ -78,4 +78,6 @@
     
     .profile-photo-container { width: 100px; margin-bottom: 0; }
 }
-@media (max-width: 480px) { .sidebar-block { flex: 1 1 100%; } }
+@media (max-width: 480px) {
+    .sidebar-block { flex: 1 1 100%; }
+}
